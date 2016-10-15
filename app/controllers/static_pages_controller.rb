@@ -13,4 +13,7 @@ class StaticPagesController < ApplicationController
   
   def my_colleges
   end
+  
+  def login
+  end
 end
