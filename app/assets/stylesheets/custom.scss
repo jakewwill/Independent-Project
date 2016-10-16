@@ -2,7 +2,10 @@
 @import "bootstrap";
 
 div.container-small {
+  margin-top: 0;
 	width: 85%;
+  background-color: white;
+  border-radius: 10px
 }
 
 div.container-xs {
@@ -28,11 +31,28 @@ div.container-xs {
 .punahou-seal {
 	display: block;
 	width: 20%;
-	margin: 0 auto;
+	margin: 0 auto 10px auto;
 }
 
 .background-white {
 	background-color: #F7F6EF;
+}
+
+.search-button-div {
+  margin: 10px 0 0 0;
+}
+
+.search-form {
+  margin: 20px 5px;
+}
+
+.sort-by-select {
+  display: inline-block;
+  margin: 0px 0px 0px 5px;
+}
+
+#punahou-nav {
+  margin-bottom: 0;
 }
 
 #font-26 {
@@ -89,7 +109,7 @@ div.container-xs {
 
 .punahou-image {
 	height: 108px;
-  background-image: url("http://i.imgur.com/NzivQls.png");
+  background-image: url("https://s3.amazonaws.com/punalink/Website+Images/Nav+Background.png");
 }
 
 .dark-blue {
@@ -110,10 +130,6 @@ div.container-xs {
 
 .black-border-top {
 	border-top: 1px solid black;
-}
-
-.short {
-	height: 300px;
 }
 
 .image {

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   root 'static_pages#home'
   get '/my_colleges', to: 'static_pages#my_colleges'
   get '/most_reviews', to: 'static_pages#most_reviews'
