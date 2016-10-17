@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'users/new'
 
   root 'static_pages#home'
@@ -6,8 +8,10 @@ Rails.application.routes.draw do
   get '/most_reviews', to: 'static_pages#most_reviews'
   get '/find_colleges', to: 'static_pages#find_colleges'
   get '/college_rankings', to: 'static_pages#college_rankings'
-  get '/login', to: 'static_pages#login'
   get '/signup', to: 'users#new'
+  get '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
   resources :users
 end
