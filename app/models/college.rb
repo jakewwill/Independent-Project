@@ -1,7 +1,7 @@
 class College < ApplicationRecord
   require 'csv'
 
-  validates :name, presence: true, uniqueness: { case_sensitive: true }
+  validates :unitid, presence: true, uniqueness: { case_sensitive: true }
 
   def self.import(file)
     CSV.foreach(file.path, :headers => true) do |row|

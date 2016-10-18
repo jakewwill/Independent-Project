@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/college_rankings', to: 'static_pages#college_rankings'
   get '/signup', to: 'users#new'
   get '/colleges', to: 'colleges#new'
-  get '/import_colleges', to: 'colleges#import_colleges'
+  get '/show_all_colleges', to: 'colleges#show_all_colleges'
   get '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   post '/import_colleges', to: 'colleges#import_colleges'

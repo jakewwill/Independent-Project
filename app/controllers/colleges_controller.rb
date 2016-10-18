@@ -1,5 +1,5 @@
 class CollegesController < ApplicationController
-  def import_colleges
+  def show_all_colleges
     @colleges = College.all
   end
 
