@@ -1,0 +1,28 @@
+<html>
+  <head>
+
+  </head>
+
+  <body class="body">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @colleges.each do |college| %>
+          <tr>
+            <td><%= college.name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <h4>Import></h4>
+    <%= form_tag import_colleges_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import CSV" %>
+    <% end %>
+  </body>
+</html>
