@@ -16,4 +16,7 @@ class User < ApplicationRecord
 
   # Validate password
   validates :password, presence: true, length: { minimum: 6 }
+  
+  # Validate user type (alumni or student)
+  validates :alumni, presence: true
 end

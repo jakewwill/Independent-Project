@@ -10,22 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018175618) do
+ActiveRecord::Schema.define(version: 20161029172159) do
 
-  create_table "colleges", force: :cascade do |t|
+  create_table "colleges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "unitid"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.string   "alumni"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
 end
