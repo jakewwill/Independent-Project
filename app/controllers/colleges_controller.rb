@@ -1,10 +1,12 @@
 class CollegesController < ApplicationController
-  def show_all_colleges
-    @colleges = College.all
+  def index
   end
 
   def new
-    @college = College.new
+  end
+
+  def show_all_colleges
+    @colleges = College.all
   end
 
   def create

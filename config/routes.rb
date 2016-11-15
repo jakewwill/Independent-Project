@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'colleges/new'
-
   get 'sessions/new'
 
   get 'users/new'
@@ -11,11 +9,9 @@ Rails.application.routes.draw do
   get '/find_colleges', to: 'static_pages#find_colleges'
   get '/college_rankings', to: 'static_pages#college_rankings'
   get '/signup', to: 'users#new'
-  get '/colleges', to: 'colleges#new'
   get '/show_all_colleges', to: 'colleges#show_all_colleges'
   get '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
-  post '/import_colleges', to: 'colleges#import_colleges'
   delete '/logout',  to: 'sessions#destroy'
 
   resources :users
