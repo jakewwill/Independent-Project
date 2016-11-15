@@ -4,9 +4,12 @@ This project is designed to form a bridge (hence the name) between the current s
 
 ####Questions may be related to the following
 
-• Weather
+• Weather\n
+
 • Geographic Location and what a Punahou Student may find appealing about it
+
 • Sense of Ohana, or family
+
 • Professors at college vs Teachers at Punahou
 
 ###Most importantly of all:
