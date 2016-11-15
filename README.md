@@ -4,7 +4,7 @@ This project is designed to form a bridge (hence the name) between the current s
 
 ####Questions may be related to the following
 
-• Weather\n
+• Weather
 
 • Geographic Location and what a Punahou Student may find appealing about it
 
@@ -15,3 +15,6 @@ This project is designed to form a bridge (hence the name) between the current s
 ###Most importantly of all:
 
 #### • Would you recommend this college for another Punahou student 
+
+
+##### This project is currently in development and any ideas or improvements can be sent to jwill18@punahou.edu. Feel free to email ideas for questions, web design, or anything else that might be able to improve the web app.
