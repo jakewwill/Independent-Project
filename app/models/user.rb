@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :reviews
+  
   # Before saving the user to the database, downcase the email
   before_save { self.email = email.downcase }
   

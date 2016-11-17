@@ -15,14 +15,14 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      	<ul class="nav navbar-nav">
 			        <li id="nav-text"><%= link_to "Home",   root_path %></li>
-			        <li id="nav-text"><%= link_to "Find Colleges",   find_colleges_path %></li>
 			        <li id="nav-text"><%= link_to "College Rankings",   college_rankings_path %></li>
 			        <li id="nav-text"><%= link_to "Most Reviews",   most_reviews_path %></li>
+			        <li id="nav-text"><%= link_to "All Reviews",   reviews_path %></li>
 			        <% if logged_in? %>
 			        	<% if @current_user.alumni.eql? "Current Student" %>
 			        		<li id="nav-text"><%= link_to "My Colleges",   my_colleges_path %></li>
 			        	<% else %>
-			        		<li id="nav-text"><%= link_to "Submit a Review",   "#" %></li>
+			        		<li id="nav-text"><%= link_to "Submit a Review",   submit_review_path %></li>
 			        	<% end %>
 			        <% end %>
           		</ul>
@@ -42,9 +42,8 @@
                     <li><%= link_to "Login",   login_path %></li>
                     <li><%= link_to "Signup",   signup_path %></li>
                   </ul>
-        		</li>
+        				</li>
               <% end %>
-
 		        </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->

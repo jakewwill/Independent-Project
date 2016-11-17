@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+	    <title>Reviews</title>
+		<link rel="stylesheet" href="custom.scss">
+	<head>
+
+	<body class="body">
+		<div class="container-small container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="results" class="row">
+						<table class="table black-border col-md-12" style="margin-top: 20px; margin-left: 2.2%; width: 96%">
+							<thead style="background: #D6E4FF">
+								<tr>
+									<th style="width: 25%">Review Author</th>
+									<th style="width: 40%">Review School Name</th>
+									<th>Link</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% Review.all.each do |r|%>
+                                    <tr>
+                                        <td><%= r.name %></td>
+                                        <td><%= r.college_name %></td>
+                                        <td><%= link_to "Go to review of " + r.college_name, r %></td>
+                                    </tr>
+                                <%end%>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div> <!-- row -->
+		</div>
+	</body>
+</html>
