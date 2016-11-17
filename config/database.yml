@@ -19,8 +19,8 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: <%= ENV["mydbinstance"] %>
-  username: <%= ENV["jwill18"] %>
-  password: <%= ENV["equinox1"] %>
-  host: <%= ENV["mydbinstance.ckcwgmv1vxps.us-west-1.rds.amazonaws.com"] %>
+  database: mydbinstance
+  username: jwill18
+  password: equinox1
+  host: mydbinstance.ckcwgmv1vxps.us-west-1.rds.amazonaws.com
   port: 3306
