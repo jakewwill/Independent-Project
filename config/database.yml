@@ -19,4 +19,4 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  url: <%= ENV["mysql2://jwill18:equinox1@mydbinstance.ckcwgmv1vxps.us-west-1.rds.amazonaws.com:3306/mydbinstance?sslca=config/amazon-rds-ca-cert.pem"] %>
+  url: <%= ENV["mysql2://jwill18:equinox1@mydbinstance.ckcwgmv1vxps.us-west-1.rds.amazonaws.com/mydbinstance?sslca=config/amazon-rds-ca-cert.pem"] %>
