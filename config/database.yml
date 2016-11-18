@@ -1,20 +1,18 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: mydbinstance
+  database: independent_project
   username: jwill18
-  password: equinox1
-  host: mydbinstance.ckcwgmv1vxps.us-west-1.rds.amazonaws.com
-  port: 3306
+  password: Gbw77a88
+  host: localhost
 
 test:
   adapter: mysql2
   encoding: utf8
-  database: mydbinstance
+  database: independent_project
   username: jwill18
-  password: equinox1
-  host: mydbinstance.ckcwgmv1vxps.us-west-1.rds.amazonaws.com
-  port: 3306
+  password: Gbw77a88
+  host: localhost
 
 production:
   adapter: mysql2
