@@ -16,7 +16,7 @@
 
 						<p class="welcome-p-2"><strong>by Punahou for Punahou<strong></p>
 
-						<img class="punahou-seal" src="https://s3.amazonaws.com/punalink/Website+Images/punahou-seal.png">
+						<img class="punahou-seal" src="http://i.imgur.com/8NWErkF.png">
 					</div>
 
 					<div class="black-border-top short row">
@@ -26,13 +26,17 @@
 				</div>
 
 				<div class="background-white col-md-6 black-border">
-					<label id="font-26">Colleges of The Week</label>
+					<label id="font-26" style="margin-bottom: 20px; text-align: center">Random Colleges</label>
 
-					<label id="font-22">Stanford University</label>
-					<img class="recommended-colleges-image" src="https://s3.amazonaws.com/punalink/Website+Images/Stanford+University.jpg">
+					<label id="font-22" style="margin-bottom: 30px; text-align: left">• <%= College.order("RAND()").first.name %></label>
 
-					<label id="font-22">Harvard University</label>
-					<img class="recommended-colleges-image" src="https://s3.amazonaws.com/punalink/Website+Images/Harvard+University.jpg">
+					<label id="font-22" style="margin-bottom: 30px; text-align: left">• <%= College.order("RAND()").second.name %></label>
+					
+					<label id="font-22" style="margin-bottom: 30px; text-align: left">• <%= College.order("RAND()").third.name %></label>
+					
+					<label id="font-22" style="margin-bottom: 30px; text-align: left">• <%= College.order("RAND()").fourth.name %></label>
+					
+					<label id="font-22" style="text-align: left">• <%= College.order("RAND()").fifth.name %></label>
 				</div>
 		</div>
 	</body>

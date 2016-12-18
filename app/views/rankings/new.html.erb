@@ -1,0 +1,27 @@
+<html>
+  <head>
+
+  </head>
+
+  <body class="body">
+    <div class="container-small container">
+      <h1>Submit a Ranking</h1>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <%= form_for(@ranking) do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+            
+            <%= f.label "Academic Rigor" %>
+            <%= f.select :response1, ['Outstanding', 'Great', 'Good', 'Needs Improvement', 'Terrible'] %>
+            
+            <%= f.label "Campus Life" %>
+            <%= f.select :response2, ['Very Laid Back', 'More Laid Back', 'Perfect Balance', 'More Tense', 'Very Tense/Anti-Social'] %>
+            
+            <%= f.submit "Submit my ranking", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

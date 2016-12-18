@@ -18,11 +18,13 @@
 			        <li id="nav-text"><%= link_to "College Rankings",   college_rankings_path %></li>
 			        <li id="nav-text"><%= link_to "Most Reviews",   most_reviews_path %></li>
 			        <li id="nav-text"><%= link_to "All Reviews",   reviews_path %></li>
+			        <li id="nav-text"><%= link_to "All Rankings",   rankings_path %></li>
 			        <% if logged_in? %>
 			        	<% if @current_user.alumni.eql? "Current Student" %>
 			        		<li id="nav-text"><%= link_to "My Colleges",   my_colleges_path %></li>
 			        	<% else %>
 			        		<li id="nav-text"><%= link_to "Submit a Review",   submit_review_path %></li>
+			        		<li id="nav-text"><%= link_to "Submit a Ranking",   submit_ranking_path %></li>
 			        	<% end %>
 			        <% end %>
           		</ul>

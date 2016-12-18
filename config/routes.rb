@@ -11,11 +11,13 @@ Rails.application.routes.draw do
   get '/show_all_colleges', to: 'colleges#show_all_colleges'
   get '/login',   to: 'sessions#new'
   get '/submit_review', to: 'reviews#new'
+  get '/submit_ranking', to: 'rankings#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
   resources :users
   resources :colleges
   resources :reviews
+  resources :rankings
 
 end

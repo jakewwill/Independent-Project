@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+	    <title>Rankings</title>
+		<link rel="stylesheet" href="custom.scss">
+	<head>
+
+	<body class="body">
+		<div class="container-small container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="results" class="row">
+						<table class="table black-border col-md-12" style="margin-top: 20px; margin-left: 2.2%; width: 96%">
+							<thead style="background: #D6E4FF">
+								<tr>
+									<th style="width: 25%">Ranking Author</th>
+									<th>Link</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% Ranking.all.each do |r|%>
+                                    <tr>
+                                        <td><%= r.name %></td>
+                                        <td><%= link_to "Go to ranking by " + r.name, r %></td>
+                                    </tr>
+                                <%end%>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div> <!-- row -->
+		</div>
+	</body>
+</html>

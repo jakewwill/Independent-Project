@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   def find_colleges
   end
   
-  def most_reviews  
+  def most_reviews
   end
   
   def my_colleges
