@@ -6,13 +6,21 @@ class ReviewsController < ApplicationController
   end
   
   def new
-    @review = Review.new
+    if (current_user.submitted_review == 0)
+      @review = Review.new
+      @colleges = College.all
+    else
+      flash[:danger] = "Error! You have already submitted a review! You may update it in your profile"
+      redirect_to root_path
+    end
   end
   
   def create
       @review = Review.new(review_params)
       if @review.save
         flash[:success] = "Review successfully submitted"
+        user = current_user
+        user.update_attribute(:submitted_review, 1)
         redirect_to root_path
       else
         flash[:danger] = "Error submitting review, please ensure you answered every question"

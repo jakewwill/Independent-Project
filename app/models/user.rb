@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :reviews
+  after_initialize :set_defaults, unless: :persisted?
   
   # Before saving the user to the database, downcase the email
   before_save { self.email = email.downcase }
@@ -21,4 +21,9 @@ class User < ApplicationRecord
   
   # Validate user type (alumni or student)
   validates :alumni, presence: true
+  
+  def set_defaults
+    self.submitted_review = false
+    self.submitted_ranking = false
+  end
 end

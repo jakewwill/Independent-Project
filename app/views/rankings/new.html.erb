@@ -12,6 +12,10 @@
             <%= f.label :name %>
             <%= f.text_field :name, class: 'form-control' %>
             
+            <%= f.label "College Name" %>
+            <% options = options_from_collection_for_select(@colleges, 'name', 'name') %>
+            <%= f.select :college_name, options, class: 'form-control' %>
+            
             <%= f.label "Academic Rigor" %>
             <%= f.select :response1, ['Outstanding', 'Great', 'Good', 'Needs Improvement', 'Terrible'] %>
             

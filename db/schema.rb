@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203032012) do
+ActiveRecord::Schema.define(version: 20161231003156) do
 
   create_table "colleges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20161203032012) do
 
   create_table "rankings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
+    t.string "college_name"
     t.string "response1"
     t.string "response2"
   end
@@ -34,10 +35,12 @@ ActiveRecord::Schema.define(version: 20161203032012) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "password_digest"
     t.string   "alumni"
+    t.integer  "submitted_review",  limit: 1
+    t.integer  "submitted_ranking", limit: 1
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 

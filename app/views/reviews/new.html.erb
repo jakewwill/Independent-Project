@@ -13,7 +13,8 @@
             <%= f.text_field :name, class: 'form-control' %>
             
             <%= f.label "College Name" %>
-            <%= f.text_field :college_name, class: 'form-control' %>
+            <% options = options_from_collection_for_select(@colleges, 'name', 'name') %>
+            <%= f.select :college_name, options, class: 'form-control' %>
             
             <%= f.label "Response:" %>
             <%= f.text_area :question1, class: 'form-control' %>
