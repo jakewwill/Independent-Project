@@ -17,8 +17,4 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: mydbinstance
-  username: jwill18
-  password: equinox1
-  host: mydbinstance.ckcwgmv1vxps.us-west-1.rds.amazonaws.com
-  port: 3306
+  host: mysql://b719b2c94b2762:6763d52b@us-cdbr-iron-east-04.cleardb.net/heroku_43dda068de5e5ab?reconnect=true
