@@ -13,3 +13,7 @@ test:
   username: jwill18
   password: equinox1
   host: localhost
+  
+production:
+  adapter: mysl2
+  encoding: utf8
