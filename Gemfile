@@ -13,7 +13,7 @@ gem 'jquery-rails', '4.1.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.4.1'
 
-gem 'jquery-ui-rails'
+gem "jquery-ui-rails"
 
 group :development, :test do
   gem 'byebug',  '9.0.0', platform: :mri
@@ -34,7 +34,8 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.18.4'
+  gem 'mysql2'
+  gem 'activerecord-mysql2-adapter'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
