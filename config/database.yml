@@ -15,5 +15,5 @@ test:
   host: localhost
   
 production:
-  adapter: mysl2
+  adapter: mysql2
   encoding: utf8
