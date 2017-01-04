@@ -8,30 +8,7 @@
       <h1>Submit a Ranking</h1>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <%= form_for(@ranking) do |f| %>
-            <%= f.label :name %>
-            <%= f.text_field :name, class: 'form-control' %>
-            
-            <%= f.label "College Name" %>
-            <% options = options_from_collection_for_select(@colleges, 'name', 'name') %>
-            <%= f.select :college_name, options, class: 'form-control' %>
-            
-            <label style="margin: 20px 0; display: block; text-align: center; font-size: 32px">Rankings:</label>
-            
-            <%= f.label "Academic Rigor" %>
-            <%= f.select :response1, ['Outstanding', 'Great', 'Good', 'Needs Improvement', 'Terrible', 'N/A'] %>
-            
-            <%= f.label "Please explain your ranking: " %>
-            <%= f.text_area :response1_explanation, class: 'form-control ranking_explanation_text_box' %>
-            
-            <%= f.label "Campus Life" %>
-            <%= f.select :response2, ['Very Laid Back', 'More Laid Back', 'Perfect Balance', 'More Tense', 'Very Tense/Anti-Social'] %>
-            
-            <%= f.label "Please explain your ranking: " %>
-            <%= f.text_area :response2_explanation, class: 'form-control ranking_explanation_text_box' %>
-            
-            <%= f.submit "Submit my ranking", class: "btn btn-primary" %>
-          <% end %>
+          
         </div>
       </div>
     </div>
