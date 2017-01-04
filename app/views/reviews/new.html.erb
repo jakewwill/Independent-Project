@@ -7,7 +7,10 @@
     <div class="container-small container">
       <h1>Submit a Review</h1>
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-10 col-md-offset-1">
+          <label style="margin: 0 0 30px 0; text-align: left">Before submitting a review, please submit a ranking form for your college - it will give you a general overview of the types of responses we are looking for.. 
+
+This section is your opportunity to provide your opinions about any topic that you think might be important to a graduating Punahou student. Please cover anything that you feel you might have wanted to know about your college before making a final decision (this can be positive or negative). Your response may take some time to appear on the site itself, as it must be reviewed prior to being posted (we can assure you that no changes will be made without first contacting you).</label>
           <%= form_for(@review) do |f| %>
             <%= f.label :name %>
             <%= f.text_field :name, class: 'form-control' %>
@@ -17,7 +20,7 @@
             <%= f.select :college_name, options, class: 'form-control' %>
             
             <%= f.label "Response:" %>
-            <%= f.text_area :question1, class: 'form-control' %>
+            <%= f.text_area :question1, class: 'form-control review_submit_text_box' %>
             
             <%= f.submit "Submit my review", class: "btn btn-primary" %>
           <% end %>

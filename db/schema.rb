@@ -23,7 +23,25 @@ ActiveRecord::Schema.define(version: 20161231003156) do
     t.string "name"
     t.string "college_name"
     t.string "response1"
+    t.text   "response1_explanation",  limit: 65535
     t.string "response2"
+    t.text   "response2_explanation",  limit: 65535
+    t.string "response3"
+    t.text   "response3_explanation",  limit: 65535
+    t.string "response4"
+    t.text   "response4_explanation",  limit: 65535
+    t.string "response5"
+    t.text   "response5_explanation",  limit: 65535
+    t.string "response6"
+    t.text   "response6_explanation",  limit: 65535
+    t.string "response7"
+    t.text   "response7_explanation",  limit: 65535
+    t.string "response8"
+    t.text   "response8_explanation",  limit: 65535
+    t.string "response9"
+    t.text   "response9_explanation",  limit: 65535
+    t.string "response10"
+    t.text   "response10_explanation", limit: 65535
   end
 
   create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
