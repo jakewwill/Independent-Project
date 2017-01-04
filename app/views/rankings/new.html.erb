@@ -24,7 +24,13 @@
             <%= f.label "Please explain your ranking: " %>
             <%= f.text_area :response1_explanation, class: 'form-control ranking_explanation_text_box' %>
             
+            <%= f.label "Campus Life" %>
+            <%= f.select :response2, ['Very Laid Back', 'More Laid Back', 'Perfect Balance', 'More Tense', 'Very Tense/Anti-Social'] %>
             
+            <%= f.label "Please explain your ranking: " %>
+            <%= f.text_area :response2_explanation, class: 'form-control ranking_explanation_text_box' %>
+            
+            <%= f.submit "Submit my ranking", class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>
