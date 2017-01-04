@@ -18,17 +18,23 @@
             
             <label style="margin: 20px 0; display: block; text-align: center; font-size: 32px">Rankings:</label>
             
-            <%= f.label "Academic Rigor" %>
-            <%= f.select :response1, ['Outstanding', 'Great', 'Good', 'Needs Improvement', 'Terrible', 'N/A'] %>
+            <%= f.label "Compared to Punahou, how would you describe the academic rigor of your college?" %>
+            <%= f.select :response1, ['N/A', 'Far Easier', 'Easier', 'About the Same', 'More Challenging', 'Far More Challenging'] %>
             
-            <%= f.label "Please explain your ranking: " %>
+            <%= f.label "Please explain your ranking. You can compare courses in college to a specific punahou course, compare academic rigor overall, etc. " %>
             <%= f.text_area :response1_explanation, class: 'form-control ranking_explanation_text_box' %>
             
-            <%= f.label "Campus Life" %>
-            <%= f.select :response2, ['Very Laid Back', 'More Laid Back', 'Perfect Balance', 'More Tense', 'Very Tense/Anti-Social'] %>
+            <%= f.label "How would you describe the campus life at your university?" %>
+            <%= f.select :response2, ['Very laid back, emphasis on minimal stress, much more socially oriented', 'Somewhat laid back, both socially and academically oriented', 'Healthy balance between academic and social life - academics take more priority', 'More academically oriented, less time for social aspect of college, stressful at times', 'Incredibly academically focused, almost no time for social activities, and very high stress levels more often than not'] %>
             
-            <%= f.label "Please explain your ranking: " %>
+            <%= f.label "Please explain your ranking. You can compare the general atmosphere at your college to that of Punahou's, compare your classmates (DO NOT MENTION INDIVIDALS) at college to those at Punahou (AGAIN, NO INDIVIDUALS), etc." %>
             <%= f.text_area :response2_explanation, class: 'form-control ranking_explanation_text_box' %>
+            
+            <%= f.label "How would you describe the food served on campus?" %>
+            <%= f.select :response3, ['Terrible - it is the last resort for me, I always try to find other food', "Mediocre - it's relatively low quality (and unhealthy), but it works", "Decent - I get at least couple of meals a week from there, and it's usually pretty good/high quality", "Good - I get most of my food from there, and it is my primary source of food", "Excellent - All of my meals come from here, everything is high quality, healthy, and delicious"] %>
+            
+            <%= f.label "Please explain your ranking. Compare on-campus food to the Punahou snack bar, or come up with your own criteria" %>
+            <%= f.text_area :response3_explanation, class: 'form-control ranking_explanation_text_box' %>
             
             <%= f.submit "Submit my ranking", class: "btn btn-primary" %>
           <% end %>
