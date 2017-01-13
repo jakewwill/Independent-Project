@@ -230,5 +230,10 @@ input {
 }
 
 .ranking_explanation_text_box {
-	min-height: 100px;
+	height: 150px;
+	border-radius: 5px;
+}
+
+.ranking-label {
+	display: block;
 }

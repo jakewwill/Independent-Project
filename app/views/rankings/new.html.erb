@@ -18,23 +18,59 @@
             
             <label style="margin: 20px 0; display: block; text-align: center; font-size: 32px">Rankings:</label>
             
-            <%= f.label "Compared to Punahou, how would you describe the academic rigor of your college?" %>
-            <%= f.select :response1, ['N/A', 'Far Easier', 'Easier', 'About the Same', 'More Challenging', 'Far More Challenging'] %>
+            <label class="ranking-label">Compared to Punahou, how would you describe the academic rigor of your college?</label>
+            <%= f.select :response1, ['Far Easier', 'Easier', 'About the Same', 'More Challenging', 'Far More Challenging', 'N/A'] %>
             
-            <%= f.label "Please explain your ranking. You can compare courses in college to a specific punahou course, compare academic rigor overall, etc. " %>
-            <%= f.text_area :response1_explanation, class: 'form-control ranking_explanation_text_box' %>
+            <label class="ranking-label">Please explain your ranking. You can compare courses in college to a specific punahou course, compare academic rigor overall, etc. </label>
+            <%= f.text_area :response1_explanation, class: 'ranking_explanation_text_box' %>
             
-            <%= f.label "How would you describe the campus life at your university?" %>
-            <%= f.select :response2, ['Very laid back, emphasis on minimal stress, much more socially oriented', 'Somewhat laid back, both socially and academically oriented', 'Healthy balance between academic and social life - academics take more priority', 'More academically oriented, less time for social aspect of college, stressful at times', 'Incredibly academically focused, almost no time for social activities, and very high stress levels more often than not'] %>
+            <label class="ranking-label">How would you describe the campus life at your university?</label>
+            <%= f.select :response2, ['Very laid back, emphasis on minimal stress, much more socially oriented', 'Somewhat laid back, both socially and academically oriented', 'Healthy balance between academic and social life - academics take more priority', 'More academically oriented, less time for social aspect of college, stressful at times', 'Incredibly academically focused, almost no time for social activities, and very high stress levels more often than not', 'N/A'], class: "ranking-label" %>
             
-            <%= f.label "Please explain your ranking. You can compare the general atmosphere at your college to that of Punahou's, compare your classmates (DO NOT MENTION INDIVIDALS) at college to those at Punahou (AGAIN, NO INDIVIDUALS), etc." %>
-            <%= f.text_area :response2_explanation, class: 'form-control ranking_explanation_text_box' %>
+            <label class="ranking-label">Please explain your ranking. You can compare the general atmosphere at your college to that of Punahou's, compare your classmates (DO NOT MENTION INDIVIDALS) at college to those at Punahou (AGAIN, NO INDIVIDUALS), etc.</label>
+            <%= f.text_area :response2_explanation, class: 'ranking_explanation_text_box' %>
             
-            <%= f.label "How would you describe the food served on campus?" %>
-            <%= f.select :response3, ['Terrible - it is the last resort for me, I always try to find other food', "Mediocre - it's relatively low quality (and unhealthy), but it works", "Decent - I get at least couple of meals a week from there, and it's usually pretty good/high quality", "Good - I get most of my food from there, and it is my primary source of food", "Excellent - All of my meals come from here, everything is high quality, healthy, and delicious"] %>
+            <label class="ranking-label">How would you describe the food served on campus?</label>
+            <%= f.select :response3, ['Terrible - it is the last resort for me, I always try to find other food', "Mediocre - it's relatively low quality (and unhealthy), but it works", "Decent - I get at least couple of meals a week from there, and it's usually pretty good/high quality", "Good - I get most of my food from there, and it is my primary source of food", "Excellent - All of my meals come from here, everything is high quality, healthy, and delicious", 'N/A'], class: "ranking-label" %>
             
-            <%= f.label "Please explain your ranking. Compare on-campus food to the Punahou snack bar, or come up with your own criteria" %>
-            <%= f.text_area :response3_explanation, class: 'form-control ranking_explanation_text_box' %>
+            <label class="ranking-label">Please explain your ranking. Compare on-campus food to the Punahou snack bar, or come up with your own criteria</label>
+            <%= f.text_area :response3_explanation, class: 'ranking_explanation_text_box' %>
+            
+            <label class="ranking-label">How would you describe the food that is readily available off campus?</label>
+            <%= f.select :response4, ['Terrible - it is the last resort for me, I always try to find other food', "Mediocre - it's relatively low quality (and unhealthy), but it works", "Decent - I eat off campus a couple of times a week, and it's usually pretty good/high quality", "Good - I get most of my food from off campus, and it is my primary source of food", "Excellent - All of my meals come from off campus, everything is high quality, healthy, and delicious", 'N/A'], class: "ranking-label" %>
+            
+            <label class="ranking-label">Please explain your ranking. Compare off-campus food to Hawaiian restaurants, or come up with your own criteria</label>
+            <%= f.text_area :response4_explanation, class: 'ranking_explanation_text_box' %>
+            
+            <label class="ranking-label">How would you describe the housing situation at your college?</label>
+            <%= f.select :response5, ['Terrible - almost unlivable, I am always trying to move out', "Meh - it's livable, but still nothing special", "Average - there aren't many problems with it, but it isn't amazing", "Above average - very good, very few issues, and I would choose to live here vs. off campus", "Best I've ever seen - incredible, almost no issues, and I would almost always choose to live here!", 'N/A'], class: "ranking-label" %>
+            
+            <label class="ranking-label">Please explain your ranking. Although there is nothing comparable at Punahou, you can can come up with your own critera, or simply describe it</label>
+            <%= f.text_area :response5_explanation, class: 'ranking_explanation_text_box' %>
+            
+            <label class="ranking-label">How would you describe the administration at your school</label>
+            <%= f.select :response6, ['Very poor - not helpful at all, it might as well not be there', "Poor - occasionally helpful, but usually slow or unwilling to help", "Average - will help you with your basic problems, but sometimes unreliable, or has other issues occasionally", "Above Average - always helpful, responds to inquiries promptly, and has very few issues", "Excellent - always helpful, seems to always prioritize your issues, prompt responses, and no issues", 'N/A'], class: "ranking-label" %>
+            
+            <label class="ranking-label">Please explain your ranking. You can compare it to Punahou faculty as a whole, or simply explain the reason behind your decision</label>
+            <%= f.text_area :response6_explanation, class: 'ranking_explanation_text_box' %>
+            
+            <label class="ranking-label">Based upon what <em>you</em> thing, rate the weather at your school on a scale from 1-10 (with 1 being terrible to 10 being phenomenal)</label>
+            <%= f.select :response7, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'], class: "ranking-label" %>
+            
+            <label class="ranking-label">Please explain your ranking. How do you think a student who has lived in Hawaii their entire lives would feel about the weather at your school. Explain what it is like.</label>
+            <%= f.text_area :response7_explanation, class: 'ranking_explanation_text_box' %>
+            
+            <label class="ranking-label">On a scale from 1-10 (with 1 being terrible to 10 being phenomenal), how do you as an individual feel about your post-college options?</label>
+            <%= f.select :response8, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'], class: "ranking-label" %>
+            
+            <label class="ranking-label">Please explain your ranking. Does your opinion match your classmates'? Does your major have any impact on this? Etc.</label>
+            <%= f.text_area :response8_explanation, class: 'ranking_explanation_text_box' %>
+            
+            <label class="ranking-label">Most importantly of all, would you recommend your college to a graduating Punahou student, knowing that your opinions may affect the lives of members of the Punahou family (hopefully for the better!)</label>
+            <%= f.select :response9, ['No - I truly did not/have not enjoyed my college experience', 'Maybe - it depends on what you want. My school is perfect for some students, but not others.', 'Probably - I think that my school would be a good fit for most Punahou students', 'Definitely - I think that any Punahou student would thrive at my school'], class: "ranking-label" %>
+            
+            <label class="ranking-label">Perhaps none of the options above fit your description properly. Here's where you can elaborate on your choice, or even come up with your own! This explanation is perhaps the most important piece of this ranking form - please answer it as completely and honestly as possible!</label>
+            <%= f.text_area :response9_explanation, class: 'ranking_explanation_text_box' %>
             
             <%= f.submit "Submit my ranking", class: "btn btn-primary" %>
           <% end %>
