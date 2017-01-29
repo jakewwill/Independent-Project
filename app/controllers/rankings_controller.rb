@@ -20,7 +20,7 @@ class RankingsController < ApplicationController
         user.update_attribute(:submitted_ranking, 1)
         redirect_to root_path
       else
-        flash[:danger] = "Error submitting ranking"
+        flash.now[:danger] = "Error submitting ranking"
       end
   end
 
@@ -30,6 +30,6 @@ class RankingsController < ApplicationController
   
 private
     def ranking_params
-      params.require(:ranking).permit(:name, :response1, :response2, :response3)
+      params.require(:ranking).permit(:name, :college_name, :response1 || '', :response2 || '', :response3 || '', :response4 || '', :response5 || '', :response6 || '', :response7 || '', :response8 || '', :response9 || '', :response10 || '')
     end
 end
