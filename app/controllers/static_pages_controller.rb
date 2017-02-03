@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @reviews = Review.order(id: :asc);
   end
   
   def college_rankings
@@ -9,6 +10,7 @@ class StaticPagesController < ApplicationController
   end
   
   def most_reviews
+    @colleges = College.order(reviews_count: :desc);
   end
   
   def my_colleges

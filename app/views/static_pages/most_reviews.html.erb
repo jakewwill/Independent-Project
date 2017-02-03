@@ -19,82 +19,13 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
-								</tr>
-
-								<tr>
-									<td>Yes   No   Maybe</td>
-									<td><a href="#">Princeton</a></td>
-									<td>30000</td>
+								<% @colleges.limit(10).each do |college| %>
+          							<tr>
+            							<td>Yes   No   Maybe</td>
+										<td><a href="#"><%= college.name %></a></td>
+										<td><%= college.reviews_count %></td>
+          							</tr>
+        						<% end %>
 								</tr>
 							</tbody>
 						</table>

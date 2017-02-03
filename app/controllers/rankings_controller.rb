@@ -18,9 +18,11 @@ class RankingsController < ApplicationController
         flash[:success] = "Ranking successfully submitted"
         user = current_user
         user.update_attribute(:submitted_ranking, 1)
+        college = College.find_by(name: ranking_params[:college_name])
+        college.update_attribute(:rankings_count, college.rankings_count + 1)
         redirect_to root_path
       else
-        flash.now[:danger] = "Error submitting ranking"
+        flash[:danger] = "Error submitting ranking"
       end
   end
 

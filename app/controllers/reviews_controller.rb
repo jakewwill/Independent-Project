@@ -21,6 +21,8 @@ class ReviewsController < ApplicationController
         flash[:success] = "Review successfully submitted"
         user = current_user
         user.update_attribute(:submitted_review, 1)
+        college = College.find_by(name: review_params[:college_name])
+        college.update_attribute(:reviews_count, college.reviews_count + 1)
         redirect_to root_path
       else
         flash[:danger] = "Error submitting review, please ensure you answered every question"
