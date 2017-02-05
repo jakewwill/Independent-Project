@@ -115,6 +115,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    nprogress-rails (0.2.0.2)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -209,6 +210,7 @@ DEPENDENCIES
   listen (= 3.0.8)
   minitest-reporters (= 1.1.9)
   mysql2
+  nprogress-rails
   puma (= 3.4.0)
   rails (= 5.0.0.1)
   rails-controller-testing (= 0.1.1)
