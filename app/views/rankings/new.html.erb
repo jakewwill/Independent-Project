@@ -18,8 +18,8 @@
             
             <label style="margin: 20px 0; display: block; text-align: center; font-size: 32px">Rankings:</label>
             
-            <label class="ranking-label">Compared to Punahou, how would you describe the academic rigor of your college?</label>
-            <%= f.select :response1, ['Far Easier', 'Easier', 'About the Same', 'More Challenging', 'Far More Challenging', 'N/A'] %>
+            <label class="ranking-label">Compared to Punahou, on a scale from 1-10, how would you describe the academic rigor of your college (1 being far easier, 5 being about the same, and 10 being far more difficult)?</label>
+            <%= f.select :response1, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] %>
             
             <label class="ranking-label">Please explain your ranking. You can compare courses in college to a specific punahou course, compare academic rigor overall, etc. </label>
             <%= f.text_area :response1_explanation, class: 'ranking_explanation_text_box' %>
@@ -66,8 +66,8 @@
             <label class="ranking-label">Please explain your ranking. Does your opinion match your classmates'? Does your major have any impact on this? Etc.</label>
             <%= f.text_area :response8_explanation, class: 'ranking_explanation_text_box' %>
             
-            <label class="ranking-label">Most importantly of all, would you recommend your college to a graduating Punahou student, knowing that your opinions may affect the lives of members of the Punahou family (hopefully for the better!)</label>
-            <%= f.select :response9, ['No - I truly did not/have not enjoyed my college experience', 'Maybe - it depends on what you want. My school is perfect for some students, but not others.', 'Probably - I think that my school would be a good fit for most Punahou students', 'Definitely - I think that any Punahou student would thrive at my school'], class: "ranking-label" %>
+            <label class="ranking-label">Most importantly of all, would you recommend your college to a graduating Punahou student, knowing that your opinions may affect the lives of members of the Punahou family (hopefully for the better!) - (1 being "No, I definitely would not recommend this college to a graduating student", 5 being "Yeah, I think some students would really enjoy it here", and 10 being "This is the best school imaginable, every Punahou student should come here!"</label>
+            <%= f.select :response9, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'], class: "ranking-label" %>
             
             <label class="ranking-label">Perhaps none of the options above fit your description properly. Here's where you can elaborate on your choice, or even come up with your own! This explanation is perhaps the most important piece of this ranking form - please answer it as completely and honestly as possible!</label>
             <%= f.text_area :response9_explanation, class: 'ranking_explanation_text_box' %>
