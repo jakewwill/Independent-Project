@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Users</title>
+    </head>
+    <body class="body">
+		<div class="container-small container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="results" class="row">
+						<table class="table black-border col-md-12" style="margin-top: 20px; margin-left: 2.2%; width: 96%">
+							<thead style="background: #D6E4FF">
+								<tr>
+									<th style="width: 25%">Name</th>
+									<th>Submitted Review</th>
+									<th>Submitted Ranking</th>
+									<th>Type</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% User.all.each do |u|%>
+                                    <tr>
+                                        <td><%= u.name %></td>
+                                        <% if u.submitted_review == 1 %>
+                                            <td>True</td>
+                                        <% else %>
+                                            <td>False</td>
+                                        <% end %>
+                                        <% if u.submitted_ranking == 1%>
+                                            <td>True</td>
+                                        <% else %>
+                                            <td>False</td>
+                                        <% end %>
+                                        <td><%= u.alumni %></td>
+                                    </tr>
+                                <%end%>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div> <!-- row -->
+		</div>
+	</body>
+</html>

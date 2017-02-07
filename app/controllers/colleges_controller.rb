@@ -1,12 +1,9 @@
 class CollegesController < ApplicationController
   def index
+    @colleges = College.order('name ASC')
   end
 
   def new
-  end
-
-  def show_all_colleges
-    @colleges = College.all
   end
 
   def create

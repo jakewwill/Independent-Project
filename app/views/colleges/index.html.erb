@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Colleges</title>
+    </head>
+    <body class="body">
+		<div class="container-small container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="results" class="row">
+						<table class="black-border table col-md-12">
+							<thead style="background: #D6E4FF">
+								<tr>
+									<th style="width: 25%">College Name</th>
+									<th>Number of Reviews</th>
+									<th>Number of Rankings</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% @colleges.all.each do |college|%>
+                                    <tr>
+                                        <td><%= college.name %></td>
+                                        <td><%= college.reviews_count %></td>
+                                        <td><%= college.rankings_count %></td>
+                                    </tr>
+                                <%end%>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div> <!-- row -->
+		</div>
+	</body>
+</html>
