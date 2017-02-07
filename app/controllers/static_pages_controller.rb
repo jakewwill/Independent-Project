@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
   end
   
   def college_rankings
+    @colleges = College.order(response1_average: :desc);
+    @counter = 1;
   end
   
   def find_colleges

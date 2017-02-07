@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170202181029) do
+ActiveRecord::Schema.define(version: 20170206213353) do
 
   create_table "colleges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "unitid"
     t.integer  "reviews_count"
     t.integer  "rankings_count"
+    t.float    "response1_average", limit: 24
+    t.float    "response2_average", limit: 24
+    t.float    "response3_average", limit: 24
+    t.float    "response4_average", limit: 24
+    t.float    "response5_average", limit: 24
+    t.float    "response6_average", limit: 24
+    t.float    "response7_average", limit: 24
+    t.float    "response8_average", limit: 24
+    t.float    "response9_average", limit: 24
   end
 
   create_table "rankings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
