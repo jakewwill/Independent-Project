@@ -7,12 +7,38 @@ h1 {
   margin-bottom: 20px;
 }
 
+h2 {
+	font-size: 32px;
+	color: black;
+	font-family: "Arial";	
+}
+
+h3 {
+	font-size: 16px;
+	color: black;
+	font-family: "Arial";
+}
+
 div.container-small {
   margin-top: 0;
 	width: 85%;
   min-height: 700px;
   background-color: white;
   border-radius: 10px
+}
+
+div.container-profile {
+	margin: 0;
+	width: 90%;
+	min-height: 700px;
+	background-color: #FDE161;
+}
+
+div.container-ranking-review {
+	margin-top: 0;
+	width: 95%;
+	min-height: 600px;
+	background-color: #FDE161;
 }
 
 div.container-xs {

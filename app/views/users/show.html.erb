@@ -4,6 +4,37 @@
   </head>
 
   <body class="body">
-    <%= @user.name %>, <%= @user.email %>
+    <div class="container container-profile">
+      <div class="row" style="margin-top: 20px">
+        <div class="col-md-6">
+          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" width="50%" ></img>
+          <h3>Name: <%= @user.name %> </h3>
+          <h3>Email: <%= @user.email %> </h3>
+        </div>
+        
+        <div class="col-md-6">
+          <h2>Your Review: </h2>
+          <% if @user.submitted_review == 0 %>
+            <a><%= link_to "Submit a Review",   submit_review_path %></a>
+          <% else %>
+            <% @reviews.each do |review| %>
+  							<% if review.name.eql? @user.name %>
+  							  <a><%= link_to "Vew your review", review %></a>
+  							<% end %>
+						<% end %>
+          <% end %>
+          <h2>Your Ranking: </h2>
+          <% if @user.submitted_ranking == 0 %>
+            <a><%= link_to "Submit a Ranking",   submit_ranking_path %></a>
+          <% else %>
+            <% @rankings.each do |ranking| %>
+  							<% if ranking.name.eql? @user.name %>
+  							  <a><%= link_to "Vew your ranking", ranking %></a>
+  							<% end %>
+						<% end %>
+          <% end %>
+        </div>
+      </div>
+    </div> <!-- container -->
   </body>
 </html>

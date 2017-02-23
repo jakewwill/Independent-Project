@@ -30,7 +30,11 @@
                                         <% else %>
                                             <td>False</td>
                                         <% end %>
-                                        <td><%= u.alumni %></td>
+                                        <% if u.alumni == 0 %>
+                                        	<td>Current Student</td>
+                                        <% else %>
+                                        	<td>Alumn</td>
+                                        <% end %>
                                     </tr>
                                 <%end%>
 							</tbody>
