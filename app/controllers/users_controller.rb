@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :correct_user, only: [:show]
   before_action :admin_user, only: [:index]
+  before_action :admin_user, :correct_user, only: :destroy
   
   def index
     @users = User.paginate(page: params[:page], per_page: 20)
@@ -26,6 +27,12 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
   end
 
   private

@@ -1,6 +1,6 @@
 require 'csv'
 
-if (College.count == 0)
+if (College.count == -1)
     CSV.foreach(Rails.root.join('res', 'Colleges.csv'), :headers => true) do |row|
           College.create!(row.to_hash)
     end
