@@ -1,4 +1,5 @@
 require 'csv'
+require 'Faker'
 
 if (College.count == -1)
     CSV.foreach(Rails.root.join('res', 'Colleges.csv'), :headers => true) do |row|
