@@ -41,6 +41,13 @@ class RankingsController < ApplicationController
       @ranking = Ranking.find(params[:id])
   end
   
+  def verify
+    r = Ranking.find(params[:id])
+    r.update_attribute(:verified, true)
+    redirect_to rankings_path
+    flash[:success] = "Ranking Verified!"
+  end
+  
 private
     def ranking_params
       params.require(:ranking).permit(:name, :college_name, :response1 || '', :ranking1_explanation || '', :response2 || '', :ranking2_explanation || '', :response3 || '', :ranking3_explanation || '', :response4 || '', :ranking4_explanation || '', :response5 || '', :ranking5_explanation || '', :response6 || '', :ranking6_explanation || '', :response7 || '', :ranking7_explanation || '', :response8 || '', :ranking8_explanation || '', :response9 || '', :ranking9_explanation || '')

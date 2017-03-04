@@ -23,13 +23,15 @@
 						<label id="font-26">Recent Reviews</label>
 						<table>
 							<tbody>
-								<% @reviews.limit(2).each do |review| %>
-	      							<tr>
-	        							<td>"<%= review.question1 %>"</td>
-	      							</tr>
-	      							<tr>
-	      								<td style="padding-left: 30px">-By <%= review.name %></td>
-	      							</tr>
+								<% @reviews.limit(3).each do |review| %>
+									<% if review.verified == true %>
+		      							<tr>
+		        							<td>"<%= review.question1 %>"</td>
+		      							</tr>
+		      							<tr>
+		      								<td style="padding-left: 30px">-By <%= review.name %></td>
+		      							</tr>
+		      						<% end %>
 	    						<% end %>
 								</tr>
 							</tbody>

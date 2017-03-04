@@ -22,6 +22,10 @@ Rails.application.routes.draw do
       get :verify
     end
   end
-  resources :rankings
+  resources :rankings do
+    collection do
+      get :verify
+    end
+  end
 
 end
