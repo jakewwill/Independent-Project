@@ -8,7 +8,8 @@
 	<body class="body">
 		<div class="container-small container" style="background-color: white">
 			<div class="row">
-				<table class="black-border table">
+				<%= will_paginate @colleges %>
+				<table class="black-border table" style="margin-top: 0">
 					<thead style="background: #D6E4FF">
 						<tr>
 							<th style="width: 25%">Are you Interested?</th>
@@ -17,7 +18,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<% @colleges.limit(10).each do |college| %>
+						<% @colleges.each do |college| %>
   							<tr>
     							<td>Yes   No   Maybe</td>
 								<td><a href="#"><%= college.name %></a></td>

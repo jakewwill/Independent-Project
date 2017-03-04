@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
   end
   
   def most_reviews
-    @colleges = College.order(reviews_count: :desc);
+    @colleges = College.order(reviews_count: :desc).paginate(page: params[:page], per_page: 15, :total_entries => 120)
   end
   
   def my_colleges

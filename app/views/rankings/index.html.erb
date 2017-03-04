@@ -15,16 +15,16 @@
 								<thead style="background: #D6E4FF">
 									<tr>
 										<th style="width: 25%">Ranking Author</th>
+										<th style="width: 30%">School Name</th>
 										<th>Link</th>
-										<th>School Name</th>
 									</tr>
 								</thead>
 							<% else %>
 								<thead style="background: #D6E4FF">
 									<tr>
 										<th style="width: 25%">Ranking Author</th>
+										<th style="width: 30%">School Name</th>
 										<th>Link</th>
-										<th>School Name</th>
 										<th>Verified?</th>
 									</tr>
 								</thead>
@@ -35,8 +35,8 @@
 										<% if r.verified == true %>
 		                                    <tr>
 		                                        <td><%= r.name %></td>
-		                                        <td><%= link_to "Go to ranking by " + r.name, r %></td>
 		                                        <td><%= r.college_name %></td>
+		                                        <td><%= link_to "Go to ranking by " + r.name, r %></td>
 		                                    </tr>
 	                                    <% end %>
 	                                <%end%>
@@ -44,8 +44,8 @@
                                 	<% Ranking.all.each do |r|%>
 	                                    <tr>
 	                                        <td><%= r.name %></td>
-	                                        <td><%= link_to "Go to ranking by " + r.name, r %></td>
 	                                        <td><%= r.college_name %></td>
+	                                        <td><%= link_to "Go to ranking by " + r.name, r %></td>
 	                                        <% if r.verified == false %>
 	                                        	<td><%= link_to "Verify", verify_rankings_path(:id => r.id) %></td>
 	                                        <% else %>
