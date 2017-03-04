@@ -12,20 +12,51 @@
 					<div id="results" class="row">
 						<table class="table black-border col-md-12" style="margin-top: 20px; margin-left: 2.2%; width: 96%">
 							<thead style="background: #D6E4FF">
-								<tr>
-									<th style="width: 25%">Review Author</th>
-									<th style="width: 40%">Review School Name</th>
-									<th>Link</th>
-								</tr>
+								<% if current_user == nil || current_user.admin == false %>
+									<tr>
+										<th style="width: 25%">Review Author</th>
+										<th style="width: 40%">Review School Name</th>
+										<th>Link</th>
+									</tr>
+								<% else %>
+									<tr>
+										<th style="width: 25%">Review Author</th>
+										<th style="width: 40%">Review School Name</th>
+										<th>Link</th>
+										<th>Verified?</th>
+									</tr>
+								<% end %>
 							</thead>
 							<tbody>
-								<% Review.all.each do |r|%>
-                                    <tr>
-                                        <td><%= r.name %></td>
-                                        <td><%= r.college_name %></td>
-                                        <td><%= link_to "Go to review of " + r.college_name, r %></td>
-                                    </tr>
-                                <%end%>
+								<% if current_user == nil || current_user.admin == false %>
+									<% Review.all.each do |r|%>
+										<% if r.verified == true %>
+		                                    <tr>
+		                                        <td><%= r.name %></td>
+		                                        <td><%= r.college_name %></td>
+		                                        <td><%= link_to "Go to review of " + r.college_name, r %></td>
+		                                    </tr>
+	                                    <% end %>
+	                                <% end %>
+	                            <% else %>
+	                            	<% Review.all.each do |r|%>
+										<% if r.verified == false %>
+		                                    <tr>
+		                                        <td><%= r.name %></td>
+		                                        <td><%= r.college_name %></td>
+		                                        <td><%= link_to "Go to review of " + r.college_name, r %></td>
+		                                        <td><%= link_to "Verify", verify_reviews_path(:id => r.id) %></td>
+		                                    </tr>
+		                                <% else %>
+		                                	<tr>
+		                                        <td><%= r.name %></td>
+		                                        <td><%= r.college_name %></td>
+		                                        <td><%= link_to "Go to review of " + r.college_name, r %></td>
+		                                        <td>Verified</td>
+		                                    </tr>
+	                                    <% end %>
+	                                <% end %>
+                                <% end %>
 							</tbody>
 						</table>
 					</div>

@@ -17,7 +17,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :colleges
-  resources :reviews
+  resources :reviews do
+    collection do
+      get :verify
+    end
+  end
   resources :rankings
 
 end

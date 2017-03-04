@@ -33,6 +33,13 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
   
+  def verify
+    r = Review.find(params[:id])
+    r.update_attribute(:verified, true)
+    redirect_to reviews_path
+    flash[:success] = "Review Verified!"
+  end
+  
   private
     def review_params
       params.require(:review).permit(:name, :question1, :college_name)
