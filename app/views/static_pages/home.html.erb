@@ -41,17 +41,13 @@
 				</div>
 
 				<div class="background-white col-md-6 black-border">
-					<label id="font-26" style="margin-bottom: 20px; text-align: center">Random Colleges</label>
-
-					<label id="font-22" style="margin-bottom: 30px; text-align: left">• <%= College.order("RAND()").first.name %></label>
-
-					<label id="font-22" style="margin-bottom: 30px; text-align: left">• <%= College.order("RAND()").second.name %></label>
+					<label id="font-26" style="margin-bottom: 20px; text-align: center">Most Reviewed Colleges</label>
 					
-					<label id="font-22" style="margin-bottom: 30px; text-align: left">• <%= College.order("RAND()").third.name %></label>
-					
-					<label id="font-22" style="margin-bottom: 30px; text-align: left">• <%= College.order("RAND()").fourth.name %></label>
-					
-					<label id="font-22" style="text-align: left">• <%= College.order("RAND()").fifth.name %></label>
+					<% @most_reviewed_colleges.limit(5).each do |college| %>
+						<% if college.reviews_count > 0 %>
+							<label id="font-22" style="margin-bottom: 30px; text-align: left">• <%= college.name %> (<%= college.reviews_count%>)</label>
+						<% end %>
+					<% end %>
 				</div>
 		</div>
 	</body>

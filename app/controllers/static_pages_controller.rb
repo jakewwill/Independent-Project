@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @reviews = Review.order(id: :asc);
+    @most_reviewed_colleges = College.order(reviews_count: :desc)
   end
   
   def college_rankings
@@ -16,6 +17,10 @@ class StaticPagesController < ApplicationController
   end
   
   def my_colleges
+    respond_to do |format|
+      format.html
+      format.json { @colleges = College.search(params[:term]) }
+    end
   end
   
   def login

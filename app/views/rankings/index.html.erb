@@ -26,6 +26,7 @@
 										<th style="width: 30%">School Name</th>
 										<th>Link</th>
 										<th>Verified?</th>
+										<th>Delete?</th>
 									</tr>
 								</thead>
 							<% end %>
@@ -51,6 +52,7 @@
 	                                        <% else %>
 	                                        	<td>Verified</td>
 	                                        <% end %>
+	                                        <td><%= button_to "Delete", r, method: :delete, data: { confirm: 'Are you sure you want to delete this ranking?' }, :class => "btn btn-danger" %></td>
 	                                    </tr>
 	                                <%end%>
                                 <% end %>

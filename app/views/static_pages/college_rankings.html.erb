@@ -11,7 +11,7 @@
 				<div class="col-md-10 col-md-offset-1"> <!-- rankings col -->
 					<div class="center-text row">
 						<div class="ranking-box black-border background-white col-md-3">
-							<label id="font-22"><strong><u>Academic Rigor</u></strong></label>
+							<label id="font-22"><u>Academic Rigor</u></label>
 							<ul class="ranking-list">
 								<% @colleges.limit(3).each do |college| %>
 									<li><%= @counter %>) <%= college.name %></li>

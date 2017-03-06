@@ -5,16 +5,17 @@
     </head>
     
     <body class="body">
-        <h2>College Name: <%= @ranking.college_name %></h2>
-        <h2>Response 1: <%= @ranking.response1 %></h2>
-        <h2>Response 2: <%= @ranking.response2 %></h2>
-        <h2>Response 3: <%= @ranking.response1 %></h2>
-        <h2>Response 4: <%= @ranking.response2 %></h2>
-        <h2>Response 5: <%= @ranking.response1 %></h2>
-        <h2>Response 6: <%= @ranking.response2 %></h2>
-        <h2>Response 7: <%= @ranking.response1 %></h2>
-        <h2>Response 8: <%= @ranking.response2 %></h2>
-        <h2>Response 9: <%= @ranking.response1 %></h2>
-        <h2>Response 10: <%= @ranking.response2 %></h2>
+        <h2 style="margin-left: 10px">College Name: <%= @ranking.college_name %></h2>
+        <div class="col-md-3" style="text-align: right">
+            <h3>Academic Rigor: <%= @ranking.response1 %></h2>
+            <h3>Campus Life: <%= @ranking.response2 %></h2>
+            <h3>On-Campus Food: <%= @ranking.response3 %></h2>
+            <h3>Off-Campus Food: <%= @ranking.response4 %></h2>
+            <h3>Housing: <%= @ranking.response5 %></h2>
+            <h3>Administration: <%= @ranking.response6 %></h2>
+            <h3>Weather: <%= @ranking.response7 %></h2>
+            <h3>Post-College Options: <%= @ranking.response8 %></h2>
+            <h3>Overall Recommendation: <%= @ranking.response9 %></h2>
+        </div>
     </body>
 </html>

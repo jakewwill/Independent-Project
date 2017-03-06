@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
       @review = Review.new
       @colleges = College.all
     else
-      flash[:danger] = "Error! You have already submitted a review! You may update it in your profile"
+      flash[:danger] = "Error! You have already submitted a review!"
       redirect_to root_path
     end
   end
@@ -18,14 +18,12 @@ class ReviewsController < ApplicationController
   def create
       @review = Review.new(review_params)
       if @review.save
-        flash[:success] = "Review successfully submitted"
+        flash[:success] = "Review successfully submitted. It is awaiting evaluation by a college counselor"
         user = current_user
         user.update_attribute(:submitted_review, 1)
-        college = College.find_by(name: review_params[:college_name])
-        college.update_attribute(:reviews_count, college.reviews_count + 1)
         redirect_to root_path
       else
-        flash[:danger] = "Error submitting review, please ensure you answered every question"
+        flash[:danger] = "Error submitting review, please ensure you answered the question"
       end
   end
   
@@ -33,9 +31,27 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
   
+  def destroy
+    @review = Review.find(params[:id])
+
+    @user = User.find_by(name: @review.name)
+    @user.update_attribute(:submitted_review, false);
+    
+    @college = College.find_by(name: @review.college_name)
+    @college.update_attribute(:reviews_count, @college.reviews_count - 1)
+
+    @review.destroy
+    flash[:success] = "Review deleted"
+    redirect_to reviews_path
+  end
+  
   def verify
     r = Review.find(params[:id])
     r.update_attribute(:verified, true)
+    
+    college = College.find_by(name: r.college_name)
+    college.update_attribute(:reviews_count, college.reviews_count + 1)
+        
     redirect_to reviews_path
     flash[:success] = "Review Verified!"
   end
