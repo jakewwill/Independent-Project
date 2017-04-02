@@ -1,6 +1,6 @@
 class CollegesController < ApplicationController
   def index
-    @colleges = College.order('name ASC')
+    @colleges = College.order('name ASC').paginate(page: params[:page], per_page: 40)
   end
 
   def new
@@ -18,6 +18,22 @@ class CollegesController < ApplicationController
 
   def show
     @college = College.find(params[:id])
+    @reviews = Review.all.paginate(page: params[:page], per_page: 10)
+    @rankings = Ranking.all.paginate(page: params[:page], per_page: 10)
+    # Create an array with all the reviews for this college
+    Review.all.each do |r|
+      if (r.college_name != @college.name)
+        @reviews.delete(r)
+      end
+    end
+    
+    # Create an array with all the rankings for this college
+    Ranking.all.each do |r|
+      if (r.college_name != @college.name)
+        @rankings.delete(r)
+      end
+    end
+    
   end
 
   def import

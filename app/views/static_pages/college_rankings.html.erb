@@ -12,9 +12,9 @@
 					<div class="center-text row">
 						<div class="ranking-box black-border background-white col-md-3">
 							<label id="font-22"><u>Academic Rigor</u></label>
-							<ul class="ranking-list">
-								<% @colleges.limit(3).each do |college| %>
-									<li><%= @counter %>) <%= college.name %></li>
+							<ul class="ranking-list" style="text-align: left">
+								<% @colleges.limit(10).each do |college| %>
+									<li style="margin-bottom: 10px"><%= @counter %>) <%= college.name %></li>
 									<% @counter += 1 %>
 								<% end %>
 								<% @counter = 1 %>
@@ -25,7 +25,7 @@
 							<label id="font-22"><u>Campus Life</u></label>
 							<ul class="ranking-list">
 								<% @colleges = College.order(response2_average: :desc) %>
-								<% @colleges.limit(3).each do |college| %>
+								<% @colleges.limit(10).each do |college| %>
 									<li><%= @counter %>) <%= college.name %></li>
 									<% @counter += 1 %>
 								<% end %>
@@ -37,7 +37,7 @@
 							<label id="font-22"><u>On-Campus Food</u></label>
 							<ul class="ranking-list">
 								<% @colleges = College.order(response3_average: :desc) %>
-								<% @colleges.limit(3).each do |college| %>
+								<% @colleges.limit(10).each do |college| %>
 									<li><%= @counter %>) <%= college.name %></li>
 									<% @counter += 1 %>
 								<% end %>
@@ -51,7 +51,7 @@
 							<label id="font-22"><u>Off-Campus Food</u></label>
 							<ul class="ranking-list">
 								<% @colleges = College.order(response4_average: :desc) %>
-								<% @colleges.limit(3).each do |college| %>
+								<% @colleges.limit(10).each do |college| %>
 									<li><%= @counter %>) <%= college.name %></li>
 									<% @counter += 1 %>
 								<% end %>
@@ -63,7 +63,7 @@
 							<label id="font-22"><u>Housing</u></label>
 							<ul class="ranking-list">
 								<% @colleges = College.order(response5_average: :desc) %>
-								<% @colleges.limit(3).each do |college| %>
+								<% @colleges.limit(10).each do |college| %>
 									<li><%= @counter %>) <%= college.name %></li>
 									<% @counter += 1 %>
 								<% end %>
@@ -75,7 +75,7 @@
 							<label id="font-22"><u>Administration</u></label>
 							<ul class="ranking-list">
 								<% @colleges = College.order(response6_average: :desc) %>
-								<% @colleges.limit(3).each do |college| %>
+								<% @colleges.limit(10).each do |college| %>
 									<li><%= @counter %>) <%= college.name %></li>
 									<% @counter += 1 %>
 								<% end %>
@@ -89,7 +89,7 @@
 							<label id="font-22"><u>Weather</u></label>
 							<ul class="ranking-list">
 								<% @colleges = College.order(response7_average: :desc) %>
-								<% @colleges.limit(3).each do |college| %>
+								<% @colleges.limit(10).each do |college| %>
 									<li><%= @counter %>) <%= college.name %></li>
 									<% @counter += 1 %>
 								<% end %>
@@ -101,7 +101,7 @@
 							<label id="font-22"><u>Post-College Options</u></label>
 							<ul class="ranking-list">
 								<% @colleges = College.order(response8_average: :desc) %>
-								<% @colleges.limit(3).each do |college| %>
+								<% @colleges.limit(10).each do |college| %>
 									<li><%= @counter %>) <%= college.name %></li>
 									<% @counter += 1 %>
 								<% end %>
@@ -113,7 +113,7 @@
 							<label id="font-22"><u>Overall Recommendation</u></label>
 							<ul class="ranking-list">
 								<% @colleges = College.order(response9_average: :desc) %>
-								<% @colleges.limit(3).each do |college| %>
+								<% @colleges.limit(10).each do |college| %>
 									<li><%= @counter %>) <%= college.name %></li>
 									<% @counter += 1 %>
 								<% end %>

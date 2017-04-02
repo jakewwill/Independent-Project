@@ -4,6 +4,59 @@
   </head>
 
   <body class="body">
-    <%= @college.name %>
+    <div class="background-white container-small container">
+      <div class="row" style="margin: 0; text-align: center">
+        <h2>College Name: <%= @college.name %></h2>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Reviews:</h3>
+          
+          <%= will_paginate @reviews %>
+    			<table class="black-border table" style="width: 100%; margin-left: 0">
+    				<thead style="background: #D6E4FF">
+    					<tr>
+    						<th style="width: 25%">Review Author</th>
+    						<th style="width: 40%">Link</th>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<% @reviews.each do |r| %>
+    						<tr>
+    						  <td><%= r.name %></td>
+    							<td><%= link_to "Link to review by: " + r.name, r %></td>
+    						</tr>
+    					<% end %>
+    				</tbody>
+    			</table>
+        </div>
+      </div> <!-- Reviews row-->
+      
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Rankings:</h3>
+          
+          <%= will_paginate @rankings %>
+    			<table class="black-border table" style="width: 100%; margin-left: 0">
+    				<thead style="background: #D6E4FF">
+    					<tr>
+    						<th style="width: 25%">Ranking Author</th>
+    						<th style="width: 40%">Link</th>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<% @rankings.each do |r| %>
+    						<tr>
+    						  <td><%= r.name %></td>
+    							<td><%= link_to "Link to rankings by: " + r.name, r %></td>
+    						</tr>
+    					<% end %>
+    				</tbody>
+    			</table>
+        </div>
+      </div> <!-- Rankings row-->
+   
+    </div> <!-- container-small -->
   </body>
 </html>

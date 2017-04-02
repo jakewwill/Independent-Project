@@ -7,10 +7,11 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div id="results" class="row">
+						<%= will_paginate @colleges %>
 						<table class="black-border table col-md-12">
 							<thead style="background: #D6E4FF">
 								<tr>
-									<th style="width: 25%">College Name</th>
+									<th style="width: 40%">College Name</th>
 									<th>Number of Reviews</th>
 									<th>Number of Rankings</th>
 								</tr>
@@ -18,7 +19,7 @@
 							<tbody>
 								<% @colleges.all.each do |college|%>
                                     <tr>
-                                        <td><%= college.name %></td>
+                                        <td><%= link_to college.name,   college %></td>
                                         <td><%= college.reviews_count %></td>
                                         <td><%= college.rankings_count %></td>
                                     </tr>
