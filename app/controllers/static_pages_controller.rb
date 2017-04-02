@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action :enough_rankings, only: [:college_rankings]
+  
   def home
     @reviews = Review.order(id: :asc);
     @most_reviewed_colleges = College.order(reviews_count: :desc)
@@ -25,4 +27,13 @@ class StaticPagesController < ApplicationController
   
   def login
   end
+  
+  private
+    def enough_rankings
+      @rankings = Ranking.all
+      if (@rankings.count < 10)
+        redirect_to(root_url)
+        flash[:danger] = "There are not enough rankings yet to view this page"
+      end
+    end
 end
