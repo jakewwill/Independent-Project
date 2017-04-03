@@ -5,6 +5,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   
+  <link rel="shortcut icon" type="image/x-icon" href="http://robotics.punahou.edu/images/ColorPUNAHOU_Seal.jpg" />
+  
   <%= render 'layouts/nav' %>
 </head>
 <body>
@@ -12,7 +14,5 @@
       <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
   <%= yield %>
-  
-  <link rel="shortcut icon" type="image/x-icon" href="http://robotics.punahou.edu/images/ColorPUNAHOU_Seal.jpg" />
 </body>
 </html>
