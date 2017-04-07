@@ -1,6 +1,11 @@
 class CollegesController < ApplicationController
   def index
     @colleges = College.order('name ASC').paginate(page: params[:page], per_page: 40)
+    if params[:search]
+      @colleges = College.search(params[:search]).order("name ASC").paginate(page: params[:page], per_page: 40)
+    else
+      @colleges = College.order('name ASC').paginate(page: params[:page], per_page: 40)
+    end
   end
 
   def new

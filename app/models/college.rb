@@ -27,7 +27,11 @@ class College < ApplicationRecord
     self.response9_average = 0;
   end
   
-  def self.search(term)
-    where('LOWER(name) LIKE :term', term: "%#{term.downcase}%")
+  def self.search(search)
+    if search
+      self.where("name like ?", "%#{search}%")
+    else
+      self.all
+    end
   end
 end
