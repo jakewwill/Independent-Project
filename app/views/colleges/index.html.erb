@@ -8,15 +8,19 @@
 				<div class="col-md-12">
 					<div id="results" class="row">
 						<div class="col-md-4">
-							<div class="form-group" style="margin: 0">
-								<%= form_tag(colleges_path, :method => "get", id: "search-form", style: "margin: 5px 0 0 2.2%") do %>
-								    <%= text_field_tag :search, params[:search], placeholder: "Search Colleges", class: "search" %>
-								    <%= submit_tag "Search", :name => nil, class: "submit"%>
-								<% end %>
-							</div>
+							<form>
+								<div class="input-group" style="margin: 10px 0 0 2.2%">
+									<%= form_tag(colleges_path, :method => "get", class: "form-control", id: "search-form", style: "margin: 5px 0 0 2.2%") do %>
+										<%= text_field_tag :search, params[:search], class: 'form-control', placeholder: "Search Colleges", style: "border-radius: 8px 0 0 8px" %>
+									    <span class="input-group-btn">
+									        <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
+									    </span>
+									    
+									<% end %>
+								</div>
+							</form>
 						</div>
 						
-
 						<%= will_paginate @colleges %>
 						<table class="black-border table col-md-12">
 							<thead style="background: #D6E4FF">
