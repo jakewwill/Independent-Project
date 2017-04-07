@@ -23,14 +23,14 @@ class CollegesController < ApplicationController
     # Create an array with all the reviews for this college
     Review.all.each do |r|
       if (r.college_name != @college.name)
-        @reviews.delete(r)
+        @reviews = @reviews - [r]
       end
     end
     
     # Create an array with all the rankings for this college
     Ranking.all.each do |r|
       if (r.college_name != @college.name)
-        @rankings.delete(r)
+        @rankings = @rankings - [r]
       end
     end
     

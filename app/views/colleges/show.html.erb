@@ -13,7 +13,9 @@
         <div class="col-md-12">
           <h3>Reviews:</h3>
           
-          <%= will_paginate @reviews %>
+          <% if (@reviews.count != 0) %>
+            <%= will_paginate @reviews %>
+          <% end %>
     			<table class="black-border table" style="width: 100%; margin-left: 0">
     				<thead style="background: #D6E4FF">
     					<tr>
@@ -37,7 +39,9 @@
         <div class="col-md-12">
           <h3>Rankings:</h3>
           
-          <%= will_paginate @rankings %>
+          <% if (@reviews.count != 0) %>
+            <%= will_paginate @rankings %>
+          <% end %>
     			<table class="black-border table" style="width: 100%; margin-left: 0">
     				<thead style="background: #D6E4FF">
     					<tr>
