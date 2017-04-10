@@ -13,7 +13,6 @@
 				<table class="black-border table" style="margin-top: 0">
 					<thead style="background: #D6E4FF">
 						<tr>
-							<th style="width: 25%">Are you Interested?</th>
 							<th style="width: 40%">School Name</th>
 							<th># Reviews</th>
 						</tr>
@@ -21,7 +20,6 @@
 					<tbody>
 						<% @colleges.each do |college| %>
   							<tr>
-    							<td>Yes   No   Maybe</td>
 								<td><a href="#"><%= college.name %></a></td>
 								<td><%= college.reviews_count %></td>
   							</tr>
