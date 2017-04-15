@@ -28,7 +28,7 @@ User.all.each do |user|
 end
 
 if (admin == false)
-    User.create!(name: "Site Admin", email: "admin@gmail.com", password: "equinox1", password_confirmation: "equinox1", alumni: false)
+    User.create!(name: "Site Admin", email: "admin@gmail.com", password: "puns123", password_confirmation: "puns123", alumni: false)
     user = User.find_by(name: "Site Admin");
     user.update_attribute(:admin, 1);
 end
