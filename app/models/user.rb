@@ -19,9 +19,6 @@ class User < ApplicationRecord
   # Validate password
   validates :password, presence: true, length: { minimum: 6 }
   
-  # Validate user type (alumni or student)
-  validates :alumni, presence: true
-  
   def set_defaults
     self.submitted_review = false
   end
