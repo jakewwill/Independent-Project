@@ -24,16 +24,6 @@
   							<% end %>
 						<% end %>
           <% end %>
-          <h2>Your Ranking: </h2>
-          <% if @user.submitted_ranking == 0 %>
-            <a><%= link_to "Submit a Ranking",   submit_ranking_path %></a>
-          <% else %>
-            <% @rankings.each do |ranking| %>
-  							<% if ranking.name.eql? @user.name %>
-  							  <a><%= link_to "Vew your ranking", ranking %></a>
-  							<% end %>
-						<% end %>
-          <% end %>
         </div>
       </div>
       <div class="row" style="width: 100%; margin-top: 50px">

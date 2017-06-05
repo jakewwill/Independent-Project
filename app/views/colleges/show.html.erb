@@ -34,33 +34,6 @@
     			</table>
         </div>
       </div> <!-- Reviews row-->
-      
-      <div class="row">
-        <div class="col-md-12">
-          <h3>Rankings:</h3>
-          
-          <% if (@reviews.count != 0) %>
-            <%= will_paginate @rankings %>
-          <% end %>
-    			<table class="black-border table" style="width: 100%; margin-left: 0">
-    				<thead style="background: #D6E4FF">
-    					<tr>
-    						<th style="width: 25%">Ranking Author</th>
-    						<th style="width: 40%">Link</th>
-    					</tr>
-    				</thead>
-    				<tbody>
-    					<% @rankings.each do |r| %>
-    						<tr>
-    						  <td><%= r.name %></td>
-    							<td><%= link_to "Link to rankings by: " + r.name, r %></td>
-    						</tr>
-    					<% end %>
-    				</tbody>
-    			</table>
-        </div>
-      </div> <!-- Rankings row-->
-   
     </div> <!-- container-small -->
   </body>
 </html>

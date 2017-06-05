@@ -4,17 +4,1585 @@
   </head>
 
   <body class="body">
-    <div class="container container-ranking-review">
-      <div class="row" style="text-align: center">
+    <div class="container-small container review-results">
+      <div class=" row" style="text-align: center">
         <h2>This is a review written by <%= @review.name %> for the college <%= @review.college_name %></h2>
       </div>
-      <div class="row" style="text-align: left">
-        <h3>In response to the prompt:</h3>
-        <h3>Before submitting a review, please submit a ranking form for your college - it will give you a general overview of the types of responses we are looking for.. 
-
-This section is your opportunity to provide your opinions about any topic that you think might be important to a graduating Punahou student. Please cover anything that you feel you might have wanted to know about your college before making a final decision (this can be positive or negative). Your response may take some time to appear on the site itself, as it must be reviewed prior to being posted (we can assure you that no changes will be made without first contacting you).</h3>
-        <h3><%= @review.name %> wrote:</h3>
-        <h3><%= @review.question1 %></h3>
+      <div class="row" style="text-align: left; padding-left: 10px">
+        <h3>1) College or University you attend: </h3>
+          <label style="margin-left: 50px"><%= @review.college_name %></label>
+        <h3>2) Punahou Graduation Year:</h3>
+          <label style="margin-left: 50px"><%= @review.punahou_graduation_year %></label>
+        <h3>3) Gender:</h3>
+          <label style="margin-left: 50px"><%= @review.gender %></label>
+        <h3>4) Major: </h3>
+          <label style="margin-left: 50px"><%= @review.major %></label>
+        <h3>5) Select the one description that best describes the academic environment at your school:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_environment1 == "Work hard/play hard" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Work hard/play hard
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Work hard/play hard
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_environment1 == "Academically challenging" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Academically challenging
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Academically challenging
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_environment1 == "Emphasis on grades" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Emphasis on grades
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Emphasis on grades
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_environment1 == "Intellectual" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Intellectual
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Intellectual
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_environment1 == "Relaxed academic atmosphere" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Relaxed academic atmosphere
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Relaxed academic atmosphere
+              <% end %>
+            </label>
+          </div>
+        <h3>6) Describe the acadmic environment at your school:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_environment2 == "Less difficult than I expected" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Less difficult than I expected
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Less difficult than I expected
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_environment2 == "What I expected" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> What I expected
+              <% else %>
+                <input type="checkbox" disabled="disabled"> What I expected
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_environment2 == "More difficult than I expected" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> More difficult than I expected
+              <% else %>
+                <input type="checkbox" disabled="disabled"> More difficult than I expected
+              <% end %>
+            </label>
+          </div>
+        <h3>7) Rate the academic competition among students:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_competition == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (None)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (None)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_competition == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_competition == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_competition == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_competition == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Cut Throat)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Cut Throat)
+              <% end %>
+            </label>
+          </div>
+        <h3>8) Compared to Punahou, rate the academic challenge of your school:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_challenge == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not as)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Not as)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_challenge == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_challenge == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_challenge == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_challenge == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Much more)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Much more)
+              <% end %>
+            </label>
+          </div>
+        <h3>9) If applicable, name the AP or Honors, courses taken at Punahou.</h3>
+          <label style="margin-left: 50px"><%= @review.ap_honors_classes %></label>
+        <h3>10) Check any class sizes you have experienced:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.class_sizes.include? "Under 15 students" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Under 15 students
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Under 15 students
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.class_sizes.include? "25 - 50 students" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 25 - 50 students
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 25 - 50 students
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.class_sizes.include? "50 - 75 students" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 50 - 75 students
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 50 - 75 students
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.class_sizes.include? "75 - 150 students" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 75 - 150 students
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 75 - 150 students
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.class_sizes.include? "150 or more students" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 150 or more students
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 150 or more students
+              <% end %>
+            </label>
+          </div>
+        <h3>11) Indicate most common class size:</h3>
+          <label style="margin-left: 50px"><%= @review.most_common_class_size %></label>
+        <h3>12) Have any of your classes been taught by graduate students or teaching assistants?</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.teaching_assistants == true %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Yes
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Yes
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.teaching_assistants == false %>
+                <input type="checkbox" disabled="disabled" checked="checked"> No
+              <% else %>
+                <input type="checkbox" disabled="disabled"> No
+              <% end %>
+            </label>
+          </div>
+        <h3>13) How accessible are the following:</h3>
+        <div class="col-md-4">
+          <h3 style="margin-left: 50px">Professors: </h3>
+            <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.professor_accessibility == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not at all)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Not at all)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.professor_accessibility == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.professor_accessibility == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.professor_accessibility == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.professor_accessibility == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Very)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Very)
+              <% end %>
+            </label>
+          </div>
+        </div>
+          
+        <div class="col-md-4">
+          <h3 style="margin-left: 50px">Academic Advisors: </h3>
+            <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_advisor_accessibility == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not at all)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Not at all)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_advisor_accessibility == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_advisor_accessibility == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_advisor_accessibility == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.academic_advisor_accessibility == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Very)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Very)
+              <% end %>
+            </label>
+          </div>
+        </div>
+        
+        <div class="col-md-4" style="margin-bottom: 20px">
+          <h3 style="margin-left: 50px">Teacher Assistants: </h3>
+            <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.teacher_assistant_accessibility == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not at all)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Not at all)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.teacher_assistant_accessibility == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.teacher_assistant_accessibility == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.teacher_assistant_accessibility == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.teacher_assistant_accessibility == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Very)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Very)
+              <% end %>
+            </label>
+          </div>
+        </div>
+        
+        <h3>14) Rate your college/university’s library facilities::</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.library_facilities == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Doesn't suit my needs)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Doesn't suit my needs)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.library_facilities == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.library_facilities == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.library_facilities == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.library_facilities == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Suits my needs perfectly)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Suits my needs perfectly)
+              <% end %>
+            </label>
+          </div>
+        <h3>15) Rate the accessibility of arts facilities at your school:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.arts_facilities == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Poor)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Poor)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.arts_facilities == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.arts_facilities == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.arts_facilities == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.arts_facilities == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Superior)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Superior)
+              <% end %>
+            </label>
+          </div>
+        <h3>16) Comments about the above facilities:</h3>
+          <label style="margin-left: 50px"><%= @review.comments_library_arts %></label>
+        <h3>17) Describe the degree of ease/difficulty in registering for courses:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.course_registration_difficulty == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Massive red tape)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Massive red tape)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.course_registration_difficulty == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.course_registration_difficulty == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.course_registration_difficulty == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.course_registration_difficulty == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (No problem)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (No problem)
+              <% end %>
+            </label>
+          </div>
+        <h3>18) Compared to Punahou, how rigorous are your school’s academic classes:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.course_rigor == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not very rigorous)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Not very rigorous)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.course_rigor == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.course_rigor == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.course_rigor == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.course_rigor == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Very rigorous)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Very rigorous)
+              <% end %>
+            </label>
+          </div>
+        <h3>19) Based on your academic experience, would you recommend your college/university to other Punahou students?</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.recommendation == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (No)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (No)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.recommendation == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.recommendation == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.recommendation == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.recommendation == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Enthusiastically)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Enthusiastically)
+              <% end %>
+            </label>
+          </div>
+        <h3>20) Concerning the academic life at your school, which stereotypes or myths that prospective students might encounter? Which are accurate?</h3>
+          <label style="margin-left: 50px"><%= @review.academic_life_stereotypes %></label>
+        <h3>21) Comment on the role discussion plays in classes.</h3>
+          <label style="margin-left: 50px"><%= @review.class_discussions %></label>
+        <h3>22) Describe the attitude of the administration at your school:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.administration_attitude == "Indifferent to students" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Indifferent to students
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Indifferent to students
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.administration_attitude == "Not a perceptible factor in day-to- day student life" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Not a perceptible factor in day-to- day student life
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Not a perceptible factor in day-to- day student life
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.administration_attitude == "Open & welcoming to students" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Open & welcoming to students
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Open & welcoming to students
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.administration_attitude == "Friendly, but guarded" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Friendly, but guarded
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Friendly, but guarded
+              <% end %>
+            </label>
+          </div>
+        <h3>23) Check all that describe social life at your campus:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "Party school – primarily alcohol" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Party school – primarily alcohol
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Party school – primarily alcohol
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "Party school – primarily drugs" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Party school – primarily drugs
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Party school – primarily drugs
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "Partying is not a significant facet of social life" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Partying is not a significant facet of student life
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Partying is not a significant facet of student life
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "Social life dominated by Greek system" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Social life dominated by Greek system
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Social life dominated by Greek system
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "Social life revolves around academics/arts" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Social life revolves around academics/arts
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Social life revolves around academics/arts
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "Social life revolves around sporting events" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Social life revolves around sporting events
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Social life revolves around sporting events
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "Most social life occurs off-campus" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Most social life occurs off-campus
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Most social life occurs off-campus
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "Most social life occurs on-campus" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Most social life occurs on-campus
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Most social life occurs on-campus
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "Significant number of students leave on weekends" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Significant number of students leave on weekends
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Significant number of students leave on weekends
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "No fraternities or sororities" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> No fraternities or sororities
+              <% else %>
+                <input type="checkbox" disabled="disabled"> No fraternities or sororities
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "Great college town" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Great college town
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Great college town
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life.include? "You can have fun here without drugs or alcohol" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> You can have fun here without drugs or alcohol
+              <% else %>
+                <input type="checkbox" disabled="disabled"> You can have fun here without drugs or alcohol
+              <% end %>
+            </label>
+          </div>
+        <h3>24) Check all that describe the ability to make friends:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.friendship_making.include? "Easy to make friends across campus" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Easy to make friends across campus
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Easy to make friends across campus
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.friendship_making.include? "Hard to make new friends after freshman year" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Hard to make new friends after freshman year
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Hard to make new friends after freshman year
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.friendship_making.include? "Between friendly and impersonal, but closer to friendly" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Between friendly and impersonal, but closer to friendly
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Between friendly and impersonal, but closer to friendly
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.friendship_making.include? "Between friendly and impersonal, but closer to impersonal" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Between friendly and impersonal, but closer to impersonal
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Between friendly and impersonal, but closer to impersonal
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.friendship_making.include? "A segmented campus based on affiliation/dorm location" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> A segmented campus based on affiliation/dorm location
+              <% else %>
+                <input type="checkbox" disabled="disabled"> A segmented campus based on affiliation/dorm location
+              <% end %>
+            </label>
+          </div>
+        <h3>25) Check all that describe campus life:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Female dominated" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Female dominated
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Female dominated
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Male dominated" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Male dominated
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Male dominated
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Uncomfortable for gay or lesbian students" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Uncomfortable for gay or lesbian students
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Uncomfortable for gay or lesbian students
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Comfortable for gay or lesbian students" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Comfortable for gay or lesbian students
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Comfortable for gay or lesbian students
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Uncomfortable for women" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Uncomfortable for women
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Uncomfortable for women
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Comfortable for women" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Comfortable for women
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Comfortable for women
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Politically conservative" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Politically conservative
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Politically conservative
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Politically liberal" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Politically liberal
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Politically liberal
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Politically middle-of- the-road" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Politically middle-of- the-road
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Politically middle-of- the-road
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Politically apathetic" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Politically apathetic
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Politically apathetic
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Politically correct" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Politically correct
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Politically correct
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "A negative atmosphere for students of color" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> A negative atmosphere for students of color
+              <% else %>
+                <input type="checkbox" disabled="disabled"> A negative atmosphere for students of color
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Good town/campus relationship" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Good town/campus relationship
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Good town/campus relationship
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.campus_life.include? "Poor town/campus relationship" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Poor town/campus relationship
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Poor town/campus relationship
+              <% end %>
+            </label>
+          </div>
+        <h3>26) Comments or Explanations about your check marks to the previous 3 questions:</h3>
+           <label style="margin-left: 50px"><%= @review.comments_friendship_social_campus %></label>
+        <h3>27) Check all the activities in which you are involved.</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Varsity athletics" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Varsity athletics
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Varsity athletics
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Fine arts" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Fine arts
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Fine arts
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Theater" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Theater
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Theater
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Newspaper/literary magazine" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Newspaper/literary magazine
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Newspaper/literary magazine
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Fraternity/sorority" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Fraternity/sorority
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Fraternity/sorority
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Music" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Music
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Music
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Dance" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Dance
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Dance
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Intramural sports" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Intramural sports
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Intramural sports
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Student government" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Student government
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Student government
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Community service" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Community service
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Community service
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Campus job" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Campus job
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Campus job
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Off-campus job" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Off-campus job
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Off-campus job
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Religious group" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Religious group
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Religious group
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.activities.include? "Radio station" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Radio station
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Radio station
+              <% end %>
+            </label>
+          </div>
+        <h3>28) Compared to your experience at Punahou, indicate your ability to get involved with extracurricular activities at your college/university:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.extracurricular_involvement_ability == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Much more difficult)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Much more difficult)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.extracurricular_involvement_ability == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.extracurricular_involvement_ability == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.extracurricular_involvement_ability == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.extracurricular_involvement_ability == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Much easier)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Much easier)
+              <% end %>
+            </label>
+          </div>
+        <h3>29) Rate the quality of food/dining on your campus:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.food_quality_on_campus == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Poor)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Poor)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.food_quality_on_campus == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.food_quality_on_campus == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.food_quality_on_campus == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.food_quality_on_campus == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Great)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Great)
+              <% end %>
+            </label>
+          </div>
+        <h3>30) Rate the residence halls on your campus:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.residence_halls == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Run Down)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Run Down)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.residence_halls == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.residence_halls == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.residence_halls == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.residence_halls == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Well-maintained)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Well-maintained)
+              <% end %>
+            </label>
+          </div>
+        <h3>31) What dorms would you recommend?</h3>
+          <label style="margin-left: 50px"><%= @review.recommended_dorms %></label>
+        <h3>32) Rate the accessibility of athletic facilities at your school, taking into account access for non-athletes:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.athletic_accessibility == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Poor)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Poor)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.athletic_accessibility == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.athletic_accessibility == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.athletic_accessibility == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.athletic_accessibility == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Superior)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Superior)
+              <% end %>
+            </label>
+          </div>
+        <h3>33) What are the unique features of your student center?</h3>
+          <label style="margin-left: 50px"><%= @review.student_center_unique_features %></label>
+        <h3>34) Rate your overall satisfaction with the social life at your school:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.overall_social_satisfaction == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Falls short)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Falls short)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.overall_social_satisfaction == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.overall_social_satisfaction == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.overall_social_satisfaction == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.overall_social_satisfaction == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Far exceeds)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Far exceeds)
+              <% end %>
+            </label>
+          </div>
+        <h3>35) Based on the social life, would you recommend your school to other Punahou students?</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life_recommendation == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (No)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (No)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life_recommendation == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life_recommendation == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life_recommendation == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.social_life_recommendation == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Enthusiastically)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Enthusiastically)
+              <% end %>
+            </label>
+          </div>
+        <h3>36) Concerning social life at your school, which rumors or myths that prospective students might encounter? Which are accurate?</h3>
+          <label style="margin-left: 50px"><%= @review.social_life_rumors %></label>
+        <h3>37) Safety is a big concern for many students and colleges. What conditions exist that help you feel safe or unsafe?</h3>
+          <label style="margin-left: 50px"><%= @review.safe_unsafe %></label>
+        <h3>38) Is there a sense of school spirit/pride? How would you describe it?</h3>
+          <label style="margin-left: 50px"><%= @review.spirit_pride %></label>
+        <h3>39) Since over 30% of Punahou students go to college sight unseen, describe your college and nearby community.</h3>
+          <label style="margin-left: 50px"><%= @review.college_nearby_community %></label>
+        <h3>40) What is there to do in your neighboring community? Discuss any or all of the following: dining, shopping, entertainment, service opportunities, etc.</h3>
+          <label style="margin-left: 50px"><%= @review.neighboring_community_activities %></label>
+        <h3>41) Check the five attributes that best describe why you chose your school:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "lower cost/higher scholarship" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> lower cost/higher scholarship
+              <% else %>
+                <input type="checkbox" disabled="disabled"> lower cost/higher scholarship
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "family tradition" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> family tradition
+              <% else %>
+                <input type="checkbox" disabled="disabled"> family tradition
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "special academic program" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> special academic program
+              <% else %>
+                <input type="checkbox" disabled="disabled"> special academic program
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "academically challenging" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> academically challenging
+              <% else %>
+                <input type="checkbox" disabled="disabled"> academically challenging
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "athletic opportunities" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> athletic opportunities
+              <% else %>
+                <input type="checkbox" disabled="disabled"> athletic opportunities
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "diversity of student body" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> diversity of student body
+              <% else %>
+                <input type="checkbox" disabled="disabled"> diversity of student body
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "pre-professional advising" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> pre-professional advising
+              <% else %>
+                <input type="checkbox" disabled="disabled"> pre-professional advising
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "location" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> location
+              <% else %>
+                <input type="checkbox" disabled="disabled"> location
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "social aspects of campus" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> social aspects of campus
+              <% else %>
+                <input type="checkbox" disabled="disabled"> social aspects of campus
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "intellectual challenge" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> intellectual challenge
+              <% else %>
+                <input type="checkbox" disabled="disabled"> intellectual challenge
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "optimum size" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> optimum size
+              <% else %>
+                <input type="checkbox" disabled="disabled"> optimum size
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.why_chose_school.include? "Prestige" %>
+                <input type="checkbox" disabled="disabled" checked="checked"> Prestige
+              <% else %>
+                <input type="checkbox" disabled="disabled"> Prestige
+              <% end %>
+            </label>
+          </div>
+        <h3>42) Rate your overall satisfaction with your school:</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.overall_satisfaction == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not at all satisfied)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Not at all satisfied)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.overall_satisfaction == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.overall_satisfaction == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.overall_satisfaction == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.overall_satisfaction == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Definitely satisfied)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Definitely satisfied)
+              <% end %>
+            </label>
+          </div>
+        <h3>43) Would you choose your school again if you were a Punahou senior?</h3>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.choose_again == 1 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Never again)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 1 (Never again)
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.choose_again == 2 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 2
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 2
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.choose_again == 3 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 3
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 3
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.choose_again == 4 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 4
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 4
+              <% end %>
+            </label>
+          </div>
+          <div class="checkbox" style="margin-left: 50px">
+            <label>
+              <% if @review.choose_again == 5 %>
+                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Definitely)
+              <% else %>
+                <input type="checkbox" disabled="disabled"> 5 (Definitely)
+              <% end %>
+            </label>
+          </div>
+        <h3>44) What advice would you give to students planning to attend this school?</h3>
+          <label style="margin-left: 50px"><%= @review.advice %></label>
+        <h3>45) Rate your overall satisfaction with the social life at your school:</h3>
+        
+        <br>
+        
+        <label>Email: <%= @review.email %></label><br>
+        <label>Phone: <%= @review.phone %></label>
       </div>
     </div>
   </body>

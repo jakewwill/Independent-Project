@@ -1,29 +1,23 @@
 class ReviewsController < ApplicationController
-  before_action :logged_in_user, only: [:new]
-  before_action :alumni_user, only: [:new]
-  
   def index
   end
   
   def new
-    if (current_user.submitted_review == 0)
-      @review = Review.new
-      @colleges = College.all
-    else
-      flash[:danger] = "Error! You have already submitted a review!"
-      redirect_to root_path
-    end
+    @review = Review.new
+    @colleges = College.all
   end
   
   def create
       @review = Review.new(review_params)
+      puts @review.class_sizes
+      puts "Hello World"
+      
       if @review.save
         flash[:success] = "Review successfully submitted. It is awaiting evaluation by a college counselor"
-        user = current_user
-        user.update_attribute(:submitted_review, 1)
         redirect_to root_path
       else
-        flash[:danger] = "Error submitting review, please ensure you answered the question"
+        flash.now[:danger] = "Error submitting review, please ensure you answer all the highlighted questions"
+        render 'new'
       end
   end
   
@@ -33,12 +27,11 @@ class ReviewsController < ApplicationController
   
   def destroy
     @review = Review.find(params[:id])
-
-    @user = User.find_by(name: @review.name)
-    @user.update_attribute(:submitted_review, false);
     
     @college = College.find_by(name: @review.college_name)
-    @college.update_attribute(:reviews_count, @college.reviews_count - 1)
+    if @college && @college.update_attribute(:reviews_count, @college.reviews_count - 1)
+    
+    end
 
     @review.destroy
     flash[:success] = "Review deleted"
@@ -51,27 +44,13 @@ class ReviewsController < ApplicationController
     
     college = College.find_by(name: r.college_name)
     college.update_attribute(:reviews_count, college.reviews_count + 1)
-        
+    
     redirect_to reviews_path
     flash[:success] = "Review Verified!"
   end
   
   private
     def review_params
-      params.require(:review).permit(:name, :question1, :college_name)
-    end
-    
-    def logged_in_user
-      if !logged_in?
-        flash[:danger] = "You need to login as an alumni to submit a review"
-        redirect_to login_url
-      end
-    end
-    
-    def alumni_user
-      if (@current_user.alumni.eql? "Current Student")
-        redirect_to(root_url)
-        flash[:danger] = "You need to login as an alumni to submit a review"
-      end
+      params.require(:review).permit(:college_name, :punahou_graduation_year, :gender, :major, :academic_environment1, :academic_environment2, :academic_competition, :academic_challenge, :ap_honors_classes, :most_common_class_size, :teaching_assistants, :professor_accessibility, :academic_advisor_accessibility, :teacher_assistant_accessibility, :library_facilities, :arts_facilities, :comments_library_arts, :course_registration_difficulty, :course_rigor, :recommendation, :academic_life_stereotypes,  :class_discussions, :administration_attitude, :comments_friendship_social_campus, :extracurricular_involvement_ability, :food_quality_on_campus, :residence_halls, :recommended_dorms, :athletic_accessibility, :student_center_unique_features, :overall_social_satisfaction, :social_life_recommendation, :social_life_rumors, :safe_unsafe, :spirit_pride, :college_nearby_community, :neighboring_community_activities, :overall_satisfaction, :choose_again, :advice,  :name, :email, :class_sizes => [], :social_life => [], :friendship_making => [], :campus_life => [], :activities => [], :why_chose_school => [])
     end
 end

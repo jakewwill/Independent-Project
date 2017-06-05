@@ -24,6 +24,5 @@ class User < ApplicationRecord
   
   def set_defaults
     self.submitted_review = false
-    self.submitted_ranking = false
   end
 end

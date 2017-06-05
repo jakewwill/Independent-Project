@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @rankings = Ranking.all
     @reviews = Review.all
   end
 

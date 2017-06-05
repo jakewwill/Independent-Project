@@ -27,10 +27,7 @@
 								<% @reviews.limit(3).each do |review| %>
 									<% if review.verified == true %>
 		      							<tr>
-		        							<td>"<%= review.question1 %>"</td>
-		      							</tr>
-		      							<tr>
-		      								<td style="padding-left: 30px">-By <%= review.name %></td>
+		        							<td style="padding-left: 10px">• Review submitted by <%= review.name %> of <%= review.college_name %> <%= link_to "Click to view", review %></td>
 		      							</tr>
 		      						<% end %>
 	    						<% end %>

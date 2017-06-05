@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+     
 h1 {
   font-size: 48px;
   text-align: center;
@@ -14,8 +14,14 @@ h2 {
 }
 
 h3 {
-	font-size: 16px;
+	font-size: 20px;
 	color: black;
+	font-family: "Arial";
+}
+
+h4 {
+	font-size: 14px;
+	color: gray;
 	font-family: "Arial";
 }
 
@@ -331,6 +337,43 @@ input {
 	display: block;
 }
 
+#review_professor_accessibility {
+	margin-left: 3%;
+}
+
+#review_academic_advisor_accessibility {
+	margin-left: 3%;
+}
+
+#review_teacher_assistant_accessibility {
+	margin-left: 3%;
+}
+
+#review_comments_library_arts, 
+#review_academic_life_stereotypes, 
+#review_class_discussions, 
+#review_comments_friendship_social_campus {
+	min-height: 80px;
+}
+
+.review-results label {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif !important;
+	font-size: 14px !important;
+	font-weight: normal !important;
+	color: #333333 !important;
+}
+
+.checkbox {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif !important;
+	font-size: 14px !important;
+	font-weight: normal !important;
+	color: #333333 !important;
+}
+
+.multi-checkbox {
+	margin-left: 40px;
+}
+
 /* Pagination */
 div.pagination {
 	width: 100%;
@@ -351,3 +394,4 @@ ul.pagination {
 	min-width: 80px;
 	text-align: center;
 }
+

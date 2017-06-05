@@ -13,7 +13,6 @@
 								<tr>
 									<th style="width: 20%">Name</th>
 									<th style="width: 20%">Submitted Review</th>
-									<th style="width: 20%">Submitted Ranking</th>
 									<th>Type</th>
 									<th style=" width: 20%">Profile</th>
 								</tr>
@@ -23,11 +22,6 @@
                                     <tr>
                                         <td><%= u.name %></td>
                                         <% if u.submitted_review == 1 %>
-                                            <td>True</td>
-                                        <% else %>
-                                            <td>False</td>
-                                        <% end %>
-                                        <% if u.submitted_ranking == 1%>
                                             <td>True</td>
                                         <% else %>
                                             <td>False</td>
