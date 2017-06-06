@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  after_initialize :set_defaults, unless: :persisted?
-  
   # Before saving the user to the database, downcase the email
   before_save { self.email = email.downcase }
   
