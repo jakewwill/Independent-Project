@@ -18,8 +18,4 @@ class User < ApplicationRecord
 
   # Validate password
   validates :password, presence: true, length: { minimum: 6 }
-  
-  def set_defaults
-    self.submitted_review = false
-  end
 end
