@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "Welcome to PunaLink!"
       log_in @user
-      redirect_to user_url(@user)
+      redirect_to root_url
     else
       render 'new'
     end
