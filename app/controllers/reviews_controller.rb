@@ -43,8 +43,9 @@ class ReviewsController < ApplicationController
     r.update_attribute(:verified, true)
     
     college = College.find_by(name: r.college_name)
-    college.update_attribute(:reviews_count, college.reviews_count + 1)
-    
+    if college
+      college.update_attribute(:reviews_count, college.reviews_count + 1)
+    end
     redirect_to reviews_path
     flash[:success] = "Review Verified!"
   end

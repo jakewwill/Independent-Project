@@ -27,10 +27,10 @@
             <%= f.label :academic_environment2, "6) Describe the academic environment at your school:" %>
             <%= f.select :academic_environment2, ['Less difficult than I expected', 'What I expected', 'More difficult than I expected'] %>
             
-            <%= f.label :academic_competition, "7) Rate the academic competition among students:" %>
+            <%= f.label :academic_competition, "7) Rate the academic competition among students (1 being none, 5 being cutthroat):" %>
             <%= f.select :academic_competition, ['1', '2', '3', '4', '5'] %>
             
-            <%= f.label :academic_challenge, "8) Compared to Punahou, rate the academic challenge of your school:" %>
+            <%= f.label :academic_challenge, "8) Compared to Punahou, rate the academic challenge of your school (1 being not as much, 5 being much more):" %>
             <%= f.select :academic_challenge, ['1', '2', '3', '4', '5'] %>
             
             <%= f.label :ap_honors_classes, "9) If applicable, name the AP or Honors, courses taken at Punahou." %>
@@ -52,11 +52,11 @@
             <%= f.label :teaching_assistants, "12) Have any of your classes been taught by graduate students or teaching assistants?" %>
             <%= f.select :teaching_assistants, [['Yes', true], ['No', false]], class: 'form-control' %>
             
-            <%= f.label :professor_accessibility, "13) How accessible are the following:" %>
+            <%= f.label :professor_accessibility, "13) How accessible are the following (1 being not accessible at all, 5 being very accessible):" %>
             
             <br>   
             
-            <%= f.label :professor_accessibility, "a) Professors: ", style: 'margin-left: 3%' %>
+            <%= f.label :professor_accessibility, "a) Professors : ", style: 'margin-left: 3%' %>
             <%= f.select :professor_accessibility, ['1', '2', '3', '4', '5'], class: 'form-control' %>
 
             <%= f.label :academic_advisor_accessibility, "b) Acadmic Advisors: ", style: 'margin-left: 3%' %>
@@ -65,22 +65,22 @@
             <%= f.label :teacher_assistant_accessibility, "c) Teacher Assistants: ", style: 'margin-left: 3%' %>
             <%= f.select :teacher_assistant_accessibility, ['1', '2', '3', '4', '5'], class: 'form-control', style: 'margin-left: 3%' %>
 
-            <%= f.label :library_facilities, "14) Rate your college/university’s library facilities: " %>
+            <%= f.label :library_facilities, "14) Rate your college/university’s library facilities (1 being it doesn't suit your needs, and 5 being it suits your needs perfectly): " %>
             <%= f.select :library_facilities, ['1', '2', '3', '4', '5'], class: 'form-control' %>
 
-            <%= f.label :arts_facilities, "15) Rate the accessibility of arts facilities at your school: " %>
+            <%= f.label :arts_facilities, "15) Rate the accessibility of arts facilities at your school (1 being poor, 5 being superior): " %>
             <%= f.select :arts_facilities, ['1', '2', '3', '4', '5'], class: 'form-control' %>
 
             <%= f.label :comments_library_arts, "16) Comments about the above facilities: " %>
             <%= f.text_area :comments_library_arts, class: 'form-control' %>
 
-            <%= f.label :course_registration_difficulty, "17) Describe the degree of ease/difficulty in registering for courses: " %>
+            <%= f.label :course_registration_difficulty, "17) Describe the degree of ease/difficulty in registering for courses (1 being massive red tape, 5 being no problem): " %>
             <%= f.select :course_registration_difficulty, ['1', '2', '3', '4', '5'], class: 'form-control' %>
       
-            <%= f.label :course_rigor, "18) Compared to Punahou, how rigorous are your school’s academic classes: " %>
+            <%= f.label :course_rigor, "18) Compared to Punahou, how rigorous are your school’s academic classes (1 being not very rigorous, 5 being very rigorous): " %>
             <%= f.select :course_rigor, ['1', '2', '3', '4', '5'], class: 'form-control' %>
       
-            <%= f.label :recommendation, "19) Based on your academic experience, would you recommend your college/university to other Punahou students? " %>
+            <%= f.label :recommendation, "19) Based on your academic experience, would you recommend your college/university to other Punahou students? (1 being no, 5 being enthusiastically) " %>
             <%= f.select :recommendation, ['1', '2', '3', '4', '5'], class: 'form-control' %>
             
             <%= f.label :academic_life_stereotypes, "20) Concerning the academic life at your school, which stereotypes or myths that prospective students might encounter? Which are accurate?" %>
@@ -137,28 +137,28 @@
                 <% end %>
               <% end %>
             </div>
-            <%= f.label :extracurricular_involvement_ability, "28) Compared to your experience at Punahou, indicate your ability to get involved with extracurricular activities at your college/university: " %>
+            <%= f.label :extracurricular_involvement_ability, "28) Compared to your experience at Punahou, indicate your ability to get involved with extracurricular activities at your college/university (1 being much more difficult, 5 being much easier): " %>
             <%= f.select :extracurricular_involvement_ability, ['1', '2', '3', '4', '5'], class: 'form-control' %>
             
-            <%= f.label :food_quality_on_campus, "29) Rate the quality of food/dining on your campus: " %>
+            <%= f.label :food_quality_on_campus, "29) Rate the quality of food/dining on your campus (1 being poor, 5 being great): " %>
             <%= f.select :food_quality_on_campus, ['1', '2', '3', '4', '5'], class: 'form-control' %>
             
-            <%= f.label :residence_halls, "30) Rate the residence halls on your campus: " %>
+            <%= f.label :residence_halls, "30) Rate the residence halls on your campus (1 being run down, 5 being well-maintained): " %>
             <%= f.select :residence_halls, ['1', '2', '3', '4', '5'], class: 'form-control' %>
             
             <%= f.label :recommended_dorms, "31) What dorms would you recommend?" %>
             <%= f.text_area :recommended_dorms, class: 'form-control' %>
             
-            <%= f.label :athletic_accessibility, "32) Rate the accessibility of athletic facilities at your school, taking into account access for non-athletes:" %>
+            <%= f.label :athletic_accessibility, "32) Rate the accessibility of athletic facilities at your school, taking into account access for non-athletes (1 being poor, 5 being superior):" %>
             <%= f.select :athletic_accessibility, ['1', '2', '3', '4', '5'], class: 'form-control' %>
             
             <%= f.label :student_center_unique_features, "33) What are the unique features of your student center?" %>
             <%= f.text_area :student_center_unique_features, class: 'form-control' %>
             
-            <%= f.label :overall_social_satisfaction, "34) Rate your overall satisfaction with the social life at your school:" %>
+            <%= f.label :overall_social_satisfaction, "34) Rate your overall satisfaction with the social life at your school (1 being falls short, 5 being far exceeds):" %>
             <%= f.select :overall_social_satisfaction, ['1', '2', '3', '4', '5'], class: 'form-control' %>
             
-            <%= f.label :social_life_recommendation, "35) Based on the social life, would you recommend your school to other Punahou students?" %>
+            <%= f.label :social_life_recommendation, "35) Based on the social life, would you recommend your school to other Punahou students (1 being no, 5 being enthusiastically)?" %>
             <%= f.select :social_life_recommendation, ['1', '2', '3', '4', '5'], class: 'form-control' %>
             
             <%= f.label :social_life_rumors, "36) Concerning social life at your school, which rumors or myths that prospective students might encounter? Which are accurate?" %>
@@ -187,10 +187,10 @@
               <% end %>
             </div>
             
-            <%= f.label :overall_satisfaction, "42) Rate your overall satisfaction with your school:" %>
+            <%= f.label :overall_satisfaction, "42) Rate your overall satisfaction with your school (1 being not at all satisfied, 5 being definitely satisfied):" %>
             <%= f.select :overall_satisfaction, ['1', '2', '3', '4', '5'], class: 'form-control' %>
             
-            <%= f.label :choose_again, "43) Would you choose your school again if you were a Punahou senior?" %>
+            <%= f.label :choose_again, "43) Would you choose your school again if you were a Punahou senior (1 being never again, 5 being definitely)?" %>
             <%= f.select :choose_again, ['1', '2', '3', '4', '5'], class: 'form-control' %>
             
             <%= f.label :advice, "44) What advice would you give to students planning to attend this school?" %>
