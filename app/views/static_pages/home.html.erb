@@ -9,44 +9,44 @@
 	<body class="body">
 		<div class="container-small container">
 			<div class="row">
-				<div class="black-border col-md-6">
+				<div id="welcome" class="col-md-12">
 					<div class="short row">
 						<label id="header">Welcome to PunaLink,</label>
-						<p class="welcome-p-1">A resource for Punahou Academy students sourced from Punahou Alumni. Get real input from our alumni on their colleges.  Find out what other Oahuans think about everything from campus life, to academic rigor, to food.  The real inside info . . . </p>
-
-						<p class="welcome-p-2"><strong>by Punahou for Punahou<strong></p>
-						<br></br>
-						<p class="welcome-p-2">Note:</p>
-						<p class="welcome-p-1">As of now, this site is not endorsed by Punahou School...it is currently being processed</p>
-					</div>
-
-					<div class="black-border-top short row">
-						<label id="font-26">Recent Reviews</label>
-						<table>
-							<tbody>
-								<% @reviews.limit(3).each do |review| %>
-									<% if review.verified == true %>
-		      							<tr>
-		        							<td style="padding-left: 10px">• Review submitted by <%= review.name %> of <%= review.college_name %> <%= link_to "Click to view", review %></td>
-		      							</tr>
-		      						<% end %>
-	    						<% end %>
-								</tr>
-							</tbody>
-						</table>
-						
+						<p class="welcome-p-1">A resource for Punahou Academy students sourced from Punahou Alumni. Get real input from our alumni on their colleges.  Find out what other Oahuans think about everything from campus life, to academic rigor, to food.  The real inside info, by Punahou, for Punahou</p>
 					</div>
 				</div>
-
-				<div class="col-md-6 black-border">
-					<label id="font-26" style="margin-bottom: 20px; text-align: center">Most Reviewed Colleges</label>
-					
-					<% @most_reviewed_colleges.limit(5).each do |college| %>
-						<% if college.reviews_count > 0 %>
-							<label id="font-22" style="margin-bottom: 30px; text-align: left">• <%= college.name %> (<%= college.reviews_count%>)</label>
+			</div>
+			<div class="row" style="margin-top: 20px">
+				<label id="header">Recent Reviews</label>
+				<% if @reviews.size == 0 %>
+					<div style="text-align: center">
+						<label>Sorry, there are no reviews to display at the moment</label>
+					</div>
+				<% else %>
+					<% @reviews.limit(4).each do |review| %>
+						<% if review.verified == true %>
+							<div class="col-sm-6">
+								<div class="well" style="padding-top: 0">
+									<div style="text-align: center">
+										<%= link_to(review, target: '_blank') do %>
+											<h3><span class="fa fa-user"></span>Review by <%= review.name %> for <%= review.college_name %></h3>
+										<% end %>
+									</div>
+									<p>
+										<label style="display: block">Review by: <%= review.name %></label>
+										<label>College: <%= link_to review.college_name, College.find_by_name(review.college_name) %></label>
+									</p>
+								</div>
+							</div>
 						<% end %>
 					<% end %>
-				</div>
+				<% end %>
+			</div>
+			
+			<!-- The extra "row" div ensures that the following <p> is placed on a separate line-->
+			<div class="row">
+				<p class="welcome-p-1">Click on the 'Colleges' tab to search for reviews of a specific college, and 'All Reviews' to see a list of every review</p>
+			</div>
 		</div>
 	</body>
 </html>

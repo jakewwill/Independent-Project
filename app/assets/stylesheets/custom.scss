@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-     
+
 h1 {
   font-size: 48px;
   text-align: center;
@@ -29,16 +29,17 @@ a {
 	width: 100%;
 }
 
+// Removes the small border around the navbar
 .container-fluid {
 	margin: -1px;
 }
 
 div.container-small {
-  margin-top: 0;
+  	margin-top: 0;
 	width: 85%;
-  min-height: 700px;
-  background-color: white;
-  border-radius: 10px
+  	min-height: 700px;
+  	background-color: white;
+  	border-radius: 10px
 }
 
 div.container-profile {
@@ -60,19 +61,15 @@ div.container-xs {
 }
 
 .body {
-  background-color: #FDE161;
+  	background-color: #FDE161;
 }
 
+// Centers text (used to remove inline styling)
 .center-text {
 	text-align: center;
 }
 
-.punahou-seal {
-	display: block;
-	width: 20%;
-	margin: 0 auto 10px auto;
-}
-
+// Sets background color to "soft" white
 .background-white {
 	background-color: #F7F6EF;
 }
@@ -140,9 +137,9 @@ div.container-xs {
 
 .punahou-image {
 	min-height: 64px;
-	background-color: darkblue;
+	//background-color: darkblue;
   	//background-image: url("http://i.imgur.com/Xcw3qDV.png");
-  	// http://i.imgur.com/6ktjPsr.png <-- Background image if can't use real one
+  	background-image: url("http://i.imgur.com/6ktjPsr.png"); //<-- Background image if can't use real one
 }
 
 .dark-blue {
@@ -155,6 +152,10 @@ div.container-xs {
 
 .container-fluid {
 	padding: 0;
+}
+
+#welcome {
+	margin-top: 10px;
 }
 
 @media(max-width: 1000px) {
@@ -394,4 +395,3 @@ ul.pagination {
 	min-width: 80px;
 	text-align: center;
 }
-

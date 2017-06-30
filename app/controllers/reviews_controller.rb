@@ -9,14 +9,12 @@ class ReviewsController < ApplicationController
   
   def create
       @review = Review.new(review_params)
-      puts @review.class_sizes
-      puts "Hello World"
-      
+
       if @review.save
         flash[:success] = "Review successfully submitted. It is awaiting evaluation by a college counselor"
         redirect_to root_path
       else
-        flash.now[:danger] = "Error submitting review, please ensure you answer all the highlighted questions"
+        flash.now[:danger] = "Error submitting review, please ensure you answer all the questions"
         render 'new'
       end
   end
