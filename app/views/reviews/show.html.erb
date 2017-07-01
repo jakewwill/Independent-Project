@@ -65,7 +65,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_environment1.eql "N/A" %>
+              <% if @review.academic_environment1.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -102,7 +102,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_environment2.eql "N/A" %>
+              <% if @review.academic_environment2.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -112,7 +112,7 @@
         <h3>7) Rate the academic competition among students:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_competition.eql "1" %>
+              <% if @review.academic_competition.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (None)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (None)
@@ -121,7 +121,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_competition.eql "2" %>
+              <% if @review.academic_competition.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -130,7 +130,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_competition.eql "3" %>
+              <% if @review.academic_competition.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -139,7 +139,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_competition.eql "4" %>
+              <% if @review.academic_competition.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -148,7 +148,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_competition.eql "5" %>
+              <% if @review.academic_competition.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Cut Throat)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Cut Throat)
@@ -157,7 +157,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_competition.eql "N/A" %>
+              <% if @review.academic_competition.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -167,7 +167,7 @@
         <h3>8) Compared to Punahou, rate the academic challenge of your school:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_challenge.eql "1" %>
+              <% if @review.academic_challenge.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not as)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Not as)
@@ -176,7 +176,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_challenge.eql "2" %>
+              <% if @review.academic_challenge.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -185,7 +185,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_challenge.eql "3" %>
+              <% if @review.academic_challenge.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -194,7 +194,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_challenge.eql "4" %>
+              <% if @review.academic_challenge.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -203,7 +203,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_challenge.eql "5" %>
+              <% if @review.academic_challenge.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Much more)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Much more)
@@ -212,7 +212,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_challenge.eql "N/A" %>
+              <% if @review.academic_challenge.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -293,7 +293,7 @@
           <h3 style="margin-left: 50px">Professors: </h3>
             <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.professor_accessibility.eql "1" %>
+              <% if @review.professor_accessibility.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not at all)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Not at all)
@@ -302,7 +302,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.professor_accessibility.eql "2" %>
+              <% if @review.professor_accessibility.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -311,7 +311,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.professor_accessibility.eql "3" %>
+              <% if @review.professor_accessibility.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -320,7 +320,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.professor_accessibility.eql "4" %>
+              <% if @review.professor_accessibility.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -329,7 +329,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.professor_accessibility.eql "5" %>
+              <% if @review.professor_accessibility.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Very)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Very)
@@ -338,7 +338,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.professor_accessibility.eql "N/A" %>
+              <% if @review.professor_accessibility.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -351,7 +351,7 @@
           <h3 style="margin-left: 50px">Academic Advisors: </h3>
             <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_advisor_accessibility.eql "1" %>
+              <% if @review.academic_advisor_accessibility.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not at all)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Not at all)
@@ -360,7 +360,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_advisor_accessibility.eql "2" %>
+              <% if @review.academic_advisor_accessibility.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -369,7 +369,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_advisor_accessibility.eql "3" %>
+              <% if @review.academic_advisor_accessibility.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -378,7 +378,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_advisor_accessibility.eql "4" %>
+              <% if @review.academic_advisor_accessibility.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -387,7 +387,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_advisor_accessibility.eql "5" %>
+              <% if @review.academic_advisor_accessibility.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Very)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Very)
@@ -396,7 +396,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.academic_advisor_accessibility.eql "N/A" %>
+              <% if @review.academic_advisor_accessibility.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -409,7 +409,7 @@
           <h3 style="margin-left: 50px">Teacher Assistants: </h3>
             <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.teacher_assistant_accessibility.eql "1" %>
+              <% if @review.teacher_assistant_accessibility.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not at all)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Not at all)
@@ -418,7 +418,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.teacher_assistant_accessibility.eql "2" %>
+              <% if @review.teacher_assistant_accessibility.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -427,7 +427,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.teacher_assistant_accessibility.eql "3" %>
+              <% if @review.teacher_assistant_accessibility.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -436,7 +436,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.teacher_assistant_accessibility.eql "4" %>
+              <% if @review.teacher_assistant_accessibility.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -445,7 +445,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.teacher_assistant_accessibility.eql "5" %>
+              <% if @review.teacher_assistant_accessibility.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Very)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Very)
@@ -454,7 +454,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.teacher_assistant_accessibility.eql "N/A" %>
+              <% if @review.teacher_assistant_accessibility.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -466,7 +466,7 @@
         <h3>14) Rate your college/university’s library facilities::</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.library_facilities.eql "1" %>
+              <% if @review.library_facilities.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Doesn't suit my needs)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Doesn't suit my needs)
@@ -475,7 +475,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.library_facilities.eql "2" %>
+              <% if @review.library_facilities.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -484,7 +484,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.library_facilities.eql "3" %>
+              <% if @review.library_facilities.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -493,7 +493,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.library_facilities.eql "4" %>
+              <% if @review.library_facilities.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -502,7 +502,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.library_facilities.eql "5" %>
+              <% if @review.library_facilities.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Suits my needs perfectly)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Suits my needs perfectly)
@@ -511,7 +511,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.library_facilities.eql "N/A" %>
+              <% if @review.library_facilities.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -521,7 +521,7 @@
         <h3>15) Rate the accessibility of arts facilities at your school:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.arts_facilities.eql "1" %>
+              <% if @review.arts_facilities.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Poor)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Poor)
@@ -530,7 +530,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.arts_facilities.eql "2" %>
+              <% if @review.arts_facilities.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -539,7 +539,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.arts_facilities.eql "3" %>
+              <% if @review.arts_facilities.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -548,7 +548,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.arts_facilities.eql "4" %>
+              <% if @review.arts_facilities.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -557,7 +557,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.arts_facilities.eql "5" %>
+              <% if @review.arts_facilities.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Superior)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Superior)
@@ -566,7 +566,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.arts_facilities.eql "N/A" %>
+              <% if @review.arts_facilities.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -578,7 +578,7 @@
         <h3>17) Describe the degree of ease/difficulty in registering for courses:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_registration_difficulty.eql "1" %>
+              <% if @review.course_registration_difficulty.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Massive red tape)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Massive red tape)
@@ -587,7 +587,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_registration_difficulty.eql "2" %>
+              <% if @review.course_registration_difficulty.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -596,7 +596,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_registration_difficulty.eql "3" %>
+              <% if @review.course_registration_difficulty.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -605,7 +605,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_registration_difficulty.eql "4" %>
+              <% if @review.course_registration_difficulty.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -614,7 +614,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_registration_difficulty.eql "5" %>
+              <% if @review.course_registration_difficulty.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (No problem)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (No problem)
@@ -623,7 +623,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_registration_difficulty.eql "N/A" %>
+              <% if @review.course_registration_difficulty.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -633,7 +633,7 @@
         <h3>18) Compared to Punahou, how rigorous are your school’s academic classes:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_rigor.eql "1" %>
+              <% if @review.course_rigor.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not very rigorous)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Not very rigorous)
@@ -642,7 +642,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_rigor.eql "2" %>
+              <% if @review.course_rigor.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -651,7 +651,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_rigor.eql "3" %>
+              <% if @review.course_rigor.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -660,7 +660,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_rigor.eql "4" %>
+              <% if @review.course_rigor.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -669,7 +669,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_rigor.eql "5" %>
+              <% if @review.course_rigor.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Very rigorous)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Very rigorous)
@@ -678,7 +678,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.course_rigor.eql "N/A" %>
+              <% if @review.course_rigor.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -688,7 +688,7 @@
         <h3>19) Based on your academic experience, would you recommend your college/university to other Punahou students?</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.recommendation.eql "1" %>
+              <% if @review.recommendation.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (No)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (No)
@@ -697,7 +697,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.recommendation.eql "2" %>
+              <% if @review.recommendation.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -706,7 +706,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.recommendation.eql "3" %>
+              <% if @review.recommendation.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -715,7 +715,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.recommendation.eql "4" %>
+              <% if @review.recommendation.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -724,7 +724,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.recommendation.eql "5" %>
+              <% if @review.recommendation.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Enthusiastically)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Enthusiastically)
@@ -733,7 +733,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.recommendation.eql "N/A" %>
+              <% if @review.recommendation.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -783,7 +783,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.administration_attitude.eql "N/A" %>
+              <% if @review.administration_attitude.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -1222,7 +1222,7 @@
         <h3>28) Compared to your experience at Punahou, indicate your ability to get involved with extracurricular activities at your college/university:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql "1" %>
+              <% if @review.extracurricular_involvement_ability.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Much more difficult)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Much more difficult)
@@ -1231,7 +1231,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql "2" %>
+              <% if @review.extracurricular_involvement_ability.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -1240,7 +1240,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql "3" %>
+              <% if @review.extracurricular_involvement_ability.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -1249,7 +1249,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql "4" %>
+              <% if @review.extracurricular_involvement_ability.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -1258,7 +1258,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql "5" %>
+              <% if @review.extracurricular_involvement_ability.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Much easier)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Much easier)
@@ -1267,7 +1267,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql "N/A" %>
+              <% if @review.extracurricular_involvement_ability.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -1277,7 +1277,7 @@
         <h3>29) Rate the quality of food/dining on your campus:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.food_quality_on_campus.eql "1" %>
+              <% if @review.food_quality_on_campus.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Poor)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Poor)
@@ -1286,7 +1286,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.food_quality_on_campus.eql "2" %>
+              <% if @review.food_quality_on_campus.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -1295,7 +1295,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.food_quality_on_campus.eql "3" %>
+              <% if @review.food_quality_on_campus.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -1304,7 +1304,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.food_quality_on_campus.eql "4" %>
+              <% if @review.food_quality_on_campus.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -1313,7 +1313,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.food_quality_on_campus.eql "5" %>
+              <% if @review.food_quality_on_campus.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Great)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Great)
@@ -1322,7 +1322,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.food_quality_on_campus.eql "N/A" %>
+              <% if @review.food_quality_on_campus.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -1332,7 +1332,7 @@
         <h3>30) Rate the residence halls on your campus:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.residence_halls.eql "1" %>
+              <% if @review.residence_halls.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Run Down)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Run Down)
@@ -1341,7 +1341,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.residence_halls.eql "2" %>
+              <% if @review.residence_halls.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -1350,7 +1350,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.residence_halls.eql "3" %>
+              <% if @review.residence_halls.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -1359,7 +1359,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.residence_halls.eql "4" %>
+              <% if @review.residence_halls.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -1368,7 +1368,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.residence_halls.eql "5" %>
+              <% if @review.residence_halls.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Well-maintained)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Well-maintained)
@@ -1377,7 +1377,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.residence_halls.eql "N/A" %>
+              <% if @review.residence_halls.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -1389,7 +1389,7 @@
         <h3>32) Rate the accessibility of athletic facilities at your school, taking into account access for non-athletes:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.athletic_accessibility.eql "1" %>
+              <% if @review.athletic_accessibility.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Poor)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Poor)
@@ -1398,7 +1398,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.athletic_accessibility.eql "2" %>
+              <% if @review.athletic_accessibility.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -1407,7 +1407,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.athletic_accessibility.eql "3" %>
+              <% if @review.athletic_accessibility.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -1416,7 +1416,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.athletic_accessibility.eql "4" %>
+              <% if @review.athletic_accessibility.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -1425,7 +1425,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.athletic_accessibility.eql "5" %>
+              <% if @review.athletic_accessibility.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Superior)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Superior)
@@ -1434,7 +1434,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.athletic_accessibility.eql "N/A" %>
+              <% if @review.athletic_accessibility.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -1446,7 +1446,7 @@
         <h3>34) Rate your overall satisfaction with the social life at your school:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_social_satisfaction.eql "1" %>
+              <% if @review.overall_social_satisfaction.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Falls short)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Falls short)
@@ -1455,7 +1455,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_social_satisfaction.eql "2" %>
+              <% if @review.overall_social_satisfaction.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -1464,7 +1464,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_social_satisfaction.eql "3" %>
+              <% if @review.overall_social_satisfaction.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -1473,7 +1473,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_social_satisfaction.eql "4" %>
+              <% if @review.overall_social_satisfaction.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -1482,7 +1482,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_social_satisfaction.eql "5" %>
+              <% if @review.overall_social_satisfaction.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Far exceeds)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Far exceeds)
@@ -1491,7 +1491,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_social_satisfaction.eql "N/A" %>
+              <% if @review.overall_social_satisfaction.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -1501,7 +1501,7 @@
         <h3>35) Based on the social life, would you recommend your school to other Punahou students?</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life_recommendation.eql "1" %>
+              <% if @review.social_life_recommendation.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (No)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (No)
@@ -1510,7 +1510,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life_recommendation.eql "2" %>
+              <% if @review.social_life_recommendation.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -1519,7 +1519,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life_recommendation.eql "3" %>
+              <% if @review.social_life_recommendation.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -1528,7 +1528,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life_recommendation.eql "4" %>
+              <% if @review.social_life_recommendation.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -1537,7 +1537,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life_recommendation.eql "5" %>
+              <% if @review.social_life_recommendation.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Enthusiastically)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Enthusiastically)
@@ -1546,7 +1546,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life_recommendation.eql "N/A" %>
+              <% if @review.social_life_recommendation.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -1684,7 +1684,7 @@
         <h3>42) Rate your overall satisfaction with your school:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_satisfaction.eql "1" %>
+              <% if @review.overall_satisfaction.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Not at all satisfied)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Not at all satisfied)
@@ -1693,7 +1693,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_satisfaction.eql "2" %>
+              <% if @review.overall_satisfaction.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -1702,7 +1702,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_satisfaction.eql "3" %>
+              <% if @review.overall_satisfaction.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -1711,7 +1711,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_satisfaction.eql "4" %>
+              <% if @review.overall_satisfaction.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -1720,7 +1720,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_satisfaction.eql "5" %>
+              <% if @review.overall_satisfaction.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Definitely satisfied)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Definitely satisfied)
@@ -1729,7 +1729,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.overall_satisfaction.eql "N/A" %>
+              <% if @review.overall_satisfaction.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -1739,7 +1739,7 @@
         <h3>43) Would you choose your school again if you were a Punahou senior?</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.choose_again.eql "1" %>
+              <% if @review.choose_again.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Never again)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Never again)
@@ -1748,7 +1748,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.choose_again.eql "2" %>
+              <% if @review.choose_again.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -1757,7 +1757,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.choose_again.eql "3" %>
+              <% if @review.choose_again.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -1766,7 +1766,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.choose_again.eql "4" %>
+              <% if @review.choose_again.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -1775,7 +1775,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.choose_again.eql "5" %>
+              <% if @review.choose_again.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Definitely)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Definitely)
@@ -1784,7 +1784,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.choose_again.eql "N/A" %>
+              <% if @review.choose_again.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A

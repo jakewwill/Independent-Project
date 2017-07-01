@@ -144,7 +144,7 @@
             <%= f.text_area :comments_friendship_social_campus, class: 'form-control' %>
             
             <%= f.label :activities, "27) Check all the activities in which you are involved." %>
-            <% options = ['Varsity athletics', 'Fine arts', 'Theater', 'Newspaper/literary magazine', 'Fraternity/sorority', 'Music', 'Dance', 'Intramural sports', 'Student government', 'Community service', 'Campus job', 'Off-campus job', 'Religious group', 'Radio station', 'None of the above'] %>
+            <% @options = ['Varsity athletics', 'Fine arts', 'Theater', 'Newspaper/literary magazine', 'Fraternity/sorority', 'Music', 'Dance', 'Intramural sports', 'Student government', 'Community service', 'Campus job', 'Off-campus job', 'Religious group', 'Radio station', 'None of the above'] %>
             <div class="multi-checkbox">
               <% @options.each do |option| %>
                 <%= f.label :activities, class: 'checkbox' do %>
