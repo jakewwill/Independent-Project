@@ -41,7 +41,11 @@
             <div class="multi-checkbox">
               <% @options.each do |option| %>
                 <%= f.label :class_sizes, class: 'checkbox' do %>
-                  <%= f.check_box :class_sizes, { multiple: true }, option, false %>
+                  <% if params[:review] && params[:review][:class_sizes]%>
+                    <%= check_box_tag 'review[class_sizes][]', option, (params[:review][:class_sizes].include? option) %>
+                  <% else %>
+                    <%= check_box_tag 'review[class_sizes][]', option, false %>
+                  <% end %>
                   <%= option %>
                 <% end %>
               <% end %>
@@ -93,11 +97,15 @@
             <%= f.select :administration_attitude, ['Indifferent to students', 'Not a perceptible factor in day-to- day student life', 'Open & welcoming to students', 'Friendly, but guarded', 'N/A'], class: 'form-control' %>
             
             <%= f.label :social_life, "23) Check all that describe social life at your campus:" %>
-            <% @options1 = ['Party school – primarily alcohol', 'Party school – primarily drugs', 'Partying is not a significant facet of social life', 'Social life dominated by Greek system', 'Social life revolves around academics/arts', 'Social life revolves around sporting events', 'Most social life occurs off-campus', 'Most social life occurs on-campus', 'Significant number of students leave on weekends', 'No fraternities or sororities', 'Great college town', 'You can have fun here without drugs or alcohol', 'None of the above'] %>
+            <% @options = ['Party school – primarily alcohol', 'Party school – primarily drugs', 'Partying is not a significant facet of social life', 'Social life dominated by Greek system', 'Social life revolves around academics/arts', 'Social life revolves around sporting events', 'Most social life occurs off-campus', 'Most social life occurs on-campus', 'Significant number of students leave on weekends', 'No fraternities or sororities', 'Great college town', 'You can have fun here without drugs or alcohol', 'None of the above'] %>
             <div class="multi-checkbox">
-              <% @options1.each do |option| %>
+              <% @options.each do |option| %>
                 <%= f.label :social_life, class: 'checkbox' do %>
-                  <%= f.check_box :social_life, { multiple: true }, option, false %>
+                  <% if params[:review] && params[:review][:social_life] %>
+                    <%= check_box_tag 'review[social_life][]', option, (params[:review][:social_life].include? option) %>
+                  <% else %>
+                    <%= check_box_tag 'review[social_life][]', option, false %>
+                  <% end %>
                   <%= option %>
                 <% end %>
               <% end %>
@@ -107,7 +115,11 @@
             <div class="multi-checkbox">
               <% @options.each do |option| %>
                 <%= f.label :friendship_making, class: 'checkbox' do %>
-                  <%= f.check_box :friendship_making, { multiple: true }, option, false %>
+                  <% if params[:review] && params[:review][:friendship_making] %>
+                    <%= check_box_tag 'review[friendship_making][]', option, (params[:review][:friendship_making].include? option) %>
+                  <% else %>
+                    <%= check_box_tag 'review[friendship_making][]', option, false %>
+                  <% end %>
                   <%= option %>
                 <% end %>
               <% end %>
@@ -118,7 +130,11 @@
             <div class="multi-checkbox">
               <% @options.each do |option| %>
                 <%= f.label :campus_life, class: 'checkbox' do %>
-                  <%= f.check_box :campus_life, { multiple: true }, option, false %>
+                  <% if params[:review] && params[:review][:campus_life] %>
+                    <%= check_box_tag 'review[campus_life][]', option, (params[:review][:campus_life].include? option) %>
+                  <% else %>
+                    <%= check_box_tag 'review[campus_life][]', option, false %>
+                  <% end %>
                   <%= option %>
                 <% end %>
               <% end %>
@@ -130,9 +146,13 @@
             <%= f.label :activities, "27) Check all the activities in which you are involved." %>
             <% options = ['Varsity athletics', 'Fine arts', 'Theater', 'Newspaper/literary magazine', 'Fraternity/sorority', 'Music', 'Dance', 'Intramural sports', 'Student government', 'Community service', 'Campus job', 'Off-campus job', 'Religious group', 'Radio station', 'None of the above'] %>
             <div class="multi-checkbox">
-              <% options.each do |option| %>
+              <% @options.each do |option| %>
                 <%= f.label :activities, class: 'checkbox' do %>
-                  <%= f.check_box :activities, { multiple: true }, option %>
+                  <% if params[:review] && params[:review][:activities] %>
+                    <%= check_box_tag 'review[activities][]', option, (params[:review][:activities].include? option) %>
+                  <% else %>
+                    <%= check_box_tag 'review[activities][]', option, false %>
+                  <% end %>
                   <%= option %>
                 <% end %>
               <% end %>
@@ -180,10 +200,14 @@
             <% @options = ['lower cost/higher scholarship', 'family tradition', 'special academic program', 'academically challenging', 'athletic opportunities', 'diversity of student body', 'pre-professional advising', 'location', 'social aspects of campus', 'intellectual challenge', 'optimum size', 'prestige', 'other'] %>
             <div class="multi-checkbox">  
               <% @options.each do |option| %>
-                  <%= f.label :why_chose_school, class: 'checkbox' do %>
-                    <%= f.check_box :why_chose_school, { multiple: true }, option, false %>
-                    <%= option %>
+                <%= f.label :why_chose_school, class: 'checkbox' do %>
+                  <% if params[:review] && params[:review][:why_chose_school] %>
+                    <%= check_box_tag 'review[why_chose_school][]', option, (params[:review][:why_chose_school].include? option) %>
+                  <% else %>
+                    <%= check_box_tag 'review[why_chose_school][]', option, false %>
                   <% end %>
+                  <%= option %>
+                <% end %>
               <% end %>
             </div>
             
@@ -210,11 +234,5 @@
         </div>
       </div>
     </div>
-    
-    <script>
-      $(function() {
-        new app.Colleges;
-      });
-    </script>
   </body>
 </html>

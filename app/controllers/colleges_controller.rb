@@ -1,4 +1,5 @@
 class CollegesController < ApplicationController
+  # Index colleges page, where you can search for individual schools
   def index
     @colleges = College.order('name ASC').paginate(page: params[:page], per_page: 40)
     if params[:search]
@@ -39,7 +40,6 @@ class CollegesController < ApplicationController
   end
 
   private
-
     def college_params
       params.require(:college).permit(:name)
     end

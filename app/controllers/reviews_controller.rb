@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
         redirect_to root_path
       else
         flash.now[:danger] = "Error submitting review, please ensure you answer all the questions"
-        render 'new'
+        render :new
       end
   end
   

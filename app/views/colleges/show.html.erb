@@ -25,14 +25,16 @@
     				</thead>
     				<tbody>
     					<% @reviews.each do |r| %>
-    						<tr>
-    						  <td><%= r.name %></td>
-    							<td><%= link_to "Link to review by: " + r.name, r %></td>
-    						</tr>
+      					<% if r.verified == true %>
+      						<tr>
+      						  <td><%= r.name %></td>
+      							<td><%= link_to "Link to review by: " + r.name, r %></td>
+      						</tr>
+      					<% end %>
     					<% end %>
     				</tbody>
     			</table>
-        </div>
+        </div> <!-- col-md-12 -->
       </div> <!-- Reviews row-->
     </div> <!-- container-small -->
   </body>
