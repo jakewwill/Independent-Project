@@ -1,0 +1,123 @@
+Script started on Fri 30 Jun 2017 07:03:50 PM UTC
+]0;ubuntu@jwill18-independent-project-4034314: ~/workspace[01;32mjwill18[00m:[01;34m~/workspace[00m (master) $ gem install jbuilder
+Fetching: jbuilder-2.7.0.gemFetching: jbuilder-2.7.0.gem (  7%)Fetching: jbuilder-2.7.0.gem ( 17%)Fetching: jbuilder-2.7.0.gem ( 27%)Fetching: jbuilder-2.7.0.gem ( 37%)Fetching: jbuilder-2.7.0.gem ( 47%)Fetching: jbuilder-2.7.0.gem ( 57%)Fetching: jbuilder-2.7.0.gem ( 66%)Fetching: jbuilder-2.7.0.gem ( 76%)Fetching: jbuilder-2.7.0.gem ( 86%)Fetching: jbuilder-2.7.0.gem ( 96%)Fetching: jbuilder-2.7.0.gem (100%)Fetching: jbuilder-2.7.0.gem (100%)
+Successfully installed jbuilder-2.7.0
+1 gem installed
+]0;ubuntu@jwill18-independent-project-4034314: ~/workspace[01;32mjwill18[00m:[01;34m~/workspace[00m (master) $ git add .
+]0;ubuntu@jwill18-independent-project-4034314: ~/workspace[01;32mjwill18[00m:[01;34m~/workspace[00m (master) $ git commit -m ""B"u"g" "f"i"s"[1P"x" "s"[1P"w"i"t"h" "o"p"t"i"o"n" "v"s" "@"o"p"t"i"o"n"
+[master 0c5f5ad] Bug fix with option vs @option
+ 2 files changed, 112 insertions(+), 112 deletions(-)
+]0;ubuntu@jwill18-independent-project-4034314: ~/workspace[01;32mjwill18[00m:[01;34m~/workspace[00m (master) $ git push
+Username for 'https://github.com': jakewwill
+Password for 'https://jakewwill@github.com': 
+Counting objects: 7, done.
+Delta compression using up to 8 threads.
+Compressing objects:  14% (1/7)   Compressing objects:  28% (2/7)   Compressing objects:  42% (3/7)   Compressing objects:  57% (4/7)   Compressing objects:  71% (5/7)   Compressing objects:  85% (6/7)   Compressing objects: 100% (7/7)   Compressing objects: 100% (7/7), done.
+Writing objects:  14% (1/7)   Writing objects:  28% (2/7)   Writing objects:  42% (3/7)   Writing objects:  57% (4/7)   Writing objects:  71% (5/7)   Writing objects:  85% (6/7)   Writing objects: 100% (7/7)   Writing objects: 100% (7/7), 1.20 KiB | 0 bytes/s, done.
+Total 7 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/5)   [Kremote: Resolving deltas:  20% (1/5)   [Kremote: Resolving deltas:  40% (2/5)   [Kremote: Resolving deltas:  60% (3/5)   [Kremote: Resolving deltas:  80% (4/5)   [Kremote: Resolving deltas: 100% (5/5)   [Kremote: Resolving deltas: 100% (5/5), completed with 5 local objects.[K
+To https://github.com/jakewwill/Independent-Project.git
+   b58d074..0c5f5ad  master -> master
+]0;ubuntu@jwill18-independent-project-4034314: ~/workspace[01;32mjwill18[00m:[01;34m~/workspace[00m (master) $ git push heroku
+Counting objects: 7, done.
+Delta compression using up to 8 threads.
+Compressing objects:  14% (1/7)   Compressing objects:  28% (2/7)   Compressing objects:  42% (3/7)   Compressing objects:  57% (4/7)   Compressing objects:  71% (5/7)   Compressing objects:  85% (6/7)   Compressing objects: 100% (7/7)   Compressing objects: 100% (7/7), done.
+Writing objects:  14% (1/7)   Writing objects:  28% (2/7)   Writing objects:  42% (3/7)   Writing objects:  57% (4/7)   Writing objects:  71% (5/7)   Writing objects:  85% (6/7)   Writing objects: 100% (7/7)   Writing objects: 100% (7/7), 1.20 KiB | 0 bytes/s, done.
+Total 7 (delta 5), reused 0 (delta 0)
+remote: Compressing source files... done.[K
+remote: Building source:[K
+remote: 
+remote: -----> Ruby app detected[K
+remote: -----> Compiling Ruby/Rails[K
+remote: -----> Using Ruby version: ruby-2.2.4[K
+remote: -----> Installing dependencies using bundler 1.15.1[K
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment[K
+remote:        Fetching gem metadata from https://rubygems.org/.........[K
+remote:        Fetching version metadata from https://rubygems.org/..[K
+remote:        Fetching dependency metadata from https://rubygems.org/.[K
+remote:        Using rake 12.0.0[K
+remote:        Using concurrent-ruby 1.0.4[K
+remote:        Using i18n 0.7.0[K
+remote:        Using minitest 5.10.1[K
+remote:        Using thread_safe 0.3.5[K
+remote:        Using builder 3.2.2[K
+remote:        Using erubis 2.7.0[K
+remote:        Using mini_portile2 2.1.0[K
+remote:        Using rack 2.0.1[K
+remote:        Using nio4r 1.2.1[K
+remote:        Using websocket-extensions 0.1.2[K
+remote:        Using mime-types-data 3.2016.0521[K
+remote:        Using arel 7.1.4[K
+remote:        Using method_source 0.8.2[K
+remote:        Using thor 0.19.4[K
+remote:        Using bundler 1.15.1[K
+remote:        Using mysql2 0.4.5[K
+remote:        Using bcrypt 3.1.11[K
+remote:        Using execjs 2.7.0[K
+remote:        Using sass 3.4.23[K
+remote:        Using puma 3.4.0[K
+remote:        Using tilt 2.0.5[K
+remote:        Using coffee-script-source 1.12.2[K
+remote:        Using turbolinks-source 5.0.0[K
+remote:        Using multi_json 1.12.1[K
+remote:        Using will_paginate 3.1.0[K
+remote:        Using faker 1.6.6[K
+remote:        Using tzinfo 1.2.2[K
+remote:        Using nokogiri 1.7.0[K
+remote:        Using rack-test 0.6.3[K
+remote:        Using sprockets 3.7.1[K
+remote:        Using websocket-driver 0.6.4[K
+remote:        Using mime-types 3.1[K
+remote:        Using autoprefixer-rails 6.6.0[K
+remote:        Using uglifier 3.0.0[K
+remote:        Using coffee-script 2.4.1[K
+remote:        Using turbolinks 5.0.1[K
+remote:        Using bootstrap-will_paginate 0.0.10[K
+remote:        Using activesupport 5.0.0.1[K
+remote:        Using loofah 2.0.3[K
+remote:        Using mail 2.6.4[K
+remote:        Using bootstrap-sass 3.3.6[K
+remote:        Using rails-dom-testing 2.0.2[K
+remote:        Using globalid 0.3.7[K
+remote:        Using activemodel 5.0.0.1[K
+remote:        Using jbuilder 2.4.1[K
+remote:        Using rails-html-sanitizer 1.0.3[K
+remote:        Using activerecord 5.0.0.1[K
+remote:        Using activejob 5.0.0.1[K
+remote:        Using actionview 5.0.0.1[K
+remote:        Using actionpack 5.0.0.1[K
+remote:        Using actioncable 5.0.0.1[K
+remote:        Using actionmailer 5.0.0.1[K
+remote:        Using railties 5.0.0.1[K
+remote:        Using sprockets-rails 3.2.0[K
+remote:        Using sass-rails 5.0.6[K
+remote:        Using coffee-rails 4.2.1[K
+remote:        Using jquery-rails 4.1.1[K
+remote:        Using jquery-ui-rails 6.0.1
+remote:        Using rails 5.0.0.1[K
+remote:        Bundle complete! 25 Gemfile dependencies, 60 gems now installed.[K
+remote:        Gems in the groups development and test were not installed.[K
+remote:        Bundled gems are installed into ./vendor/bundle.[K
+remote:        Bundle completed (2.46s)[K
+remote:        Cleaning up the bundler cache.[K
+remote: -----> Installing node-v6.10.0-linux-x64[K
+remote: -----> Detecting rake tasks[K
+remote: -----> Preparing app for Rails asset pipeline[K
+remote:        Running: rake assets:precompile[K
+remote:        DEPRECATION WARNING: `config.serve_static_files` is deprecated and will be removed in Rails 5.1.[K
+remote:        Please use `config.public_file_server.enabled = true` instead.[K
+remote:        (called from block in <top (required)> at /tmp/build_0faf1542ee2e4148458189b93b15c485/config/environments/production.rb:25)[K
+remote:        Asset precompilation completed (1.50s)[K
+remote:        Cleaning assets[K
+remote:        Running: rake assets:clean[K
+remote:        DEPRECATION WARNING: `config.serve_static_files` is deprecated and will be removed in Rails 5.1.[K
+remote:        Please use `config.public_file_server.enabled = true` instead.[K
+remote:        (called from block in <top (required)> at /tmp/build_0faf1542ee2e4148458189b93b15c485/config/environments/production.rb:25)[K
+remote: 
+remote: ###### WARNING:[K
+remote:        You have not declared a Ruby version in your Gemfile.[K
+remote:        To set your Ruby version add this line to your Gemfile:[K
+remote:        ruby '2.2.4'[K
+remote:        # See https://devcenter.heroku.com/articles/ruby-versions for more information.[K
+remote: 
+remote: ----->
