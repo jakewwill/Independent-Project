@@ -38,15 +38,20 @@ class ReviewsController < ApplicationController
   
   def destroy
     @review = Review.find(params[:id])
-    
-    @college = College.find_by(name: @review.college_name)
-    if @college && @college.update_attribute(:reviews_count, @college.reviews_count - 1)
-    
+    if (@review)
+      @college = College.find_by(name: @review.college_name)
+      if @college && @college.update_attribute(:reviews_count, @college.reviews_count - 1)
+      
+      end
+  
+      @review.destroy
+      flash[:success] = "Review deleted"
+      redirect_to reviews_path
+    else
+      flash[:danger] = "That review has already been deleted"
+      redirect_to reviews_path
     end
-
-    @review.destroy
-    flash[:success] = "Review deleted"
-    redirect_to reviews_path
+    
   end
   
   def verify
