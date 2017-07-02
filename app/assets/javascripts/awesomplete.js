@@ -5,6 +5,11 @@
  * MIT license
  */
 
+/**
+ * Note (from Jake): I copied this open-source code from github to incorporate an auto-complete function
+ * into the website. I made some slight changes to it, but all credit should go to @author Lea Verou
+ */
+ 
 (function () {
 
 var _ = function (input, o) {
