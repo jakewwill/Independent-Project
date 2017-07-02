@@ -5,6 +5,11 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @colleges = College.all
+    @collegeNames = ""
+    
+    @colleges.each do |college|
+      @collegeNames += college.name + ", "
+    end
   end
   
   def create

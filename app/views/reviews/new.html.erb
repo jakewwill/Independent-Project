@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Submit a Review</title>
+    <!-- The awesomplete css and js files are already added through the config/assets.rb file-->
   </head>
 
   <body class="body">
@@ -9,8 +10,8 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <%= form_for(@review) do |f| %>
-            <%= f.label :college_name, "1) College or University you attend: (You can search for the exact name of your college in our database under the colleges tab)" %>
-            <%= f.text_field :college_name, class: 'form-control' %>
+            <%= f.label :college_name, "1) College or University you attend: " %>
+            <%= f.text_field :college_name, class: 'form-control awesomplete', datalist: @collegeNames %>
 
             <%= f.label :college_name, "2) Year graduated from Punahou:" %>
             <%= f.text_field :punahou_graduation_year, class: 'form-control' %>
