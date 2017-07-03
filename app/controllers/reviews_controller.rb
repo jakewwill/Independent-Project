@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @collegeNames = ""
     
     @colleges.each do |college|
-      @collegeNames += college.name + ", "
+      @collegeNames += college.name + ";:"
     end
   end
   
@@ -40,6 +40,8 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     if (@review)
       @college = College.find_by(name: @review.college_name)
+      
+      # I put this in an if statement to eliminate bugs surround non-existant colleges
       if @college && @college.update_attribute(:reviews_count, @college.reviews_count - 1)
       
       end

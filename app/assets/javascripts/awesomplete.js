@@ -127,8 +127,8 @@ _.prototype = {
 		if (Array.isArray(list)) {
 			this._list = list;
 		}
-		else if (typeof list === "string" && list.indexOf(",") > -1) {
-				this._list = list.split(/\s*,\s*/);
+		else if (typeof list === "string" && list.indexOf(";:") > -1) {
+			this._list = list.split(/\s*;:\s*/);
 		}
 		else { // Element or CSS selector
 			list = $(list);
