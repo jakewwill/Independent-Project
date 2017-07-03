@@ -3,7 +3,6 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 
-Rails.application.config.assets.precompile += %w( awesomplete.css )
 Rails.application.config.assets.precompile += %w( awesomplete.js )
 
 # Add additional assets to the asset load path
