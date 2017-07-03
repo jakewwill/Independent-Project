@@ -6,10 +6,9 @@ if (!User.find_by_email("admin@gmail.com"))
     user.update_attribute(:admin, 1);
 end
 
-
 # Populate the database with college names
-if (College.count == 0)
-    CSV.foreach(Rails.root.join('res', 'Colleges.csv'), :headers => true, :col_sep => ";:") do |row|
+CSV.foreach(Rails.root.join('res', 'Colleges.csv'), :headers => true, :col_sep => ";:") do |row|
+    if (College.where(:name => row.to_hash["name"]).blank?)
         College.create!(row.to_hash)
     end
 end
