@@ -10,5 +10,6 @@ end
 CSV.foreach(Rails.root.join('res', 'Colleges.csv'), :headers => true, :col_sep => ";:") do |row|
     if (College.where(:name => row.to_hash["name"]).blank?)
         College.create!(row.to_hash)
+        puts row.to_hash["name"]
     end
 end
