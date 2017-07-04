@@ -1,7 +1,4 @@
 class ReviewsController < ApplicationController
-  def index
-  end
-  
   def new
     @review = Review.new
     @colleges = College.all
@@ -16,22 +13,15 @@ class ReviewsController < ApplicationController
       @review = Review.new(review_params)
   
       # Ensures that you typed in a valid college name
-      if @review.college_name && (College.all.include? College.find_by_name(@review.college_name))
-         if @review.save
-            flash[:success] = "Review successfully submitted. It is awaiting evaluation by a college counselor"
-            redirect_to root_path
-          else
-            flash.now[:danger] = "Error submitting review, please ensure you answer all the questions"
-            render :new
-          end
+      if @review.save
+          flash[:success] = "Review successfully submitted. It is awaiting evaluation by a college counselor"
+          redirect_to root_path
       else
-        flash.now[:danger] = "Please ensure that you typed your college name in correctly...as of right now, it matches none in our database"
-        render :new
+          flash.now[:danger] = "Error submitting review, please ensure you answer all the questions"
+          render :new
       end
-
-     
   end
-  
+
   def show
     @review = Review.find(params[:id])
   end
@@ -53,17 +43,20 @@ class ReviewsController < ApplicationController
       flash[:danger] = "That review has already been deleted"
       redirect_to reviews_path
     end
-    
   end
   
   def verify
     r = Review.find(params[:id])
-    r.update_attribute(:verified, true)
+    # Check for concurrency issues
+    if r.verified == false
+       r.update_attribute(:verified, true)
     
-    college = College.find_by(name: r.college_name)
-    if college
-      college.update_attribute(:reviews_count, college.reviews_count + 1)
+      college = College.find_by(name: r.college_name)
+      if college
+        college.update_attribute(:reviews_count, college.reviews_count + 1)
+      end
     end
+   
     redirect_to reviews_path
     flash[:success] = "Review Verified!"
   end
