@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :correct_user, only: [:show]
   before_action :admin_user, only: [:index]
   before_action :correct_user, only: [:destroy]
   
@@ -47,15 +46,7 @@ class UsersController < ApplicationController
         redirect_to login_url
       end
     end
-    
-    def correct_user
-      @user = User.find(params[:id])
-      if (@user != current_user && !current_user.admin?)
-        redirect_to(root_url)
-        flash[:danger] = "You need to login as the correct user"
-      end
-    end
-    
+
     def admin_user
       if (current_user == nil || !current_user.admin?)
         redirect_to(root_url)
