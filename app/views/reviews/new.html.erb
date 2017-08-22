@@ -20,20 +20,8 @@
             <%= f.select :gender, ['Male', 'Female'] %>
             
             <%= f.label :year_completed, "4) College Year Completed:" %>
-            <% @options = ['Junior', 'Sophomore', 'Freshman'] %>
-            <div class="multi-checkbox">
-              <% @options.each do |option| %>
-                <%= f.label :year_completed, class: 'checkbox' do %>
-                  <% if params[:review] && params[:review][:year_completed]%>
-                    <%= check_box_tag 'review[year_completed][]', option, (params[:review][:year_completed].include? option) %>
-                  <% else %>
-                    <%= check_box_tag 'review[year_completed][]', option, false %>
-                  <% end %>
-                  <%= option %>
-                <% end %>
-              <% end %>
-            </div>
-            
+            <%= f.select :year_completed, ['Freshman', 'Sophomore', 'Junior'] %>
+
             <%= f.label :major, "5) What is your Major?" %>
             <%= f.text_field :major, class: 'form-control' %>
             

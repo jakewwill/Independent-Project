@@ -18,7 +18,7 @@
         <h3>4) College Year Completed: </h3>
         <div class="checkbox" style="margin-left: 50px">
           <label>
-            <% if @review.year_completed.include? "Freshman" %>
+            <% if @review.year_completed == "Freshman" %>
               <input type="checkbox" disabled="disabled" checked="checked"> Freshman
             <% else %>
               <input type="checkbox" disabled="disabled"> Freshman
@@ -27,7 +27,7 @@
         </div>
         <div class="checkbox" style="margin-left: 50px">
           <label>
-            <% if @review.year_completed.include? "Sophomore" %>
+            <% if @review.year_completed == "Sophomore" %>
               <input type="checkbox" disabled="disabled" checked="checked"> Sophomore
             <% else %>
               <input type="checkbox" disabled="disabled"> Sophomore
@@ -36,7 +36,7 @@
         </div>
         <div class="checkbox" style="margin-left: 50px">
           <label>
-            <% if @review.year_completed.include? "Junior" %>
+            <% if @review.year_completed == "Junior" %>
               <input type="checkbox" disabled="disabled" checked="checked"> Junior
             <% else %>
               <input type="checkbox" disabled="disabled"> Junior
