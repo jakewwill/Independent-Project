@@ -3,6 +3,7 @@ class AddQuestionsToReviews < ActiveRecord::Migration[5.0]
     add_column :reviews, :college_name, :text
     add_column :reviews, :punahou_graduation_year, :text
     add_column :reviews, :gender, :text
+    add_column :reviews, :year_completed, :text
     add_column :reviews, :major, :text
     add_column :reviews, :academic_environment1, :text
     add_column :reviews, :academic_environment2, :text
@@ -12,14 +13,18 @@ class AddQuestionsToReviews < ActiveRecord::Migration[5.0]
     add_column :reviews, :class_sizes, :text
     add_column :reviews, :most_common_class_size, :text
     add_column :reviews, :teaching_assistants, :bool
+    add_column :reviews, :teaching_rating, :text
     add_column :reviews, :professor_accessibility, :text
     add_column :reviews, :academic_advisor_accessibility, :text
     add_column :reviews, :teacher_assistant_accessibility, :text
+    add_column :reviews, :class_or_meeting_at_professors_home, :text
     add_column :reviews, :library_facilities, :text
+    add_column :reviews, :science_facilities, :text
     add_column :reviews, :arts_facilities, :text
     add_column :reviews, :comments_library_arts, :text
     add_column :reviews, :course_registration_difficulty, :text
     add_column :reviews, :course_rigor, :text
+    add_column :reviews, :rigor_satisfaction, :text
     add_column :reviews, :recommendation, :text
     add_column :reviews, :academic_life_stereotypes, :text
     add_column :reviews, :class_discussions, :text
@@ -35,10 +40,12 @@ class AddQuestionsToReviews < ActiveRecord::Migration[5.0]
     add_column :reviews, :recommended_dorms, :text
     add_column :reviews, :athletic_accessibility, :text
     add_column :reviews, :student_center_unique_features, :text
+    add_column :reviews, :financial_value, :text
     add_column :reviews, :overall_social_satisfaction, :text
     add_column :reviews, :social_life_recommendation, :text
     add_column :reviews, :social_life_rumors, :text
     add_column :reviews, :safe_unsafe, :text
+    add_column :reviews, :weather, :text
     add_column :reviews, :spirit_pride, :text
     add_column :reviews, :college_nearby_community, :text
     add_column :reviews, :neighboring_community_activities, :text
