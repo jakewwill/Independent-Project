@@ -1997,8 +1997,10 @@
         <br>
         
         <label>Name: <%= @review.name %></label><br>
-        <label>Email: <%= @review.email %></label><br>
-        <label>Phone: <%= @review.phone %></label>
+        
+        <% if @review.cancontact == "Yes" %>
+          <label>Email: <%= @review.email %></label>
+        <% end %>
       </div>
     </div>
   </body>

@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170601190626) do
     t.text    "choose_again",                        limit: 65535
     t.text    "advice",                              limit: 65535
     t.text    "name",                                limit: 65535
+    t.text    "cancontact",                          limit: 65535
     t.text    "email",                               limit: 65535
     t.text    "phone",                               limit: 65535
   end

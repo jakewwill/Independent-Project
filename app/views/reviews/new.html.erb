@@ -246,11 +246,21 @@
             <%= f.label :name, "52) Your Name: " %>
             <%= f.text_field :name, class: 'form-control' %>
             
+            <%= f.label :cancontact, "Are you willing to receive an email from a Punahou senior interested in your college/university?"%>
+            <%= f.label :cancontact, class: 'radio-button-label' do %>
+              <%= f.radio_button :cancontact, 'Yes', :class => 'radio-button' %> 
+              Yes
+            <% end %>
+
+            <%= f.label :cancontact, class: 'radio-button-label' do %>
+              <%= f.radio_button :cancontact, 'No', :class => 'radio-button' %> 
+              No
+            <% end %>
+            
+            <br>
+
             <%= f.label :email, "53) Email Address: " %>
             <%= f.text_field :email, class: 'form-control' %>
-            
-            <%= f.label :phone, "54) Cell Phone Number" %>
-            <%= f.text_field :phone, class: 'form-control' %>
             
             <%= f.submit "Submit my review", style: "margin-bottom: 30px", class: "btn btn-primary" %>
           <% end %>

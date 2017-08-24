@@ -54,6 +54,7 @@ class AddQuestionsToReviews < ActiveRecord::Migration[5.0]
     add_column :reviews, :choose_again, :text
     add_column :reviews, :advice, :text
     add_column :reviews, :name, :text
+    add_column :reviews, :cancontact, :text
     add_column :reviews, :email, :text
     add_column :reviews, :phone, :text
   end
