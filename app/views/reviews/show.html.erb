@@ -825,7 +825,7 @@
               <% end %>
             </label>
           </div>
-          <h3>23) Rate your overall satisfaction with the rigor of your school's acadmeic program:</h3>
+          <h3>23) Rate your overall satisfaction with the rigor of your school's academic program:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.rigor_satisfaction.eql? "1" %>
@@ -1996,9 +1996,9 @@
         <br>
         <br>
         
-        <label>Name: <%= @review.name %></label><br>
+        <label><strong>Review by: <%= @review.name %>, class of <%= @review.punahou_graduation_year %></strong></label><br>
         
-        <% if @review.cancontact == "Yes" %>
+        <% if @review.cancontact == "Yes" and @review.email != ""%>
           <label>Email: <%= @review.email %></label>
         <% end %>
       </div>
