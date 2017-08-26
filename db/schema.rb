@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20170601190626) do
     t.text    "class_sizes",                         limit: 65535
     t.text    "most_common_class_size",              limit: 65535
     t.boolean "teaching_assistants"
-    t.text    "teaching_rating",                     limit: 65535
     t.text    "professor_accessibility",             limit: 65535
     t.text    "academic_advisor_accessibility",      limit: 65535
     t.text    "teacher_assistant_accessibility",     limit: 65535
@@ -46,7 +45,6 @@ ActiveRecord::Schema.define(version: 20170601190626) do
     t.text    "comments_library_arts",               limit: 65535
     t.text    "course_registration_difficulty",      limit: 65535
     t.text    "course_rigor",                        limit: 65535
-    t.text    "rigor_satisfaction",                  limit: 65535
     t.text    "recommendation",                      limit: 65535
     t.text    "academic_life_stereotypes",           limit: 65535
     t.text    "class_discussions",                   limit: 65535
@@ -62,12 +60,10 @@ ActiveRecord::Schema.define(version: 20170601190626) do
     t.text    "recommended_dorms",                   limit: 65535
     t.text    "athletic_accessibility",              limit: 65535
     t.text    "student_center_unique_features",      limit: 65535
-    t.text    "financial_value",                     limit: 65535
     t.text    "overall_social_satisfaction",         limit: 65535
     t.text    "social_life_recommendation",          limit: 65535
     t.text    "social_life_rumors",                  limit: 65535
     t.text    "safe_unsafe",                         limit: 65535
-    t.text    "weather",                             limit: 65535
     t.text    "spirit_pride",                        limit: 65535
     t.text    "college_nearby_community",            limit: 65535
     t.text    "neighboring_community_activities",    limit: 65535

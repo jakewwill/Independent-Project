@@ -24,6 +24,11 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+
+    if @review.verified != true
+      flash[:danger] = "Error! This review has not been verified by a college counselor"
+      redirect_to root_path
+    end
   end
   
   def destroy

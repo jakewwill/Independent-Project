@@ -316,62 +316,7 @@
               <% end %>
             </label>
           </div>
-        <h3>14) Rate the teaching (1 being poor, 5 being superior): </h3>
-        <div class="checkbox" style="margin-left: 50px">
-          <label>
-            <% if @review.teaching_rating.eql? "1" %>
-              <input type="checkbox" disabled="disabled" checked="checked"> 1 (None)
-            <% else %>
-              <input type="checkbox" disabled="disabled"> 1 (None)
-            <% end %>
-          </label>
-        </div>
-        <div class="checkbox" style="margin-left: 50px">
-          <label>
-            <% if @review.teaching_rating.eql? "2" %>
-              <input type="checkbox" disabled="disabled" checked="checked"> 2
-            <% else %>
-              <input type="checkbox" disabled="disabled"> 2
-            <% end %>
-          </label>
-        </div>
-        <div class="checkbox" style="margin-left: 50px">
-          <label>
-            <% if @review.teaching_rating.eql? "3" %>
-              <input type="checkbox" disabled="disabled" checked="checked"> 3
-            <% else %>
-              <input type="checkbox" disabled="disabled"> 3
-            <% end %>
-          </label>
-        </div>
-        <div class="checkbox" style="margin-left: 50px">
-          <label>
-            <% if @review.teaching_rating.eql? "4" %>
-              <input type="checkbox" disabled="disabled" checked="checked"> 4
-            <% else %>
-              <input type="checkbox" disabled="disabled"> 4
-            <% end %>
-          </label>
-        </div>
-        <div class="checkbox" style="margin-left: 50px">
-          <label>
-            <% if @review.teaching_rating.eql? "5" %>
-              <input type="checkbox" disabled="disabled" checked="checked"> 5 (Cut Throat)
-            <% else %>
-              <input type="checkbox" disabled="disabled"> 5 (Cut Throat)
-            <% end %>
-          </label>
-        </div>
-        <div class="checkbox" style="margin-left: 50px">
-          <label>
-            <% if @review.teaching_rating.eql? "N/A" %>
-              <input type="checkbox" disabled="disabled" checked="checked"> N/A
-            <% else %>
-              <input type="checkbox" disabled="disabled"> N/A
-            <% end %>
-          </label>
-        </div>
-        <h3>15) How accessible are the following:</h3>
+        <h3>14) How accessible are the following:</h3>
         <div class="col-md-4">
           <h3 style="margin-left: 50px">Professors: </h3>
             <div class="checkbox" style="margin-left: 50px">
@@ -545,10 +490,10 @@
             </label>
           </div>
         </div>
-        <h3>16) How many times have you had a meeting at a professor's home?: </h3>
+        <h3>15) How many times have you had a meeting at a professor's home?: </h3>
           <label style="margin-left: 50px"><%= @review.class_or_meeting_at_professors_home %></label>
           
-        <h3>17) Rate your college/university’s library facilities::</h3>
+        <h3>16) Rate your college/university’s library facilities::</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.library_facilities.eql? "1" %>
@@ -603,7 +548,7 @@
               <% end %>
             </label>
           </div>
-          <h3>18) Rate your college/university’s science facilities::</h3>
+          <h3>17) Rate your college/university’s science facilities::</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.science_facilities.eql? "1" %>
@@ -658,7 +603,7 @@
               <% end %>
             </label>
           </div>
-        <h3>19) Rate the accessibility of arts facilities at your school:</h3>
+        <h3>18) Rate the accessibility of arts facilities at your school:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.arts_facilities.eql? "1" %>
@@ -713,9 +658,9 @@
               <% end %>
             </label>
           </div>
-        <h3>20) Comments about the above facilities:</h3>
+        <h3>19) Comments about the above facilities:</h3>
           <label style="margin-left: 50px"><%= @review.comments_library_arts %></label>
-        <h3>21) Describe the degree of ease/difficulty in registering for courses:</h3>
+        <h3>20) Describe the degree of ease/difficulty in registering for courses:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.course_registration_difficulty.eql? "1" %>
@@ -770,7 +715,7 @@
               <% end %>
             </label>
           </div>
-        <h3>22) Compared to Punahou, how rigorous are your school’s academic classes:</h3>
+        <h3>21) Compared to Punahou, how rigorous are your school’s academic classes:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.course_rigor.eql? "1" %>
@@ -825,62 +770,7 @@
               <% end %>
             </label>
           </div>
-          <h3>23) Rate your overall satisfaction with the rigor of your school's academic program:</h3>
-          <div class="checkbox" style="margin-left: 50px">
-            <label>
-              <% if @review.rigor_satisfaction.eql? "1" %>
-                <input type="checkbox" disabled="disabled" checked="checked"> 1 (Falls short)
-              <% else %>
-                <input type="checkbox" disabled="disabled"> 1 (Falls short)
-              <% end %>
-            </label>
-          </div>
-          <div class="checkbox" style="margin-left: 50px">
-            <label>
-              <% if @review.rigor_satisfaction.eql? "2" %>
-                <input type="checkbox" disabled="disabled" checked="checked"> 2
-              <% else %>
-                <input type="checkbox" disabled="disabled"> 2
-              <% end %>
-            </label>
-          </div>
-          <div class="checkbox" style="margin-left: 50px">
-            <label>
-              <% if @review.rigor_satisfaction.eql? "3" %>
-                <input type="checkbox" disabled="disabled" checked="checked"> 3
-              <% else %>
-                <input type="checkbox" disabled="disabled"> 3
-              <% end %>
-            </label>
-          </div>
-          <div class="checkbox" style="margin-left: 50px">
-            <label>
-              <% if @review.rigor_satisfaction.eql? "4" %>
-                <input type="checkbox" disabled="disabled" checked="checked"> 4
-              <% else %>
-                <input type="checkbox" disabled="disabled"> 4
-              <% end %>
-            </label>
-          </div>
-          <div class="checkbox" style="margin-left: 50px">
-            <label>
-              <% if @review.rigor_satisfaction.eql? "5" %>
-                <input type="checkbox" disabled="disabled" checked="checked"> 5 (Far exceeds)
-              <% else %>
-                <input type="checkbox" disabled="disabled"> 5 (Far exceeds)
-              <% end %>
-            </label>
-          </div>
-          <div class="checkbox" style="margin-left: 50px">
-            <label>
-              <% if @review.rigor_satisfaction.eql? "N/A" %>
-                <input type="checkbox" disabled="disabled" checked="checked"> N/A
-              <% else %>
-                <input type="checkbox" disabled="disabled"> N/A
-              <% end %>
-            </label>
-          </div>
-        <h3>24) Based on your academic experience, would you recommend your college/university to other Punahou students?</h3>
+        <h3>22) Based on your academic experience, would you recommend your college/university to other Punahou students?</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.recommendation.eql? "1" %>
@@ -935,11 +825,11 @@
               <% end %>
             </label>
           </div>
-        <h3>25) Concerning the academic life at your school, which stereotypes or myths that prospective students might encounter? Which are accurate?</h3>
+        <h3>23) Concerning the academic life at your school, which stereotypes or myths that prospective students might encounter? Which are accurate?</h3>
           <label style="margin-left: 50px"><%= @review.academic_life_stereotypes %></label>
-        <h3>26) Comment on the role discussion plays in classes.</h3>
+        <h3>24) Comment on the role discussion plays in classes.</h3>
           <label style="margin-left: 50px"><%= @review.class_discussions %></label>
-        <h3>27) Describe the attitude of the administration at your school:</h3>
+        <h3>25) Describe the attitude of the administration at your school:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.administration_attitude == "Indifferent to students" %>
@@ -985,7 +875,7 @@
               <% end %>
             </label>
           </div>
-        <h3>28) Check all that describe social life at your campus:</h3>
+        <h3>26) Check all that describe social life at your campus:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.social_life.include? "Party school – primarily alcohol" %>
@@ -1103,7 +993,7 @@
               <% end %>
             </label>
           </div>
-        <h3>29) Check all that describe the ability to make friends:</h3>
+        <h3>27) Check all that describe the ability to make friends:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.friendship_making.include? "Easy to make friends across campus" %>
@@ -1149,7 +1039,7 @@
               <% end %>
             </label>
           </div>
-        <h3>30) Check all that describe campus life:</h3>
+        <h3>28) Check all that describe campus life:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.campus_life.include? "Female dominated" %>
@@ -1276,9 +1166,9 @@
               <% end %>
             </label>
           </div>
-        <h3>31) Comments or Explanations about your check marks to the previous 3 questions:</h3>
+        <h3>29) Comments or Explanations about your check marks to the previous 3 questions:</h3>
            <label style="margin-left: 50px"><%= @review.comments_friendship_social_campus %></label>
-        <h3>32) Check all the activities in which you are involved.</h3>
+        <h3>30) Check all the activities in which you are involved.</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.activities.include? "Varsity athletics" %>
@@ -1414,7 +1304,7 @@
               <% end %>
             </label>
           </div>
-        <h3>33) Compared to your experience at Punahou, indicate your ability to get involved with extracurricular activities at your college/university:</h3>
+        <h3>31) Compared to your experience at Punahou, indicate your ability to get involved with extracurricular activities at your college/university:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.extracurricular_involvement_ability.eql? "1" %>
@@ -1469,7 +1359,7 @@
               <% end %>
             </label>
           </div>
-        <h3>34) Rate the quality of food/dining on your campus:</h3>
+        <h3>32) Rate the quality of food/dining on your campus:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.food_quality_on_campus.eql? "1" %>
@@ -1524,7 +1414,7 @@
               <% end %>
             </label>
           </div>
-        <h3>35) Rate the residence halls on your campus:</h3>
+        <h3>33) Rate the residence halls on your campus:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.residence_halls.eql? "1" %>
@@ -1579,9 +1469,9 @@
               <% end %>
             </label>
           </div>
-        <h3>36) What dorms would you recommend?</h3>
+        <h3>34) What dorms would you recommend?</h3>
           <label style="margin-left: 50px"><%= @review.recommended_dorms %></label>
-        <h3>37) Rate the accessibility of athletic facilities at your school, taking into account access for non-athletes:</h3>
+        <h3>35) Rate the accessibility of athletic facilities at your school, taking into account access for non-athletes:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.athletic_accessibility.eql? "1" %>
@@ -1636,9 +1526,9 @@
               <% end %>
             </label>
           </div>
-        <h3>38) What are the unique features of your student center?</h3>
+        <h3>36) What are the unique features of your student center?</h3>
           <label style="margin-left: 50px"><%= @review.student_center_unique_features %></label>
-        <h3>39) Rate your overall satisfaction with the social life at your school:</h3>
+        <h3>37) Rate your overall satisfaction with the social life at your school:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.overall_social_satisfaction.eql? "1" %>
@@ -1693,7 +1583,7 @@
               <% end %>
             </label>
           </div>
-        <h3>40) Based on the social life, would you recommend your school to other Punahou students?</h3>
+        <h3>38) Based on the social life, would you recommend your school to other Punahou students?</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.social_life_recommendation.eql? "1" %>
@@ -1748,17 +1638,17 @@
               <% end %>
             </label>
           </div>
-        <h3>41) Concerning social life at your school, which rumors or myths that prospective students might encounter? Which are accurate?</h3>
+        <h3>39) Concerning social life at your school, which rumors or myths that prospective students might encounter? Which are accurate?</h3>
           <label style="margin-left: 50px"><%= @review.social_life_rumors %></label>
-        <h3>42) Safety is a big concern for many students and colleges. What conditions exist that help you feel safe or unsafe?</h3>
+        <h3>40) Safety is a big concern for many students and colleges. What conditions exist that help you feel safe or unsafe?</h3>
           <label style="margin-left: 50px"><%= @review.safe_unsafe %></label>
-        <h3>43) Is there a sense of school spirit/pride? How would you describe it?</h3>
+        <h3>41) Is there a sense of school spirit/pride? How would you describe it?</h3>
           <label style="margin-left: 50px"><%= @review.spirit_pride %></label>
-        <h3>44) Since over 30% of Punahou students go to college sight unseen, describe your college and nearby community.</h3>
+        <h3>42) Since over 30% of Punahou students go to college sight unseen, describe your college and nearby community.</h3>
           <label style="margin-left: 50px"><%= @review.college_nearby_community %></label>
-        <h3>45) What is there to do in your neighboring community? Discuss any or all of the following: dining, shopping, entertainment, service opportunities, etc.</h3>
+        <h3>43) What is there to do in your neighboring community? Discuss any or all of the following: dining, shopping, entertainment, service opportunities, etc.</h3>
           <label style="margin-left: 50px"><%= @review.neighboring_community_activities %></label>
-        <h3>46) Check the five attributes that best describe why you chose your school:</h3>
+        <h3>44) Check the five attributes that best describe why you chose your school:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.why_chose_school.include? "lower cost/higher scholarship" %>
@@ -1876,11 +1766,7 @@
               <% end %>
             </label>
           </div>
-        <h3>47) If costs or financial aid were factors in selecting this school please comment on the value of the education you are receiving.</h3>
-        <label style="margin-left: 50px"><%= @review.financial_value %></label>
-         <h3>48) Is weather a reason someone should or shouldn't attend this school? Please comment.</h3>
-        <label style="margin-left: 50px"><%= @review.weather %></label>
-        <h3>49) Rate your overall satisfaction with your school:</h3>
+        <h3>45) Rate your overall satisfaction with your school:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.overall_satisfaction.eql? "1" %>
@@ -1935,7 +1821,7 @@
               <% end %>
             </label>
           </div>
-        <h3>50) Would you choose your school again if you were a Punahou senior?</h3>
+        <h3>46) Would you choose your school again if you were a Punahou senior?</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
               <% if @review.choose_again.eql? "1" %>
@@ -1990,7 +1876,7 @@
               <% end %>
             </label>
           </div>
-        <h3>51) What advice would you give to students planning to attend this school?</h3>
+        <h3>47) What advice would you give to students planning to attend this school?</h3>
           <label style="margin-left: 50px"><%= @review.advice %></label>
 
         <br>
