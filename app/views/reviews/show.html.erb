@@ -43,6 +43,15 @@
             <% end %>
           </label>
         </div>
+        <div class="checkbox" style="margin-left: 50px">
+          <label>
+            <% if @review.year_completed == "Senior" %>
+              <input type="checkbox" disabled="disabled" checked="checked"> Senior
+            <% else %>
+              <input type="checkbox" disabled="disabled"> Senior
+            <% end %>
+          </label>
+        </div>
         <h3>5) Major: </h3>
           <label style="margin-left: 50px"><%= @review.major %></label>
         <h3>6) Select the one description that best describes the academic environment at your school:</h3>
