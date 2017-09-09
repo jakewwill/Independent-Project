@@ -12,13 +12,37 @@ class ReviewsController < ApplicationController
   def create
       @review = Review.new(review_params)
   
-      # Ensures that you typed in a valid college name
       if @review.save
           flash[:success] = "Review successfully submitted. It is awaiting evaluation by a college counselor"
           redirect_to root_path
       else
-          flash.now[:danger] = "Error submitting review, please ensure you answer all the questions"
-          render :new
+        @errors = Array.new
+        counter = -1
+        @review.attributes.each do |name, val|
+          puts (name + ": " + val.to_s + "        " + counter.to_s)
+          if counter > 0 && ((val != true && val != false) && (val == nil || val.length == 0)) && counter < 50
+            @errors.push(counter)
+          end
+          
+          if (name != "professor_accessibility" && name != "academic_advisor_accessibility")
+            counter = counter + 1
+          end
+        end
+        
+        @error_string = ""
+        
+        count = 0
+        @errors.each do |err|
+          if (count != @errors.length - 1)
+            @error_string = @error_string + err.to_s + ", "
+          else
+            @error_string = @error_string + err.to_s
+          end
+          count = count + 1
+        end
+        
+        flash.now[:danger] = "Error submitting review, please answer the questions: " + @error_string
+        render :new
       end
   end
 
