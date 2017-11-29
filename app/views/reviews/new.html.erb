@@ -9,20 +9,31 @@
       <h1>Submit a Review</h1>
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
+          <label style="color: #db4437">* Required</label>
           <%= form_for(@review) do |f| %>
-            <%= f.label :college_name, "1) College or University you attend: " %>
+            <%= f.label :college_name do %>
+              <span style="color: #db4437">* </span>1) College or University you attend:
+            <% end %>
             <%= f.text_field :college_name, class: 'form-control awesomplete', datalist: @collegeNames %>
 
-            <%= f.label :punahou_graduation_year, "2) Year graduated from Punahou:" %>
+            <%= f.label :punahou_graduation_year do %>
+              <span style="color: #db4437">* </span>2) Year graduated from Punahou:
+            <% end %>
             <%= f.text_field :punahou_graduation_year, class: 'form-control' %>
             
-            <%= f.label :gender, "3) Gender:" %>
+            <%= f.label :gender do %>
+              <span style="color: #db4437">* </span>3) Gender:
+            <% end %>
             <%= f.select :gender, ['Male', 'Female'] %>
             
-            <%= f.label :year_completed, "4) College Year Completed:" %>
+            <%= f.label :year_completed do %>
+              <span style="color: #db4437">* </span>4) College year completed: 
+            <% end %>
             <%= f.select :year_completed, ['Freshman', 'Sophomore', 'Junior', 'Senior'] %>
 
-            <%= f.label :major, "5) What is your Major?" %>
+            <%= f.label :major do %>
+              <span style="color: #db4437">* </span>5) What is your major?
+            <% end %>
             <%= f.text_field :major, class: 'form-control' %>
             
             <%= f.label :academic_environment1, "6) Select the one description that best describes the academic environment at your school:" %>
@@ -231,7 +242,9 @@
             <%= f.label :advice, "47 What advice would you give to students planning to attend this school?" %>
             <%= f.text_area :advice, class: 'form-control' %>
             
-            <%= f.label :name, "48) Your Name: " %>
+            <%= f.label :name do %>
+              <span style="color: #db4437">* </span>48) Your name: 
+            <% end %>
             <%= f.text_field :name, class: 'form-control' %>
             
             <%= f.label :cancontact, "49) Are you willing to receive an email from a Punahou senior interested in your college/university?"%>

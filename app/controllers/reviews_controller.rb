@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @colleges = College.all
     @collegeNames = ""
-    
     @colleges.each do |college|
       @collegeNames += college.name + ";:"
     end
@@ -11,7 +10,7 @@ class ReviewsController < ApplicationController
   
   def create
       @review = Review.new(review_params)
-  
+      
       if @review.save
           flash[:success] = "Review successfully submitted. It is awaiting evaluation by a college counselor"
           redirect_to root_path
@@ -19,8 +18,7 @@ class ReviewsController < ApplicationController
         @errors = Array.new
         counter = -1
         @review.attributes.each do |name, val|
-          puts (name + ": " + val.to_s + "        " + counter.to_s)
-          if counter > 0 && ((val != true && val != false) && (val == nil || val.length == 0)) && counter < 50
+          if counter > 0 && ((val != true && val != false) && (val == nil || val.length == 0)) && counter < 50 && (counter == 1 || counter == 2 || counter == 3 || counter == 4 || counter == 5 || counter == 48) 
             @errors.push(counter)
           end
           
@@ -41,6 +39,11 @@ class ReviewsController < ApplicationController
           count = count + 1
         end
         
+        @colleges = College.all
+        @collegeNames = ""
+        @colleges.each do |college|
+          @collegeNames += college.name + ";:"
+        end
         flash.now[:danger] = "Error submitting review, please answer the questions: " + @error_string
         render :new
       end

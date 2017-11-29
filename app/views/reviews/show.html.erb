@@ -5,7 +5,7 @@
 
   <body class="body">
     <div class="container-small container review-results">
-      <div class=" row" style="text-align: center">
+      <div class="row" style="text-align: center">
         <h2>This is a review written by <%= @review.name %> for the college <%= @review.college_name %></h2>
       </div>
       <div class="row" style="text-align: left; padding-left: 10px">
@@ -261,7 +261,7 @@
         <h3>11) Check any class sizes you have experienced:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.class_sizes.include? "Under 15 students" %>
+              <% if @review.class_sizes != nil and @review.class_sizes.include? "Under 15 students" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Under 15 students
               <% else %>
                 <input type="checkbox" disabled="disabled"> Under 15 students
@@ -270,7 +270,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.class_sizes.include? "25 - 50 students" %>
+              <% if @review.class_sizes != nil and @review.class_sizes.include? "25 - 50 students" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 25 - 50 students
               <% else %>
                 <input type="checkbox" disabled="disabled"> 25 - 50 students
@@ -279,7 +279,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.class_sizes.include? "50 - 75 students" %>
+              <% if @review.class_sizes != nil and @review.class_sizes.include? "50 - 75 students" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 50 - 75 students
               <% else %>
                 <input type="checkbox" disabled="disabled"> 50 - 75 students
@@ -288,7 +288,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.class_sizes.include? "75 - 150 students" %>
+              <% if @review.class_sizes != nil and @review.class_sizes.include? "75 - 150 students" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 75 - 150 students
               <% else %>
                 <input type="checkbox" disabled="disabled"> 75 - 150 students
@@ -297,7 +297,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.class_sizes.include? "150 or more students" %>
+              <% if @review.class_sizes != nil and @review.class_sizes.include? "150 or more students" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 150 or more students
               <% else %>
                 <input type="checkbox" disabled="disabled"> 150 or more students
@@ -887,7 +887,7 @@
         <h3>26) Check all that describe social life at your campus:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "Party school – primarily alcohol" %>
+              <% if @review.social_life != nil and @review.social_life.include? "Party school – primarily alcohol" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Party school – primarily alcohol
               <% else %>
                 <input type="checkbox" disabled="disabled"> Party school – primarily alcohol
@@ -896,7 +896,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "Party school – primarily drugs" %>
+              <% if @review.social_life != nil and @review.social_life.include? "Party school – primarily drugs" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Party school – primarily drugs
               <% else %>
                 <input type="checkbox" disabled="disabled"> Party school – primarily drugs
@@ -905,7 +905,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "Partying is not a significant facet of social life" %>
+              <% if @review.social_life != nil and @review.social_life.include? "Partying is not a significant facet of social life" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Partying is not a significant facet of student life
               <% else %>
                 <input type="checkbox" disabled="disabled"> Partying is not a significant facet of student life
@@ -914,7 +914,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "Social life dominated by Greek system" %>
+              <% if @review.social_life != nil and @review.social_life.include? "Social life dominated by Greek system" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Social life dominated by Greek system
               <% else %>
                 <input type="checkbox" disabled="disabled"> Social life dominated by Greek system
@@ -923,7 +923,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "Social life revolves around academics/arts" %>
+              <% if @review.social_life != nil and @review.social_life.include? "Social life revolves around academics/arts" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Social life revolves around academics/arts
               <% else %>
                 <input type="checkbox" disabled="disabled"> Social life revolves around academics/arts
@@ -932,7 +932,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "Social life revolves around sporting events" %>
+              <% if @review.social_life != nil and @review.social_life.include? "Social life revolves around sporting events" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Social life revolves around sporting events
               <% else %>
                 <input type="checkbox" disabled="disabled"> Social life revolves around sporting events
@@ -941,7 +941,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "Most social life occurs off-campus" %>
+              <% if @review.social_life != nil and @review.social_life.include? "Most social life occurs off-campus" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Most social life occurs off-campus
               <% else %>
                 <input type="checkbox" disabled="disabled"> Most social life occurs off-campus
@@ -950,7 +950,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "Most social life occurs on-campus" %>
+              <% if @review.social_life != nil and @review.social_life.include? "Most social life occurs on-campus" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Most social life occurs on-campus
               <% else %>
                 <input type="checkbox" disabled="disabled"> Most social life occurs on-campus
@@ -959,7 +959,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "Significant number of students leave on weekends" %>
+              <% if @review.social_life != nil and @review.social_life.include? "Significant number of students leave on weekends" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Significant number of students leave on weekends
               <% else %>
                 <input type="checkbox" disabled="disabled"> Significant number of students leave on weekends
@@ -968,7 +968,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "No fraternities or sororities" %>
+              <% if @review.social_life != nil and @review.social_life.include? "No fraternities or sororities" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> No fraternities or sororities
               <% else %>
                 <input type="checkbox" disabled="disabled"> No fraternities or sororities
@@ -977,7 +977,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "Great college town" %>
+              <% if @review.social_life != nil and @review.social_life.include? "Great college town" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Great college town
               <% else %>
                 <input type="checkbox" disabled="disabled"> Great college town
@@ -986,7 +986,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "You can have fun here without drugs or alcohol" %>
+              <% if @review.social_life != nil and @review.social_life.include? "You can have fun here without drugs or alcohol" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> You can have fun here without drugs or alcohol
               <% else %>
                 <input type="checkbox" disabled="disabled"> You can have fun here without drugs or alcohol
@@ -995,7 +995,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.social_life.include? "None of the above" %>
+              <% if @review.social_life != nil and @review.social_life.include? "None of the above" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> None of the above
               <% else %>
                 <input type="checkbox" disabled="disabled"> None of the above
@@ -1005,7 +1005,7 @@
         <h3>27) Check all that describe the ability to make friends:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.friendship_making.include? "Easy to make friends across campus" %>
+              <% if @review.friendship_making != nil and @review.friendship_making.include? "Easy to make friends across campus" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Easy to make friends across campus
               <% else %>
                 <input type="checkbox" disabled="disabled"> Easy to make friends across campus
@@ -1014,7 +1014,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.friendship_making.include? "Hard to make new friends after freshman year" %>
+              <% if @review.friendship_making != nil and @review.friendship_making.include? "Hard to make new friends after freshman year" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Hard to make new friends after freshman year
               <% else %>
                 <input type="checkbox" disabled="disabled"> Hard to make new friends after freshman year
@@ -1023,7 +1023,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.friendship_making.include? "Between friendly and impersonal, but closer to friendly" %>
+              <% if @review.friendship_making != nil and @review.friendship_making.include? "Between friendly and impersonal, but closer to friendly" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Between friendly and impersonal, but closer to friendly
               <% else %>
                 <input type="checkbox" disabled="disabled"> Between friendly and impersonal, but closer to friendly
@@ -1032,7 +1032,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.friendship_making.include? "Between friendly and impersonal, but closer to impersonal" %>
+              <% if @review.friendship_making != nil and @review.friendship_making.include? "Between friendly and impersonal, but closer to impersonal" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Between friendly and impersonal, but closer to impersonal
               <% else %>
                 <input type="checkbox" disabled="disabled"> Between friendly and impersonal, but closer to impersonal
@@ -1041,7 +1041,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.friendship_making.include? "A segmented campus based on affiliation/dorm location" %>
+              <% if @review.friendship_making != nil and @review.friendship_making.include? "A segmented campus based on affiliation/dorm location" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> A segmented campus based on affiliation/dorm location
               <% else %>
                 <input type="checkbox" disabled="disabled"> A segmented campus based on affiliation/dorm location
@@ -1051,7 +1051,7 @@
         <h3>28) Check all that describe campus life:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Female dominated" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Female dominated" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Female dominated
               <% else %>
                 <input type="checkbox" disabled="disabled"> Female dominated
@@ -1060,7 +1060,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Male dominated" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Male dominated" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Male dominated
               <% else %>
                 <input type="checkbox" disabled="disabled"> Male dominated
@@ -1069,7 +1069,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Uncomfortable for gay or lesbian students" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Uncomfortable for gay or lesbian students" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Uncomfortable for gay or lesbian students
               <% else %>
                 <input type="checkbox" disabled="disabled"> Uncomfortable for gay or lesbian students
@@ -1078,7 +1078,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Comfortable for gay or lesbian students" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Comfortable for gay or lesbian students" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Comfortable for gay or lesbian students
               <% else %>
                 <input type="checkbox" disabled="disabled"> Comfortable for gay or lesbian students
@@ -1087,7 +1087,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Uncomfortable for women" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Uncomfortable for women" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Uncomfortable for women
               <% else %>
                 <input type="checkbox" disabled="disabled"> Uncomfortable for women
@@ -1096,7 +1096,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Comfortable for women" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Comfortable for women" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Comfortable for women
               <% else %>
                 <input type="checkbox" disabled="disabled"> Comfortable for women
@@ -1105,7 +1105,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Politically conservative" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Politically conservative" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Politically conservative
               <% else %>
                 <input type="checkbox" disabled="disabled"> Politically conservative
@@ -1114,7 +1114,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Politically liberal" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Politically liberal" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Politically liberal
               <% else %>
                 <input type="checkbox" disabled="disabled"> Politically liberal
@@ -1123,7 +1123,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Politically middle-of- the-road" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Politically middle-of- the-road" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Politically middle-of- the-road
               <% else %>
                 <input type="checkbox" disabled="disabled"> Politically middle-of- the-road
@@ -1132,7 +1132,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Politically apathetic" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Politically apathetic" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Politically apathetic
               <% else %>
                 <input type="checkbox" disabled="disabled"> Politically apathetic
@@ -1141,7 +1141,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Politically correct" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Politically correct" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Politically correct
               <% else %>
                 <input type="checkbox" disabled="disabled"> Politically correct
@@ -1150,7 +1150,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "A negative atmosphere for students of color" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "A negative atmosphere for students of color" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> A negative atmosphere for students of color
               <% else %>
                 <input type="checkbox" disabled="disabled"> A negative atmosphere for students of color
@@ -1159,7 +1159,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Good town/campus relationship" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Good town/campus relationship" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Good town/campus relationship
               <% else %>
                 <input type="checkbox" disabled="disabled"> Good town/campus relationship
@@ -1168,7 +1168,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.campus_life.include? "Poor town/campus relationship" %>
+              <% if @review.campus_life != nil and @review.campus_life.include? "Poor town/campus relationship" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Poor town/campus relationship
               <% else %>
                 <input type="checkbox" disabled="disabled"> Poor town/campus relationship
@@ -1180,7 +1180,7 @@
         <h3>30) Check all the activities in which you are involved.</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Varsity athletics" %>
+              <% if @review.activities != nil and @review.activities.include? "Varsity athletics" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Varsity athletics
               <% else %>
                 <input type="checkbox" disabled="disabled"> Varsity athletics
@@ -1189,7 +1189,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Fine arts" %>
+              <% if @review.activities != nil and @review.activities.include? "Fine arts" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Fine arts
               <% else %>
                 <input type="checkbox" disabled="disabled"> Fine arts
@@ -1198,7 +1198,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Theater" %>
+              <% if @review.activities != nil and @review.activities.include? "Theater" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Theater
               <% else %>
                 <input type="checkbox" disabled="disabled"> Theater
@@ -1207,7 +1207,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Newspaper/literary magazine" %>
+              <% if @review.activities != nil and @review.activities.include? "Newspaper/literary magazine" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Newspaper/literary magazine
               <% else %>
                 <input type="checkbox" disabled="disabled"> Newspaper/literary magazine
@@ -1216,7 +1216,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Fraternity/sorority" %>
+              <% if @review.activities != nil and @review.activities.include? "Fraternity/sorority" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Fraternity/sorority
               <% else %>
                 <input type="checkbox" disabled="disabled"> Fraternity/sorority
@@ -1225,7 +1225,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Music" %>
+              <% if @review.activities != nil and @review.activities.include? "Music" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Music
               <% else %>
                 <input type="checkbox" disabled="disabled"> Music
@@ -1234,7 +1234,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Dance" %>
+              <% if @review.activities != nil and @review.activities.include? "Dance" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Dance
               <% else %>
                 <input type="checkbox" disabled="disabled"> Dance
@@ -1243,7 +1243,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Intramural sports" %>
+              <% if @review.activities != nil and @review.activities.include? "Intramural sports" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Intramural sports
               <% else %>
                 <input type="checkbox" disabled="disabled"> Intramural sports
@@ -1252,7 +1252,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Student government" %>
+              <% if @review.activities != nil and @review.activities.include? "Student government" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Student government
               <% else %>
                 <input type="checkbox" disabled="disabled"> Student government
@@ -1261,7 +1261,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Community service" %>
+              <% if @review.activities != nil and @review.activities.include? "Community service" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Community service
               <% else %>
                 <input type="checkbox" disabled="disabled"> Community service
@@ -1270,7 +1270,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Campus job" %>
+              <% if @review.activities != nil and @review.activities.include? "Campus job" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Campus job
               <% else %>
                 <input type="checkbox" disabled="disabled"> Campus job
@@ -1279,7 +1279,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Off-campus job" %>
+              <% if @review.activities != nil and @review.activities.include? "Off-campus job" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Off-campus job
               <% else %>
                 <input type="checkbox" disabled="disabled"> Off-campus job
@@ -1288,7 +1288,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Religious group" %>
+              <% if @review.activities != nil and @review.activities.include? "Religious group" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Religious group
               <% else %>
                 <input type="checkbox" disabled="disabled"> Religious group
@@ -1297,7 +1297,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "Radio station" %>
+              <% if @review.activities != nil and @review.activities.include? "Radio station" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Radio station
               <% else %>
                 <input type="checkbox" disabled="disabled"> Radio station
@@ -1306,7 +1306,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.activities.include? "None of the above" %>
+              <% if @review.activities != nil and @review.activities.include? "None of the above" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> None of the above
               <% else %>
                 <input type="checkbox" disabled="disabled"> None of the above
@@ -1316,7 +1316,7 @@
         <h3>31) Compared to your experience at Punahou, indicate your ability to get involved with extracurricular activities at your college/university:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql? "1" %>
+              <% if @review.activities != nil and @review.extracurricular_involvement_ability.eql? "1" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 1 (Much more difficult)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 1 (Much more difficult)
@@ -1325,7 +1325,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql? "2" %>
+              <% if @review.activities != nil and @review.extracurricular_involvement_ability.eql? "2" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 2
               <% else %>
                 <input type="checkbox" disabled="disabled"> 2
@@ -1334,7 +1334,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql? "3" %>
+              <% if @review.activities != nil and @review.extracurricular_involvement_ability.eql? "3" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 3
               <% else %>
                 <input type="checkbox" disabled="disabled"> 3
@@ -1343,7 +1343,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql? "4" %>
+              <% if @review.activities != nil and @review.extracurricular_involvement_ability.eql? "4" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 4
               <% else %>
                 <input type="checkbox" disabled="disabled"> 4
@@ -1352,7 +1352,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql? "5" %>
+              <% if @review.activities != nil and @review.extracurricular_involvement_ability.eql? "5" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> 5 (Much easier)
               <% else %>
                 <input type="checkbox" disabled="disabled"> 5 (Much easier)
@@ -1361,7 +1361,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.extracurricular_involvement_ability.eql? "N/A" %>
+              <% if @review.activities != nil and @review.extracurricular_involvement_ability.eql? "N/A" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> N/A
               <% else %>
                 <input type="checkbox" disabled="disabled"> N/A
@@ -1660,7 +1660,7 @@
         <h3>44) Check the five attributes that best describe why you chose your school:</h3>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "lower cost/higher scholarship" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "lower cost/higher scholarship" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> lower cost/higher scholarship
               <% else %>
                 <input type="checkbox" disabled="disabled"> lower cost/higher scholarship
@@ -1669,7 +1669,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "family tradition" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "family tradition" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> family tradition
               <% else %>
                 <input type="checkbox" disabled="disabled"> family tradition
@@ -1678,7 +1678,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "special academic program" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "special academic program" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> special academic program
               <% else %>
                 <input type="checkbox" disabled="disabled"> special academic program
@@ -1687,7 +1687,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "academically challenging" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "academically challenging" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> academically challenging
               <% else %>
                 <input type="checkbox" disabled="disabled"> academically challenging
@@ -1696,7 +1696,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "athletic opportunities" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "athletic opportunities" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> athletic opportunities
               <% else %>
                 <input type="checkbox" disabled="disabled"> athletic opportunities
@@ -1705,7 +1705,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "diversity of student body" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "diversity of student body" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> diversity of student body
               <% else %>
                 <input type="checkbox" disabled="disabled"> diversity of student body
@@ -1714,7 +1714,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "pre-professional advising" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "pre-professional advising" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> pre-professional advising
               <% else %>
                 <input type="checkbox" disabled="disabled"> pre-professional advising
@@ -1723,7 +1723,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "location" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "location" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> location
               <% else %>
                 <input type="checkbox" disabled="disabled"> location
@@ -1732,7 +1732,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "social aspects of campus" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "social aspects of campus" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> social aspects of campus
               <% else %>
                 <input type="checkbox" disabled="disabled"> social aspects of campus
@@ -1741,7 +1741,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "intellectual challenge" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "intellectual challenge" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> intellectual challenge
               <% else %>
                 <input type="checkbox" disabled="disabled"> intellectual challenge
@@ -1750,7 +1750,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "optimum size" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "optimum size" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> optimum size
               <% else %>
                 <input type="checkbox" disabled="disabled"> optimum size
@@ -1759,7 +1759,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "Prestige" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "Prestige" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> Prestige
               <% else %>
                 <input type="checkbox" disabled="disabled"> Prestige
@@ -1768,7 +1768,7 @@
           </div>
           <div class="checkbox" style="margin-left: 50px">
             <label>
-              <% if @review.why_chose_school.include? "other" %>
+              <% if @review.why_chose_school != nil and @review.why_chose_school.include? "other" %>
                 <input type="checkbox" disabled="disabled" checked="checked"> other
               <% else %>
                 <input type="checkbox" disabled="disabled"> other
