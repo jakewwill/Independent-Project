@@ -24,13 +24,14 @@ class CollegesController < ApplicationController
 
   def show
     @college = College.find(params[:id])
-    @reviews = Review.all.paginate(page: params[:page], per_page: 10)
+    @reviews = Review.all
     # Create an array with all the reviews for this college
     @reviews.each do |r|
       if (r.college_name != @college.name)
         @reviews = @reviews - [r]
       end
     end
+    
     @reviews = @reviews.paginate(page: params[:page], per_page: 10)
   end
 
