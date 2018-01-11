@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @reviews = Review.order(id: :asc);
+    @reviews = Review.order(id: :desc);
   end
   
   def most_reviews
