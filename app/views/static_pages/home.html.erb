@@ -54,7 +54,7 @@
 	                                <% end %>
 	                            <% else %>
 	                            	<%= will_paginate @reviews %>
-	                            	<% @reviews.each do |r|%>
+	                            	<% @reviews.reverse.each do |r|%>
 										<% if r.verified == false %>
 		                                    <tr>
 		                                        <td><%= r.name %></td>
