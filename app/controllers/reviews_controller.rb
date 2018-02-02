@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+  def index
+    @reviews = Review.paginate(:page => params[:page], :per_page => 2)
+  end
+  
   def new
     @review = Review.new
     @colleges = College.all

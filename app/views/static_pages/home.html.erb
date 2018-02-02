@@ -6,44 +6,83 @@
 
 	<body class="body">
 		<div class="container-small container">
-			<div class="row">
+			<div class="row" style="margin-bottom: 50px">
 				<div id="welcome" class="col-md-12">
 					<div class="short row">
-						<label id="header">Welcome to PunaLink,</label>
+						<label id="header"><u>Welcome to PunaLink,</u></label>
 						<p class="welcome-p-1">A resource for Punahou Academy students sourced from Punahou Alumni. Get real input from our alumni on their colleges.  Find out what other Oahuans think about everything from campus life, to academic rigor, to food.  The real inside info, by Punahou, for Punahou</p>
 					</div>
 				</div>
 			</div>
-			<div class="row" style="margin-top: 20px">
-				<label id="header">Recent Reviews</label>
-				<% if @reviews.size == 0 %>
-					<div style="text-align: center">
-						<label>Sorry, there are no reviews to display at the moment</label>
+			
+			<!-- Paginate Reviews-->
+			<div class="row">
+				<div style="display: block; margin: 0 auto; text-align: center">
+					<label id="header"><u>All Reviews: </u></label>
+				</div>
+				
+				<div class="col-md-12">
+					<div id="results" class="row">
+						<table class="table black-border col-md-12" style="margin-top: 20px; margin-left: 2.2%; width: 96%">
+							<thead style="background: #D6E4FF">
+								<% if current_user == nil || current_user.admin == false %>
+									<tr>
+										<th style="width: 20%">Review Author</th>
+										<th style="width: 30%">Review School Name</th>
+										<th>Link</th>
+									</tr>
+								<% else %>
+									<tr>
+										<th style="width: 20%">Review Author</th>
+										<th style="width: 30%">Review School Name</th>
+										<th>Link</th>
+										<th>Verified?</th>
+										<td>Delete?</td>
+									</tr>
+								<% end %>
+							</thead>
+							<tbody>
+								<% if current_user == nil || current_user.admin == false %>
+									<% Review.all.reverse.each do |r|%>
+										<% if r.verified == true %>
+		                                    <tr>
+		                                        <td><%= r.name %></td>
+		                                        <td><%= r.college_name %></td>
+		                                        <td><%= link_to "Go to review of " + r.college_name, r %></td>
+		                                    </tr>
+	                                    <% end %>
+	                                <% end %>
+	                            <% else %>
+	                            	<%= will_paginate @reviews %>
+	                            	<% @reviews.each do |r|%>
+										<% if r.verified == false %>
+		                                    <tr>
+		                                        <td><%= r.name %></td>
+		                                        <td><%= r.college_name %></td>
+		                                        <td><%= link_to "Go to review of " + r.college_name, r %></td>
+		                                        <td><%= link_to "Verify", verify_reviews_path(:id => r.id) %></td>
+		                                        <td><%= button_to "Delete", r, method: :delete, data: { confirm: 'Are you sure you want to delete this review?' }, :class => "btn btn-danger" %></td>
+		                                    </tr>
+		                                <% else %>
+		                                	<tr>
+		                                        <td><%= r.name %></td>
+		                                        <td><%= r.college_name %></td>
+		                                        <td><%= link_to "Go to review of " + r.college_name, r %></td>
+		                                        <td>Verified</td>
+		                                        <td><%= button_to "Delete", r, method: :delete, data: { confirm: 'Are you sure you want to delete this review?' }, :class => "btn btn-danger" %></td>
+		                                    </tr>
+	                                    <% end %>
+	                                <% end %>
+                                <% end %>
+							</tbody>
+						</table>
 					</div>
-				<% else %>
-					<% @reviews.limit(4).each do |review| %>
-						<% if review.verified == true %>
-							<div class="col-sm-6">
-								<div class="well" style="padding-top: 0">
-									<div style="text-align: center">
-										<%= link_to(review, target: '_blank') do %>
-											<h3><span class="fa fa-user"></span>Review by <%= review.name %> for <%= review.college_name %></h3>
-										<% end %>
-									</div>
-									<p>
-										<label style="display: block">Review by: <%= review.name %></label>
-										<label>College: <%= link_to review.college_name, College.find_by_name(review.college_name) %></label>
-									</p>
-								</div>
-							</div>
-						<% end %>
-					<% end %>
-				<% end %>
-			</div>
+				</div>
+			</div> <!-- row -->
 			
 			<!-- The extra "row" div ensures that the following <p> is placed on a separate line-->
 			<div class="row">
-				<p class="welcome-p-1">Click on the 'Colleges' tab to search for reviews of a specific college, and 'All Reviews' to see a list of every review</p>
+				<p class="welcome-p-1">Click on the 'Colleges' tab to search for reviews of a specific college</p>
 			</div>
 		</div>
 	</body>
