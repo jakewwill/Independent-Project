@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @reviews = Review.order('college_name DESC').paginate(:page => params[:page], :per_page => 15)
+    @reviews = Review.paginate(:page => params[:page], :per_page => 15).order('college_name DESC')
   end
   
   def most_reviews
