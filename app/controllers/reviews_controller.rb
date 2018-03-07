@@ -10,8 +10,17 @@ class ReviewsController < ApplicationController
   
   def create
       @review = Review.new(review_params)
-      
-      if @review.save
+      if (College.find_by(name: @review.college_name) == nil)
+        @colleges = College.all
+        @collegeNames = ""
+        @colleges.each do |college|
+          @collegeNames += college.name + ";:"
+        end
+        
+        flash.now[:danger] = "Please select a college from the auto-fill list (try typing out the full name of your college i.e University of....)"
+        render :new
+      else
+        if @review.save
           flash[:success] = "Review successfully submitted. It is awaiting evaluation by a college counselor"
           redirect_to root_path
       else
@@ -46,6 +55,7 @@ class ReviewsController < ApplicationController
         end
         flash.now[:danger] = "Error submitting review, please answer the questions: " + @error_string
         render :new
+      end
       end
   end
 
