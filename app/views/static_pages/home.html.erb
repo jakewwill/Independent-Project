@@ -43,7 +43,8 @@
 							</thead>
 							<tbody>
 								<% if current_user == nil || current_user.admin == false %>
-									<% Review.all.reverse.each do |r|%>
+									<%= will_paginate @reviews %>
+									<% @reviews.each do |r| %>
 										<% if r.verified == true %>
 		                                    <tr>
 		                                        <td><%= r.name %></td>
@@ -54,7 +55,7 @@
 	                                <% end %>
 	                            <% else %>
 	                            	<%= will_paginate @reviews %>
-	                            	<% @reviews.reverse.each do |r|%>
+	                            	<% @reviews.each do |r| %>
 										<% if r.verified == false %>
 		                                    <tr>
 		                                        <td><%= r.name %></td>
