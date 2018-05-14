@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+  def index
+  end
+  
   def new
     @review = Review.new
     @colleges = College.all
@@ -80,10 +83,10 @@ class ReviewsController < ApplicationController
   
       @review.destroy
       flash[:success] = "Review deleted"
-      redirect_to reviews_path
+      redirect_to root_path
     else
       flash[:danger] = "That review has already been deleted"
-      redirect_to reviews_path
+      redirect_to root_path
     end
   end
   
@@ -99,7 +102,7 @@ class ReviewsController < ApplicationController
       end
     end
    
-    redirect_to reviews_path
+    redirect_to root_path
     flash[:success] = "Review Verified!"
   end
   

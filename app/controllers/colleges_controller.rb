@@ -1,6 +1,7 @@
 class CollegesController < ApplicationController
   # Index colleges page, where you can search for individual schools
   def index
+    # Orders the colleges alphabetically and paginates them with 40 schools per page
     @colleges = College.order('name ASC').paginate(page: params[:page], per_page: 40)
     if params[:search]
       @colleges = College.search(params[:search]).order("name ASC").paginate(page: params[:page], per_page: 40)
@@ -12,6 +13,7 @@ class CollegesController < ApplicationController
   def new
   end
 
+  # Only used once when I initially created all of the colleges in the database
   def create
     @college = College.new(college_params)
     if @college.save

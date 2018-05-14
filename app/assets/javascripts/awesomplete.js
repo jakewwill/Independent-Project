@@ -7,7 +7,8 @@
 
 /**
  * Note (from Jake): I copied this open-source code from github to incorporate an auto-complete function
- * into the website. I made some slight changes to it, but all credit should go to @author Lea Verou
+ * into the website for the college dropdown list in the reviews. I made some slight changes to it, but all 
+ * credit should go to @author Lea Verou
  */
  
 (function () {
